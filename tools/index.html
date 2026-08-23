@@ -1,36 +1,1056 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>AI Tools — 2NEXTAI</title>
+
 <meta name="description" content="Discover useful AI tools for writing, images, video, SEO, marketing, productivity and AI agents. Curated by 2NEXTAI.">
+
 <link rel="canonical" href="https://2nextai.com/tools/">
+
 <style>
-:root{--bg:#070b14;--panel:#0d1422;--text:#f4f7fb;--muted:#9eabc0;--line:rgba(255,255,255,.09);--a:#66e3ff;--b:#8b7cff}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(102,227,255,.10),transparent 30%),radial-gradient(circle at 90% 10%,rgba(139,124,255,.12),transparent 32%),var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}a{text-decoration:none;color:inherit}.container{width:min(1180px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.84);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:900}.brand i{color:var(--a);font-style:normal}.links{display:flex;gap:20px;color:var(--muted);font-size:14px}.links a:hover{color:#fff}
-.hero{text-align:center;padding:80px 0 45px}.eyebrow{display:inline-block;color:var(--a);border:1px solid rgba(102,227,255,.25);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}h1{font-size:clamp(44px,7vw,78px);line-height:.98;letter-spacing:-.06em;margin:20px 0}.gradient{background:linear-gradient(90deg,#fff,var(--a),#b4aaff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:730px;margin:auto;color:var(--muted);font-size:18px;line-height:1.7}.search{max-width:680px;margin:30px auto 0}.search input{width:100%;padding:17px 20px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#fff;font-size:16px;outline:0}
-.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:10px 0 45px}.filter{cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.035);color:#c8d2e2;border-radius:999px;padding:10px 14px}.filter.active,.filter:hover{background:rgba(102,227,255,.08);border-color:rgba(102,227,255,.4);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:80px}.card{border:1px solid var(--line);border-radius:22px;padding:24px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));transition:.2s}.card:hover{transform:translateY(-4px);border-color:rgba(102,227,255,.25)}.icon{font-size:25px;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(102,227,255,.08)}h2{margin:18px 0 8px;font-size:21px}.card p{color:var(--muted);font-size:14px;line-height:1.65;min-height:68px}.meta{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.badge{font-size:11px;padding:6px 9px;border-radius:999px;border:1px solid var(--line);color:#cbd5e1}.btn{display:block;text-align:center;padding:11px;border-radius:11px;background:linear-gradient(135deg,var(--a),var(--b));color:#07101b;font-size:12px;font-weight:900;margin-top:18px}
-footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:12px}@media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.links{display:none}}@media(max-width:560px){.grid{grid-template-columns:1fr}}
-</style></head>
-<body><header><div class="container"><nav><a class="brand" href="/">2<i>NEXTAI</i></a><div class="links"><a href="/">Home</a><a href="/tools/">AI Tools</a><a href="/workflows/">Workflows</a><a href="/prompts/">Prompts</a><a href="/resources/">Resources</a></div></nav></div></header>
-<main><section class="hero"><div class="container"><div class="eyebrow">2NEXTAI · AI Tools Hub</div><h1>Find the right <span class="gradient">AI tool</span> for the job.</h1><p>A curated directory of practical AI tools for creators, businesses and professionals — organized by what you actually want to accomplish.</p><div class="search"><input id="search" type="search" placeholder="Search AI tools, categories, use cases..." aria-label="Search AI tools"></div></div></section>
-<section class="container"><div class="filters" id="filters">
-<button class="filter active" data-cat="all">All</button><button class="filter" data-cat="Writing">Writing</button><button class="filter" data-cat="Image">Image</button><button class="filter" data-cat="Video">Video</button><button class="filter" data-cat="SEO">SEO</button><button class="filter" data-cat="Marketing">Marketing</button><button class="filter" data-cat="Productivity">Productivity</button><button class="filter" data-cat="Agents">AI Agents</button></div>
-<div class="grid" id="grid">
-<div class="card" data-cat="Writing" data-search="writing content copy"><div class="icon">✍️</div><h2>AI Writing</h2><p>Draft, rewrite, research and improve content faster.</p><div class="meta"><span class="badge">Writing</span><span class="badge">Content</span></div><a class="btn" href="/tools/writing/">Access Writing Tools →</a></div>
-<div class="card" data-cat="Image" data-search="image design graphics"><div class="icon">🎨</div><h2>AI Image</h2><p>Generate and edit creative visuals and design assets.</p><div class="meta"><span class="badge">Image</span><span class="badge">Design</span></div><a class="btn" href="/tools/image/">Access Image Tools →</a></div>
-<div class="card" data-cat="Video" data-search="video editing avatar"><div class="icon">🎬</div><h2>AI Video</h2><p>Create, edit and enhance videos with AI.</p><div class="meta"><span class="badge">Video</span><span class="badge">Creator</span></div><a class="btn" href="/tools/video/">Access Video Tools →</a></div>
-<div class="card" data-cat="SEO" data-search="seo keywords search optimization"><div class="icon">🔎</div><h2>AI for SEO</h2><p>Research keywords and optimize content for search visibility.</p><div class="meta"><span class="badge">SEO</span><span class="badge">Search</span></div><a class="btn" href="/tools/seo/">Access SEO Tools →</a></div>
-<div class="card" data-cat="Marketing" data-search="marketing ads social campaigns"><div class="icon">📈</div><h2>AI Marketing</h2><p>Build better campaigns, copy and marketing workflows.</p><div class="meta"><span class="badge">Marketing</span><span class="badge">Business</span></div><a class="btn" href="/tools/marketing/">Access Marketing Tools →</a></div>
-<div class="card" data-cat="Productivity" data-search="productivity meeting notes automation"><div class="icon">⚡</div><h2>AI Productivity</h2><p>Research, meetings, organization and everyday work.</p><div class="meta"><span class="badge">Productivity</span><span class="badge">Work</span></div><a class="btn" href="/tools/productivity/">Access Productivity Tools →</a></div>
-<div class="card" data-cat="Agents" data-search="agents autonomous automation"><div class="icon">🤖</div><h2>AI Agents</h2><p>Discover AI systems designed to plan and execute multi-step tasks.</p><div class="meta"><span class="badge">Agents</span><span class="badge">Automation</span></div><a class="btn" href="/tools/ai-agents/">Access AI Agents →</a></div>
-</div></section></main>
-<footer><div class="container"><strong>2NEXTAI</strong> · AI Tools, Workflows & Resources. · Affiliate relationships will be disclosed where applicable.</div></footer>
+:root{
+  --bg:#070b14;
+  --panel:#0d1422;
+  --text:#f4f7fb;
+  --muted:#9eabc0;
+  --line:rgba(255,255,255,.09);
+  --a:#66e3ff;
+  --b:#8b7cff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(102,227,255,.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(139,124,255,.12),
+      transparent 32%
+    ),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input{
+  font-family:inherit;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(7,11,20,.84);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+
+nav{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-size:22px;
+  font-weight:900;
+}
+
+.brand i{
+  color:var(--a);
+  font-style:normal;
+}
+
+.links{
+  display:flex;
+  gap:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.links a:hover{
+  color:#fff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  text-align:center;
+  padding:80px 0 45px;
+}
+
+.eyebrow{
+  display:inline-block;
+  color:var(--a);
+  border:1px solid rgba(102,227,255,.25);
+  border-radius:999px;
+  padding:8px 13px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+h1{
+  font-size:clamp(44px,7vw,78px);
+  line-height:.98;
+  letter-spacing:-.06em;
+  margin:20px 0;
+}
+
+.gradient{
+  background:linear-gradient(
+    90deg,
+    #fff,
+    var(--a),
+    #b4aaff
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:730px;
+  margin:auto;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+
+.search{
+  max-width:680px;
+  margin:30px auto 0;
+}
+
+.search input{
+  width:100%;
+  padding:17px 20px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+  color:#fff;
+  font-size:16px;
+  outline:0;
+}
+
+.search input:focus{
+  border-color:rgba(102,227,255,.45);
+  box-shadow:0 0 0 3px rgba(102,227,255,.06);
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  margin:10px 0 45px;
+}
+
+.filter{
+  cursor:pointer;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.035);
+  color:#c8d2e2;
+  border-radius:999px;
+  padding:10px 14px;
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+.filter:hover{
+  background:rgba(102,227,255,.08);
+  border-color:rgba(102,227,255,.4);
+  color:#fff;
+  transform:translateY(-1px);
+}
+
+.filter.active{
+  background:rgba(102,227,255,.08);
+  border-color:rgba(102,227,255,.4);
+  color:#fff;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  padding-bottom:80px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:24px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.018)
+    );
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+  scroll-margin-top:100px;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(102,227,255,.25);
+}
+
+/*
+   Carte ciblée après clic sur un filtre.
+   L'effet reste léger pour conserver le design.
+*/
+.card.target-card{
+  border-color:rgba(102,227,255,.65);
+  box-shadow:
+    0 0 0 1px rgba(102,227,255,.18),
+    0 20px 60px rgba(102,227,255,.08);
+}
+
+.icon{
+  font-size:25px;
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:rgba(102,227,255,.08);
+}
+
+h2{
+  margin:18px 0 8px;
+  font-size:21px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.65;
+  min-height:68px;
+}
+
+.meta{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin:14px 0;
+}
+
+.badge{
+  font-size:11px;
+  padding:6px 9px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:#cbd5e1;
+}
+
+.btn{
+  display:block;
+  text-align:center;
+  padding:11px;
+  border-radius:11px;
+  background:linear-gradient(
+    135deg,
+    var(--a),
+    var(--b)
+  );
+  color:#07101b;
+  font-size:12px;
+  font-weight:900;
+  margin-top:18px;
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.05);
+}
+
+/* =========================
+   EMPTY SEARCH RESULT
+========================= */
+
+.empty{
+  grid-column:1/-1;
+  text-align:center;
+  color:var(--muted);
+  padding:50px 20px;
+  border:1px dashed var(--line);
+  border-radius:20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .links{
+    display:none;
+  }
+
+}
+
+@media(max-width:560px){
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:55px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+
+      <a class="brand" href="/">
+        2<i>NEXTAI</i>
+      </a>
+
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/tools/">AI Tools</a>
+        <a href="/workflows/">Workflows</a>
+        <a href="/prompts/">Prompts</a>
+        <a href="/resources/">Resources</a>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      2NEXTAI · AI Tools Hub
+    </div>
+
+    <h1>
+      Find the right
+      <span class="gradient">AI tool</span>
+      for the job.
+    </h1>
+
+    <p>
+      A curated directory of practical AI tools for creators,
+      businesses and professionals — organized by what you
+      actually want to accomplish.
+    </p>
+
+    <div class="search">
+
+      <input
+        id="search"
+        type="search"
+        placeholder="Search AI tools, categories, use cases..."
+        aria-label="Search AI tools"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <!-- =========================
+       CATEGORY NAVIGATION
+  ========================== -->
+
+  <div
+    class="filters"
+    id="filters"
+    aria-label="AI tool categories"
+  >
+
+    <button
+      type="button"
+      class="filter active"
+      data-cat="all"
+      data-target="all"
+    >
+      All
+    </button>
+
+    <button
+      type="button"
+      class="filter"
+      data-cat="Writing"
+      data-target="writing"
+    >
+      Writing
+    </button>
+
+    <button
+      type="button"
+      class="filter"
+      data-cat="Image"
+      data-target="image"
+    >
+      Image
+    </button>
+
+    <button
+      type="button"
+      class="filter"
+      data-cat="Video"
+      data-target="video"
+    >
+      Video
+    </button>
+
+    <button
+      type="button"
+      class="filter"
+      data-cat="SEO"
+      data-target="seo"
+    >
+      SEO
+    </button>
+
+    <button
+      type="button"
+      class="filter"
+      data-cat="Marketing"
+      data-target="marketing"
+    >
+      Marketing
+    </button>
+
+    <button
+      type="button"
+      class="filter"
+      data-cat="Productivity"
+      data-target="productivity"
+    >
+      Productivity
+    </button>
+
+    <button
+      type="button"
+      class="filter"
+      data-cat="Agents"
+      data-target="ai-agents"
+    >
+      AI Agents
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       CATEGORY CARDS
+  ========================== -->
+
+  <div class="grid" id="grid">
+
+
+    <!-- WRITING -->
+
+    <div
+      class="card"
+      id="card-writing"
+      data-cat="Writing"
+      data-search="writing content copy"
+    >
+
+      <div class="icon">✍️</div>
+
+      <h2>AI Writing</h2>
+
+      <p>
+        Draft, rewrite, research and improve content faster.
+      </p>
+
+      <div class="meta">
+        <span class="badge">Writing</span>
+        <span class="badge">Content</span>
+      </div>
+
+      <a
+        class="btn"
+        href="/tools/writing/"
+      >
+        Access Writing Tools →
+      </a>
+
+    </div>
+
+
+    <!-- IMAGE -->
+
+    <div
+      class="card"
+      id="card-image"
+      data-cat="Image"
+      data-search="image design graphics"
+    >
+
+      <div class="icon">🎨</div>
+
+      <h2>AI Image</h2>
+
+      <p>
+        Generate and edit creative visuals and design assets.
+      </p>
+
+      <div class="meta">
+        <span class="badge">Image</span>
+        <span class="badge">Design</span>
+      </div>
+
+      <a
+        class="btn"
+        href="/tools/image/"
+      >
+        Access Image Tools →
+      </a>
+
+    </div>
+
+
+    <!-- VIDEO -->
+
+    <div
+      class="card"
+      id="card-video"
+      data-cat="Video"
+      data-search="video editing avatar"
+    >
+
+      <div class="icon">🎬</div>
+
+      <h2>AI Video</h2>
+
+      <p>
+        Create, edit and enhance videos with AI.
+      </p>
+
+      <div class="meta">
+        <span class="badge">Video</span>
+        <span class="badge">Creator</span>
+      </div>
+
+      <a
+        class="btn"
+        href="/tools/video/"
+      >
+        Access Video Tools →
+      </a>
+
+    </div>
+
+
+    <!-- SEO -->
+
+    <div
+      class="card"
+      id="card-seo"
+      data-cat="SEO"
+      data-search="seo keywords search optimization"
+    >
+
+      <div class="icon">🔎</div>
+
+      <h2>AI for SEO</h2>
+
+      <p>
+        Research keywords and optimize content for search visibility.
+      </p>
+
+      <div class="meta">
+        <span class="badge">SEO</span>
+        <span class="badge">Search</span>
+      </div>
+
+      <a
+        class="btn"
+        href="/tools/seo/"
+      >
+        Access SEO Tools →
+      </a>
+
+    </div>
+
+
+    <!-- MARKETING -->
+
+    <div
+      class="card"
+      id="card-marketing"
+      data-cat="Marketing"
+      data-search="marketing ads social campaigns"
+    >
+
+      <div class="icon">📈</div>
+
+      <h2>AI Marketing</h2>
+
+      <p>
+        Build better campaigns, copy and marketing workflows.
+      </p>
+
+      <div class="meta">
+        <span class="badge">Marketing</span>
+        <span class="badge">Business</span>
+      </div>
+
+      <a
+        class="btn"
+        href="/tools/marketing/"
+      >
+        Access Marketing Tools →
+      </a>
+
+    </div>
+
+
+    <!-- PRODUCTIVITY -->
+
+    <div
+      class="card"
+      id="card-productivity"
+      data-cat="Productivity"
+      data-search="productivity meeting notes automation"
+    >
+
+      <div class="icon">⚡</div>
+
+      <h2>AI Productivity</h2>
+
+      <p>
+        Research, meetings, organization and everyday work.
+      </p>
+
+      <div class="meta">
+        <span class="badge">Productivity</span>
+        <span class="badge">Work</span>
+      </div>
+
+      <a
+        class="btn"
+        href="/tools/productivity/"
+      >
+        Access Productivity Tools →
+      </a>
+
+    </div>
+
+
+    <!-- AI AGENTS -->
+
+    <div
+      class="card"
+      id="card-ai-agents"
+      data-cat="Agents"
+      data-search="agents autonomous automation"
+    >
+
+      <div class="icon">🤖</div>
+
+      <h2>AI Agents</h2>
+
+      <p>
+        Discover AI systems designed to plan and execute
+        multi-step tasks.
+      </p>
+
+      <div class="meta">
+        <span class="badge">Agents</span>
+        <span class="badge">Automation</span>
+      </div>
+
+      <a
+        class="btn"
+        href="/tools/ai-agents/"
+      >
+        Access AI Agents →
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <strong>2NEXTAI</strong>
+    · AI Tools, Workflows & Resources.
+    · Affiliate relationships will be disclosed where applicable.
+
+  </div>
+
+</footer>
+
+
 <script>
-const cards=[...document.querySelectorAll('.card')], filters=[...document.querySelectorAll('.filter')], search=document.querySelector('#search');
-let cat='all';
-function render(){let q=search.value.toLowerCase().trim();cards.forEach(c=>{let show=(cat==='all'||c.dataset.cat===cat)&&(!q||c.dataset.search.includes(q)||c.textContent.toLowerCase().includes(q));c.style.display=show?'block':'none'})}
-filters.forEach(f=>f.onclick=()=>{filters.forEach(x=>x.classList.remove('active'));f.classList.add('active');cat=f.dataset.cat;render()});search.oninput=render;
-</script></body></html>
+
+const cards = [
+  ...document.querySelectorAll(".card")
+];
+
+const filters = [
+  ...document.querySelectorAll(".filter")
+];
+
+const search = document.querySelector("#search");
+
+let cat = "all";
+
+
+/* =====================================================
+   FIND CARD
+===================================================== */
+
+function getTargetCard(category){
+
+  if(category === "all"){
+    return null;
+  }
+
+  return document.querySelector(
+    "#card-" + category
+  );
+
+}
+
+
+/* =====================================================
+   CLEAR CARD HIGHLIGHT
+===================================================== */
+
+function clearTargetHighlight(){
+
+  cards.forEach(card => {
+
+    card.classList.remove("target-card");
+
+  });
+
+}
+
+
+/* =====================================================
+   SCROLL TO SELECTED CARD
+===================================================== */
+
+function scrollToCategoryCard(category){
+
+  if(category === "all"){
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+    return;
+  }
+
+
+  const card = getTargetCard(category);
+
+  if(!card){
+    return;
+  }
+
+
+  /*
+     The card must be visible first.
+     Therefore we wait until the filtering/rendering
+     has been completed by the browser.
+  */
+
+  requestAnimationFrame(() => {
+
+    requestAnimationFrame(() => {
+
+      clearTargetHighlight();
+
+      card.classList.add("target-card");
+
+
+      /*
+         Center the selected card in the viewport.
+      */
+
+      card.scrollIntoView({
+        behavior:"smooth",
+        block:"center",
+        inline:"nearest"
+      });
+
+    });
+
+  });
+
+}
+
+
+/* =====================================================
+   RENDER FILTER
+===================================================== */
+
+function render(){
+
+  const q =
+    search.value
+      .toLowerCase()
+      .trim();
+
+
+  let visibleCount = 0;
+
+
+  cards.forEach(card => {
+
+    const categoryMatch =
+      cat === "all" ||
+      card.dataset.cat === cat;
+
+
+    const searchMatch =
+      !q ||
+      card.dataset.search
+        .toLowerCase()
+        .includes(q) ||
+      card.textContent
+        .toLowerCase()
+        .includes(q);
+
+
+    const show =
+      categoryMatch &&
+      searchMatch;
+
+
+    card.style.display =
+      show ? "block" : "none";
+
+
+    if(show){
+      visibleCount++;
+    }
+
+  });
+
+
+  /*
+     Empty state
+  */
+
+  let empty =
+    document.querySelector(".empty");
+
+
+  if(visibleCount === 0){
+
+    if(!empty){
+
+      empty =
+        document.createElement("div");
+
+      empty.className = "empty";
+
+      empty.textContent =
+        "No matching AI tool category found.";
+
+      document
+        .querySelector("#grid")
+        .appendChild(empty);
+
+    }
+
+  }else{
+
+    if(empty){
+      empty.remove();
+    }
+
+  }
+
+}
+
+
+/* =====================================================
+   FILTER CLICK
+===================================================== */
+
+filters.forEach(filter => {
+
+  filter.addEventListener(
+    "click",
+    () => {
+
+      /*
+         Update active button
+      */
+
+      filters.forEach(button => {
+
+        button.classList.remove("active");
+
+      });
+
+      filter.classList.add("active");
+
+
+      /*
+         Set selected category
+      */
+
+      cat =
+        filter.dataset.cat;
+
+
+      /*
+         Remove previous highlight
+      */
+
+      clearTargetHighlight();
+
+
+      /*
+         Apply filtering
+      */
+
+      render();
+
+
+      /*
+         Scroll to selected card
+      */
+
+      scrollToCategoryCard(
+        filter.dataset.target
+      );
+
+    }
+  );
+
+});
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+search.addEventListener(
+  "input",
+  () => {
+
+    /*
+       Searching should not force
+       a category navigation.
+    */
+
+    render();
+
+  }
+);
+
+
+/* =====================================================
+   INITIAL RENDER
+===================================================== */
+
+render();
+
+</script>
+
+</body>
+</html>
