@@ -683,54 +683,6 @@ footer{
 
     <div
       
-    <section class="seo-section" aria-labelledby="directory-heading">
-
-  <h2 id="directory-heading">
-    Explore AI Tools by Category
-  </h2>
-
-  <p>
-    2NEXTAI organizes useful AI software by real-world tasks.
-    Explore AI writing tools for content creation, AI image tools
-    for visual production, AI video tools for creators, SEO tools
-    for search visibility, marketing tools for campaigns,
-    productivity tools for everyday work, and AI agent platforms
-    for multi-step automation.
-  </p>
-
-  <nav class="seo-links" aria-label="AI tools category links">
-
-    <a href="/tools/writing/">
-      AI Writing Tools
-    </a>
-
-    <a href="/tools/image/">
-      AI Image Tools
-    </a>
-
-    <a href="/tools/video/">
-      AI Video Tools
-    </a>
-
-    <a href="/tools/seo/">
-      AI SEO Tools
-    </a>
-
-    <a href="/tools/marketing/">
-      AI Marketing Tools
-    </a>
-
-    <a href="/tools/productivity/">
-      AI Productivity Tools
-    </a>
-
-    <a href="/tools/ai-agents/">
-      AI Agents
-    </a>
-
-  </nav>
-
-</section>
       class="card"
       id="card-writing"
       data-cat="Writing"
@@ -955,6 +907,56 @@ footer{
 
   </div>
 
+
+    <section class="seo-section" aria-labelledby="directory-heading">
+
+  <h2 id="directory-heading">
+    Explore AI Tools by Category
+  </h2>
+
+  <p>
+    2NEXTAI organizes useful AI software by real-world tasks.
+    Explore AI writing tools for content creation, AI image tools
+    for visual production, AI video tools for creators, SEO tools
+    for search visibility, marketing tools for campaigns,
+    productivity tools for everyday work, and AI agent platforms
+    for multi-step automation.
+  </p>
+
+  <nav class="seo-links" aria-label="AI tools category links">
+
+    <a href="/tools/writing/">
+      AI Writing Tools
+    </a>
+
+    <a href="/tools/image/">
+      AI Image Tools
+    </a>
+
+    <a href="/tools/video/">
+      AI Video Tools
+    </a>
+
+    <a href="/tools/seo/">
+      AI SEO Tools
+    </a>
+
+    <a href="/tools/marketing/">
+      AI Marketing Tools
+    </a>
+
+    <a href="/tools/productivity/">
+      AI Productivity Tools
+    </a>
+
+    <a href="/tools/ai-agents/">
+      AI Agents
+    </a>
+
+  </nav>
+
+</section>
+
 </section>
 
 </main>
@@ -987,21 +989,26 @@ const search = document.querySelector("#search");
 
 let cat = "all";
 
+filters.forEach(button => {
+  button.setAttribute(
+    "aria-pressed",
+    button.classList.contains("active") ? "true" : "false"
+  );
+});
+
 
 /* =====================================================
    FIND CARD
 ===================================================== */
 
 function getTargetCard(category){
-
   if(category === "all"){
     return null;
   }
 
   return document.querySelector(
-    "#card-" + category
+    "#card-" + String(category).toLowerCase()
   );
-
 }
 
 
@@ -1026,61 +1033,26 @@ function clearTargetHighlight(){
 
 function scrollToCategoryCard(category){
 
-if(category === "all"){
-
   clearTargetHighlight();
 
   requestAnimationFrame(() => {
 
+    const target =
+      category === "all"
+        ? document.querySelector("#grid")
+        : getTargetCard(category);
+
+    if(!target){
+      return;
+    }
+
     requestAnimationFrame(() => {
 
-      const firstCard =
-        document.querySelector("#card-writing");
-
-      if(firstCard){
-
-        firstCard.scrollIntoView({
-          behavior:"smooth",
-          block:"center",
-          inline:"nearest"
-        });
-
+      if(category !== "all"){
+        target.classList.add("target-card");
       }
 
-    });
-
-  });
-
-  return;
-}
-
-  const card = getTargetCard(category);
-
-  if(!card){
-    return;
-  }
-
-
-  /*
-     The card must be visible first.
-     Therefore we wait until the filtering/rendering
-     has been completed by the browser.
-  */
-
-  requestAnimationFrame(() => {
-
-    requestAnimationFrame(() => {
-
-      clearTargetHighlight();
-
-      card.classList.add("target-card");
-
-
-      /*
-         Center the selected card in the viewport.
-      */
-
-      card.scrollIntoView({
+      target.scrollIntoView({
         behavior:"smooth",
         block:"center",
         inline:"nearest"
@@ -1090,10 +1062,7 @@ if(category === "all"){
 
   });
 
-}
-
-
-/* =====================================================
+}/* =====================================================
    RENDER FILTER
 ===================================================== */
 
@@ -1199,6 +1168,13 @@ filters.forEach(filter => {
       });
 
       filter.classList.add("active");
+
+      filters.forEach(button => {
+        button.setAttribute(
+          "aria-pressed",
+          button === filter ? "true" : "false"
+        );
+      });
 
 
       /*
