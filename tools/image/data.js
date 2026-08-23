@@ -8,7 +8,7 @@ const IMAGE_TOOLS = [
     pros:["Adobe ecosystem","Creative editing workflows","Commercial-focused positioning"],
     cons:["Generative credits vary by plan","Advanced features require paid access"],
     verdict:"A strong choice for creators already using Adobe tools.",
-    url:"https://firefly.adobe.com/"
+    url:"https://firefly.adobe.com/",logo:"https://firefly.adobe.com/favicon.ico"
   },
   {
     name:"Canva AI",
@@ -19,7 +19,7 @@ const IMAGE_TOOLS = [
     pros:["Very easy to use","Large design ecosystem","Excellent for social content"],
     cons:["Best experience is inside Canva","AI limits depend on plan"],
     verdict:"One of the easiest options for non-designers and marketing teams.",
-    url:"https://www.canva.com/"
+    url:"https://www.canva.com/",logo:"https://www.canva.com/favicon.ico"
   },
   {
     name:"Leonardo AI",
@@ -30,7 +30,7 @@ const IMAGE_TOOLS = [
     pros:["Creative controls","Broad image workflows","Useful for visual assets"],
     cons:["Credits and limits vary","Advanced usage is plan dependent"],
     verdict:"A versatile choice for creators who want more generation controls.",
-    url:"https://leonardo.ai/"
+    url:"https://leonardo.ai/",logo:"https://leonardo.ai/favicon.ico"
   },
   {
     name:"Midjourney",
@@ -41,7 +41,7 @@ const IMAGE_TOOLS = [
     pros:["Strong visual quality","Excellent artistic exploration","Commercial usage available under its terms"],
     cons:["No standard free Discord trial","Subscription model"],
     verdict:"A leading choice when visual quality and artistic direction matter most.",
-    url:"https://www.midjourney.com/"
+    url:"https://www.midjourney.com/",logo:"https://www.midjourney.com/favicon.ico"
   },
   {
     name:"Ideogram",
@@ -52,7 +52,7 @@ const IMAGE_TOOLS = [
     pros:["Strong text rendering","Design-oriented","Character consistency features"],
     cons:["Priority credits depend on plan","Some private features require paid plans"],
     verdict:"One of the strongest choices when accurate text inside images is important.",
-    url:"https://ideogram.ai/"
+    url:"https://ideogram.ai/",logo:"https://ideogram.ai/favicon.ico"
   },
   {
     name:"Recraft",
@@ -63,7 +63,7 @@ const IMAGE_TOOLS = [
     pros:["Design and vector workflows","Brand-oriented features","Frequent model updates"],
     cons:["Credits vary by plan","Advanced models may require paid access"],
     verdict:"Particularly interesting for designers who need editable-looking brand assets.",
-    url:"https://www.recraft.ai/"
+    url:"https://www.recraft.ai/",logo:"https://www.recraft.ai/favicon.ico"
   },
   {
     name:"Flux",
@@ -74,7 +74,7 @@ const IMAGE_TOOLS = [
     pros:["Strong prompt following","Multiple deployment options","Developer ecosystem"],
     cons:["Pricing depends on provider","Not one single consumer subscription"],
     verdict:"A strong model family for users who want flexibility beyond one hosted application.",
-    url:"https://blackforestlabs.ai/"
+    url:"https://blackforestlabs.ai/",logo:"https://blackforestlabs.ai/favicon.ico"
   },
   {
     name:"Playground",
@@ -85,7 +85,7 @@ const IMAGE_TOOLS = [
     pros:["Accessible workflow","Image editing capabilities","Useful experimentation"],
     cons:["Limits vary","Product features can change"],
     verdict:"A useful option for quick image creation and experimentation.",
-    url:"https://playground.com/"
+    url:"https://playground.com/",logo:"https://playground.com/favicon.ico"
   },
   {
     name:"Microsoft Designer",
@@ -96,7 +96,7 @@ const IMAGE_TOOLS = [
     pros:["Easy workflow","Microsoft ecosystem","Useful templates and graphics"],
     cons:["Feature availability can change","Advanced usage may require Microsoft 365 access"],
     verdict:"A convenient choice for quick everyday graphics.",
-    url:"https://designer.microsoft.com/"
+    url:"https://designer.microsoft.com/",logo:"https://designer.microsoft.com/favicon.ico"
   },
   {
     name:"DreamStudio",
@@ -107,6 +107,6 @@ const IMAGE_TOOLS = [
     pros:["Model-focused workflow","Flexible image generation","Stability AI ecosystem"],
     cons:["Usage is credit based","Pricing can change with models"],
     verdict:"Worth considering for users specifically interested in Stability AI image generation.",
-    url:"https://dreamstudio.ai/"
+    url:"https://dreamstudio.ai/",logo:"https://dreamstudio.ai/favicon.ico"
   }
 ];
