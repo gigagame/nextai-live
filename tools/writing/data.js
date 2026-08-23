@@ -8,7 +8,7 @@ const WRITING_TOOLS = [
     pros: ["Very versatile", "Broad ecosystem", "Useful for many writing tasks"],
     cons: ["Limits vary by plan", "Important facts should be verified"],
     verdict: "Best all-round starting point for most writing workflows.",
-    url: "https://chatgpt.com/"
+    url:"https://chatgpt.com/",logo:"https://chatgpt.com/favicon.ico"
   },
   {
     name: "Claude",
@@ -19,7 +19,7 @@ const WRITING_TOOLS = [
     pros: ["Strong long-form workflow", "Useful document handling", "Good editing assistant"],
     cons: ["Limits vary by plan", "Features change over time"],
     verdict: "A strong choice for long-form and document-heavy writing.",
-    url: "https://claude.ai/"
+    url:"https://claude.ai/",logo:"https://claude.ai/favicon.ico"
   },
   {
     name: "Gemini",
@@ -30,7 +30,7 @@ const WRITING_TOOLS = [
     pros: ["Google ecosystem", "Useful research workflows", "Multimodal capabilities"],
     cons: ["Availability varies by region", "Features change over time"],
     verdict: "A strong option when your workflow already uses Google services.",
-    url: "https://gemini.google.com/"
+    url:"https://gemini.google.com/",logo:"https://gemini.google.com/favicon.ico"
   },
   {
     name: "Jasper",
@@ -41,7 +41,7 @@ const WRITING_TOOLS = [
     pros: ["Marketing focused", "Brand workflow features", "Team oriented"],
     cons: ["Primarily paid", "More specialized than general assistants"],
     verdict: "Interesting for professional marketing teams.",
-    url: "https://www.jasper.ai/"
+    url:"https://www.jasper.ai/",logo:"https://www.jasper.ai/favicon.ico"
   },
   {
     name: "Copy.ai",
@@ -52,7 +52,7 @@ const WRITING_TOOLS = [
     pros: ["Workflow oriented", "Marketing use cases", "Business focused"],
     cons: ["Plan limits vary", "Advanced features may require paid access"],
     verdict: "A good candidate for structured marketing workflows.",
-    url: "https://www.copy.ai/"
+    url:"https://www.copy.ai/",logo:"https://www.copy.ai/favicon.ico"
   },
   {
     name: "Grammarly",
@@ -63,7 +63,7 @@ const WRITING_TOOLS = [
     pros: ["Easy to use", "Strong editing workflow", "Useful for everyday writing"],
     cons: ["Advanced features require paid access", "More editor than generator"],
     verdict: "One of the most practical tools for polishing existing text.",
-    url: "https://www.grammarly.com/"
+    url:"https://www.grammarly.com/",logo:"https://www.grammarly.com/favicon.ico"
   },
   {
     name: "Writesonic",
@@ -74,7 +74,7 @@ const WRITING_TOOLS = [
     pros: ["Content focused", "SEO-oriented features", "Marketing use cases"],
     cons: ["Usage limits depend on plan", "Features change frequently"],
     verdict: "Useful for content teams that want writing plus SEO workflows.",
-    url: "https://writesonic.com/"
+    url:"https://writesonic.com/",logo:"https://writesonic.com/favicon.ico"
   },
   {
     name: "Sudowrite",
@@ -85,7 +85,7 @@ const WRITING_TOOLS = [
     pros: ["Creative-writing focused", "Story development features", "Useful for authors"],
     cons: ["Niche audience", "Paid service"],
     verdict: "A specialist choice for fiction and creative writers.",
-    url: "https://sudowrite.com/"
+    url:"https://sudowrite.com/",logo:"https://sudowrite.com/favicon.ico"
   },
   {
     name: "Notion AI",
@@ -96,7 +96,7 @@ const WRITING_TOOLS = [
     pros: ["Integrated workspace", "Good for notes and documents", "Team collaboration"],
     cons: ["Best value inside Notion", "AI access depends on plan"],
     verdict: "Excellent when writing is part of a larger knowledge workflow.",
-    url: "https://www.notion.com/product/ai"
+    url:"https://www.notion.com/product/ai",logo:"https://www.notion.com/favicon.ico"
   },
   {
     name: "QuillBot",
@@ -107,6 +107,6 @@ const WRITING_TOOLS = [
     pros: ["Simple rewriting workflow", "Useful paraphrasing", "Accessible"],
     cons: ["Advanced limits on free access", "More specialized than general assistants"],
     verdict: "A practical tool for rewriting and polishing existing text.",
-    url: "https://quillbot.com/"
+    url:"https://quillbot.com/",logo:"https://quillbot.com/favicon.ico"
   }
 ];
