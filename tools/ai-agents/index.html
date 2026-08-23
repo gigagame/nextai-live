@@ -693,12 +693,17 @@ function render(){
 
           <div class="title">
 
-            <div
-              class="logo"
-              aria-hidden="true"
-            >
-              ${esc(t.name[0])}
-            </div>
+            <div class="logo">
+  <img
+    src="${esc(t.logo || '')}"
+    alt="${esc(t.name)} logo"
+    loading="lazy"
+    onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+  >
+  <span class="logo-fallback">
+    ${esc(t.name[0])}
+  </span>
+</div>
 
             <div>
 
