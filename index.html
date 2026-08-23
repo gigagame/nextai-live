@@ -31,6 +31,7 @@
   No reviews, ratings, customer counts, SKU, GTIN,
   fake availability claims or invented information.
 -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,6 +53,7 @@
   }
 }
 </script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,7 +68,9 @@
   }
 }
 </script>
+
 <style>
+
 :root{
   --bg:#03040a;
   --text:#f8f9ff;
@@ -117,19 +121,23 @@ summary:focus-visible{
   margin:auto
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
-  height:82px;
+  min-height:82px;
   display:flex;
   align-items:center;
-  justify-content:space-between
+  justify-content:space-between;
+  gap:20px
 }
 
 .logo{
   font-size:25px;
   font-weight:950;
-  letter-spacing:-1px
+  letter-spacing:-1px;
+  flex-shrink:0
 }
 
 .logo span{
@@ -139,13 +147,46 @@ nav{
   color:transparent
 }
 
+.navlinks{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:8px
+}
+
+.navlink{
+  padding:10px 14px;
+  border-radius:11px;
+  color:#aeb7cf;
+  font-size:14px;
+  font-weight:750;
+  border:1px solid transparent;
+  transition:.25s
+}
+
+.navlink:hover{
+  color:#fff;
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.08);
+  transform:translateY(-1px)
+}
+
+.navlink.active{
+  color:#fff;
+  background:rgba(168,85,247,.12);
+  border-color:rgba(168,85,247,.28);
+  box-shadow:0 0 22px rgba(168,85,247,.10)
+}
+
 .navbtn{
   padding:11px 21px;
   border:1px solid rgba(168,85,247,.75);
   border-radius:999px;
   background:rgba(12,10,28,.72);
   box-shadow:0 0 25px rgba(168,85,247,.18);
-  transition:.25s
+  transition:.25s;
+  font-weight:800;
+  white-space:nowrap
 }
 
 .navbtn:hover{
@@ -153,7 +194,9 @@ nav{
   box-shadow:0 0 35px rgba(168,85,247,.38)
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   text-align:center;
@@ -220,7 +263,9 @@ nav{
   margin-top:14px
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 section{
   padding:58px 0
@@ -251,7 +296,9 @@ h2{
   margin:0 auto 32px
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
 
 .grid{
   display:grid;
@@ -338,7 +385,9 @@ h2{
   font-size:16px
 }
 
-/* OFFER */
+/* =========================
+   OFFER
+========================= */
 
 .offer{
   display:grid;
@@ -404,7 +453,9 @@ h2{
   color:#ccecef
 }
 
-/* FAQ */
+/* =========================
+   FAQ
+========================= */
 
 .faq{
   max-width:900px;
@@ -436,7 +487,9 @@ h2{
   padding:0 23px 21px
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
   border-top:1px solid var(--line);
@@ -447,7 +500,9 @@ h2{
   justify-content:space-between
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:900px){
 
@@ -463,14 +518,38 @@ h2{
 
 }
 
+@media(max-width:700px){
+
+  nav{
+    align-items:center;
+    flex-wrap:wrap;
+    padding:14px 0;
+    min-height:70px
+  }
+
+  .navlinks{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:5px
+  }
+
+  .navlink{
+    padding:8px 10px;
+    font-size:12px
+  }
+
+  .navbtn{
+    padding:9px 13px;
+    font-size:12px
+  }
+
+}
+
 @media(max-width:600px){
 
   .wrap{
     width:calc(100% - 28px)
-  }
-
-  nav{
-    height:70px
   }
 
   .hero{
@@ -512,17 +591,15 @@ h2{
     gap:10px
   }
 
-  .navbtn{
-    padding:10px 16px
-  }
-
   .cta{
     max-width:100%
   }
 
 }
 
-/* REDUCE MOTION */
+/* =========================
+   REDUCE MOTION
+========================= */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -538,10 +615,15 @@ h2{
   }
 
 }
+
 </style>
 </head>
 
 <body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav class="wrap">
 
@@ -549,19 +631,41 @@ h2{
     2NEXT<span>AI</span>
   </div>
 
-  <a
-    class="navbtn"
-    href="#buy"
-    aria-label="Get access to the 2NEXTAI AI Prompt Pack"
-  >
-    Get Access
-  </a>
+  <div class="navlinks" aria-label="Main navigation">
+
+    <a
+      href="/"
+      class="navlink active"
+      aria-current="page"
+    >
+      Home
+    </a>
+
+    <a
+      href="/tools/"
+      class="navlink"
+      aria-label="Explore AI Tools"
+    >
+      AI Tools
+    </a>
+
+    <a
+      href="#buy"
+      class="navbtn"
+      aria-label="Get access to the 2NEXTAI AI Prompt Pack"
+    >
+      Get Access
+    </a>
+
+  </div>
 
 </nav>
 
 <main>
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero wrap">
 
@@ -595,7 +699,9 @@ h2{
 
 </section>
 
-<!-- BENEFITS -->
+<!-- =========================
+     BENEFITS
+========================= -->
 
 <section class="wrap center">
 
@@ -614,34 +720,60 @@ h2{
   <div class="grid">
 
     <div class="card">
-      <div class="icon" aria-hidden="true">💼</div>
-      <h3>Business</h3>
+
+      <div class="icon" aria-hidden="true">
+        💼
+      </div>
+
+      <h3>
+        Business
+      </h3>
+
       <p>
         Planning, offers, strategy, research and everyday business tasks.
       </p>
+
     </div>
 
     <div class="card">
-      <div class="icon" aria-hidden="true">📱</div>
-      <h3>Content</h3>
+
+      <div class="icon" aria-hidden="true">
+        📱
+      </div>
+
+      <h3>
+        Content
+      </h3>
+
       <p>
         Hooks, scripts, captions, ideas and content systems.
       </p>
+
     </div>
 
     <div class="card">
-      <div class="icon" aria-hidden="true">📈</div>
-      <h3>Marketing & SEO</h3>
+
+      <div class="icon" aria-hidden="true">
+        📈
+      </div>
+
+      <h3>
+        Marketing & SEO
+      </h3>
+
       <p>
         Campaigns, headlines, product copy, keywords and conversion ideas.
       </p>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- OFFER -->
+<!-- =========================
+     OFFER
+========================= -->
 
 <section class="wrap">
 
@@ -727,7 +859,9 @@ h2{
 
 </section>
 
-<!-- FAQ -->
+<!-- =========================
+     FAQ
+========================= -->
 
 <section class="wrap center">
 
@@ -742,6 +876,7 @@ h2{
   <div class="faq">
 
     <details>
+
       <summary>
         Is this a subscription?
       </summary>
@@ -749,9 +884,11 @@ h2{
       <p>
         No. It is a one-time digital purchase.
       </p>
+
     </details>
 
     <details>
+
       <summary>
         Can I use the prompts with ChatGPT?
       </summary>
@@ -759,9 +896,11 @@ h2{
       <p>
         Yes. Customize the templates for your own context and workflow.
       </p>
+
     </details>
 
     <details>
+
       <summary>
         How do I receive the product?
       </summary>
@@ -770,13 +909,16 @@ h2{
         After payment, the buyer is directed to the digital delivery page
         when Auto-return is configured in PayPal.
       </p>
+
     </details>
 
   </div>
 
 </section>
 
-<!-- FINAL CTA -->
+<!-- =========================
+     FINAL CTA
+========================= -->
 
 <section class="wrap center">
 
@@ -801,6 +943,10 @@ h2{
 </section>
 
 </main>
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="wrap footer">
 
