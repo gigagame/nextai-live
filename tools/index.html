@@ -253,7 +253,7 @@ h1{
     transform .25s ease,
     border-color .25s ease,
     box-shadow .25s ease;
-  scroll-margin-top:100px;
+  scroll-margin-top:92px;
 }
 
 .card:hover{
@@ -976,268 +976,202 @@ footer{
 
 
 <script>
+(() => {
+  const cards = [...document.querySelectorAll(".card")];
+  const filters = [...document.querySelectorAll(".filter")];
+  const search = document.querySelector("#search");
+  const grid = document.querySelector("#grid");
 
-const cards = [
-  ...document.querySelectorAll(".card")
-];
+  let cat = "all";
 
-const filters = [
-  ...document.querySelectorAll(".filter")
-];
+  const categoryMap = {
+    all: "all",
+    writing: "Writing",
+    image: "Image",
+    video: "Video",
+    seo: "SEO",
+    marketing: "Marketing",
+    productivity: "Productivity",
+    "ai-agents": "Agents"
+  };
 
-const search = document.querySelector("#search");
+  const cardMap = {
+    writing: "#card-writing",
+    image: "#card-image",
+    video: "#card-video",
+    seo: "#card-seo",
+    marketing: "#card-marketing",
+    productivity: "#card-productivity",
+    "ai-agents": "#card-ai-agents"
+  };
 
-let cat = "all";
-
-filters.forEach(button => {
-  button.setAttribute(
-    "aria-pressed",
-    button.classList.contains("active") ? "true" : "false"
-  );
-});
-
-
-/* =====================================================
-   FIND CARD
-===================================================== */
-
-function getTargetCard(category){
-  if(category === "all"){
-    return null;
-  }
-
-  return document.querySelector(
-    "#card-" + String(category).toLowerCase()
-  );
-}
-
-
-/* =====================================================
-   CLEAR CARD HIGHLIGHT
-===================================================== */
-
-function clearTargetHighlight(){
-
-  cards.forEach(card => {
-
-    card.classList.remove("target-card");
-
+  filters.forEach(button => {
+    button.setAttribute(
+      "aria-pressed",
+      button.classList.contains("active") ? "true" : "false"
+    );
   });
 
-}
+  function clearTargetHighlight() {
+    cards.forEach(card => card.classList.remove("target-card"));
+  }
 
+  function getTargetCard(target) {
+    if (!target || target === "all") return grid;
+    return document.querySelector(cardMap[target]) || null;
+  }
 
-/* =====================================================
-   SCROLL TO SELECTED CARD
-===================================================== */
+  function render() {
+    const q = search.value.toLowerCase().trim();
+    let visibleCount = 0;
 
-function scrollToCategoryCard(category){
+    cards.forEach(card => {
+      const categoryMatch =
+        cat === "all" ||
+        card.dataset.cat === categoryMap[cat];
 
-  clearTargetHighlight();
+      const searchText = [
+        card.dataset.search || "",
+        card.textContent || ""
+      ].join(" ").toLowerCase();
 
-  requestAnimationFrame(() => {
+      const searchMatch = !q || searchText.includes(q);
+      const show = categoryMatch && searchMatch;
 
-    const target =
-      category === "all"
-        ? document.querySelector("#grid")
-        : getTargetCard(category);
+      card.style.display = show ? "" : "none";
 
-    if(!target){
+      if (show) visibleCount++;
+    });
+
+    let empty = grid.querySelector(".empty");
+
+    if (visibleCount === 0) {
+      if (!empty) {
+        empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "No matching AI tool category found.";
+        grid.appendChild(empty);
+      }
+    } else if (empty) {
+      empty.remove();
+    }
+  }
+
+  function scrollToCategory(target) {
+    clearTargetHighlight();
+
+    const card = getTargetCard(target);
+    if (!card) return;
+
+    requestAnimationFrame(() => {
+      card.scrollIntoView({
+        behavior: "smooth",
+        block: target === "all" ? "start" : "center",
+        inline: "nearest"
+      });
+
+      if (target !== "all") {
+        setTimeout(() => {
+          card.classList.add("target-card");
+
+          setTimeout(() => {
+            card.classList.remove("target-card");
+          }, 1800);
+        }, 350);
+      }
+    });
+  }
+
+  filters.forEach(filter => {
+    filter.addEventListener("click", () => {
+      const target = filter.dataset.target || "all";
+
+      // If the user changes category, remove an old search
+      // so the selected category card is always available.
+      search.value = "";
+
+      filters.forEach(button => {
+        const active = button === filter;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+
+      cat = target;
+
+      render();
+      scrollToCategory(target);
+
+      // Keep the selected category shareable/bookmarkable.
+      if (window.history && window.history.replaceState) {
+        const url = new URL(window.location.href);
+
+        if (target === "all") {
+          url.hash = "";
+        } else {
+          url.hash = target;
+        }
+
+        window.history.replaceState(
+          null,
+          "",
+          url.pathname + url.search + url.hash
+        );
+      }
+    });
+  });
+
+  search.addEventListener("input", () => {
+    clearTargetHighlight();
+    render();
+  });
+
+  // Support direct URLs such as:
+  // /tools/#writing
+  // /tools/#image
+  // /tools/#video
+  // /tools/#seo
+  // /tools/#marketing
+  // /tools/#productivity
+  // /tools/#ai-agents
+  function activateFromHash() {
+    const hash = decodeURIComponent(
+      window.location.hash.replace("#", "").toLowerCase()
+    );
+
+    if (!hash || !categoryMap[hash]) {
+      render();
       return;
     }
 
-    requestAnimationFrame(() => {
+    const filter = filters.find(
+      button => (button.dataset.target || "").toLowerCase() === hash
+    );
 
-      if(category !== "all"){
-        target.classList.add("target-card");
-      }
+    if (!filter) {
+      render();
+      return;
+    }
 
-      target.scrollIntoView({
-        behavior:"smooth",
-        block:"center",
-        inline:"nearest"
-      });
-
+    filters.forEach(button => {
+      const active = button === filter;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
     });
 
-  });
-
-}/* =====================================================
-   RENDER FILTER
-===================================================== */
-
-function render(){
-
-  const q =
-    search.value
-      .toLowerCase()
-      .trim();
-
-
-  let visibleCount = 0;
-
-
-  cards.forEach(card => {
-
-    const categoryMatch =
-      cat === "all" ||
-      card.dataset.cat === cat;
-
-
-    const searchMatch =
-      !q ||
-      card.dataset.search
-        .toLowerCase()
-        .includes(q) ||
-      card.textContent
-        .toLowerCase()
-        .includes(q);
-
-
-    const show =
-      categoryMatch &&
-      searchMatch;
-
-
-    card.style.display =
-      show ? "block" : "none";
-
-
-    if(show){
-      visibleCount++;
-    }
-
-  });
-
-
-  /*
-     Empty state
-  */
-
-  let empty =
-    document.querySelector(".empty");
-
-
-  if(visibleCount === 0){
-
-    if(!empty){
-
-      empty =
-        document.createElement("div");
-
-      empty.className = "empty";
-
-      empty.textContent =
-        "No matching AI tool category found.";
-
-      document
-        .querySelector("#grid")
-        .appendChild(empty);
-
-    }
-
-  }else{
-
-    if(empty){
-      empty.remove();
-    }
-
-  }
-
-}
-
-
-/* =====================================================
-   FILTER CLICK
-===================================================== */
-
-filters.forEach(filter => {
-
-  filter.addEventListener(
-    "click",
-    () => {
-
-      /*
-         Update active button
-      */
-
-      filters.forEach(button => {
-
-        button.classList.remove("active");
-
-      });
-
-      filter.classList.add("active");
-
-      filters.forEach(button => {
-        button.setAttribute(
-          "aria-pressed",
-          button === filter ? "true" : "false"
-        );
-      });
-
-
-      /*
-         Set selected category
-      */
-
-      cat =
-        filter.dataset.cat;
-
-
-      /*
-         Remove previous highlight
-      */
-
-      clearTargetHighlight();
-
-
-      /*
-         Apply filtering
-      */
-
-      render();
-
-
-      /*
-         Scroll to selected card
-      */
-
-      scrollToCategoryCard(
-        filter.dataset.target
-      );
-
-    }
-  );
-
-});
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-search.addEventListener(
-  "input",
-  () => {
-
-    /*
-       Searching should not force
-       a category navigation.
-    */
+    cat = hash;
+    search.value = "";
 
     render();
 
+    setTimeout(() => {
+      scrollToCategory(hash);
+    }, 80);
   }
-);
 
+  window.addEventListener("hashchange", activateFromHash);
 
-/* =====================================================
-   INITIAL RENDER
-===================================================== */
-
-render();
-
+  activateFromHash();
+})();
 </script>
 
 </body>
