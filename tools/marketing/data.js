@@ -8,7 +8,7 @@ const MARKETING_TOOLS = [
     pros:["Very broad marketing suite","CRM integration","AI and AEO features"],
     cons:["Advanced plans can be expensive","Large platform takes time to configure"],
     verdict:"A strong all-in-one choice for businesses that want marketing and CRM connected together.",
-    url:"https://www.hubspot.com/products/marketing"
+    url:"https://www.hubspot.com/products/marketing",logo:"https://www.hubspot.com/favicon.ico"
   },
   {
     name:"Jasper",
@@ -19,7 +19,7 @@ const MARKETING_TOOLS = [
     pros:["Marketing-specific workflows","Brand voice controls","Large marketing-agent ecosystem"],
     cons:["Paid-first after trial","Advanced workflows can use credits"],
     verdict:"One of the strongest specialist choices for teams building repeatable AI marketing workflows.",
-    url:"https://www.jasper.ai/"
+    url:"https://www.jasper.ai/",logo:"https://www.jasper.ai/favicon.ico"
   },
   {
     name:"Copy.ai",
@@ -30,7 +30,7 @@ const MARKETING_TOOLS = [
     pros:["Workflow oriented","GTM focus","Multiple model access"],
     cons:["Paid-first pricing","Higher-scale plans become expensive"],
     verdict:"A good fit for teams that want marketing content tied to repeatable GTM workflows.",
-    url:"https://www.copy.ai/"
+    url:"https://www.copy.ai/",logo:"https://www.copy.ai/favicon.ico"
   },
   {
     name:"Buffer",
@@ -41,7 +41,7 @@ const MARKETING_TOOLS = [
     pros:["Easy scheduling","Multi-platform publishing","Creator-friendly"],
     cons:["Advanced capabilities are paid","Primarily social-focused"],
     verdict:"A practical starting point for creators and small teams managing multiple social channels.",
-    url:"https://buffer.com/"
+    url:"https://buffer.com/",logo:"https://buffer.com/favicon.ico"
   },
   {
     name:"Canva",
@@ -52,7 +52,7 @@ const MARKETING_TOOLS = [
     pros:["Very easy to use","Huge template ecosystem","Strong visual marketing workflow"],
     cons:["Some premium assets and AI usage are paid","Best suited to visual content"],
     verdict:"One of the easiest platforms for turning marketing ideas into publishable visual assets.",
-    url:"https://www.canva.com/"
+    url:"https://www.canva.com/",logo:"https://www.canva.com/favicon.ico"
   },
   {
     name:"Mailchimp",
@@ -63,7 +63,7 @@ const MARKETING_TOOLS = [
     pros:["Established email platform","Automation workflows","Broad integrations"],
     cons:["Pricing depends on contacts and features","Advanced automation is paid"],
     verdict:"A strong option for businesses building email-driven customer journeys.",
-    url:"https://mailchimp.com/"
+    url:"https://mailchimp.com/",logo:"https://mailchimp.com/favicon.ico"
   },
   {
     name:"Brevo",
@@ -74,7 +74,7 @@ const MARKETING_TOOLS = [
     pros:["Free entry tier","Broad communication tools","Automation and CRM"],
     cons:["Advanced limits vary","Feature breadth requires setup"],
     verdict:"A compelling choice for businesses wanting email plus broader customer communication.",
-    url:"https://www.brevo.com/"
+    url:"https://www.brevo.com/",logo:"https://www.brevo.com/favicon.ico"
   },
   {
     name:"AdCreative.ai",
@@ -85,7 +85,7 @@ const MARKETING_TOOLS = [
     pros:["Advertising-specific","Fast creative variations","Performance-oriented"],
     cons:["Primarily for paid advertising","Plan limits vary"],
     verdict:"Worth considering when ad creative production is the bottleneck.",
-    url:"https://www.adcreative.ai/"
+    url:"https://www.adcreative.ai/",logo:"https://www.adcreative.ai/favicon.ico"
   },
   {
     name:"Predis.ai",
@@ -96,7 +96,7 @@ const MARKETING_TOOLS = [
     pros:["Social-first","Fast content generation","Useful for small teams"],
     cons:["Best suited to social marketing","Advanced features depend on plan"],
     verdict:"A useful productivity tool for maintaining a consistent social content pipeline.",
-    url:"https://predis.ai/"
+    url:"https://predis.ai/",logo:"https://predis.ai/favicon.ico"
   },
   {
     name:"Ocoya",
@@ -107,6 +107,6 @@ const MARKETING_TOOLS = [
     pros:["Content plus scheduling","Social commerce use cases","Multi-channel workflow"],
     cons:["Paid-focused","Best value for active social teams"],
     verdict:"Interesting for businesses that want content creation and social scheduling in one workflow.",
-    url:"https://www.ocoya.com/"
+    url:"https://www.ocoya.com/",logo:"https://www.ocoya.com/favicon.ico"
   }
 ];
