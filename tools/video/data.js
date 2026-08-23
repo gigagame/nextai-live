@@ -8,7 +8,7 @@ const VIDEO_TOOLS = [
     pros:["Strong professional workflow","Multiple video models","Useful editing and generation tools"],
     cons:["Credit-based limits","Advanced/high-volume work is paid"],
     verdict:"A leading all-around choice for serious AI video production.",
-    url:"https://runwayml.com/"
+    url:"https://runwayml.com/",logo:"https://runwayml.com/favicon.ico"
   },
   {
     name:"Kling AI",
@@ -19,7 +19,7 @@ const VIDEO_TOOLS = [
     pros:["Strong motion generation","Cinematic use cases","Image-to-video workflows"],
     cons:["Credits can be consumed quickly","Plan and feature availability can change"],
     verdict:"A strong option for creators prioritizing cinematic AI video generation.",
-    url:"https://klingai.com/"
+    url:"https://klingai.com/",logo:"https://klingai.com/favicon.ico"
   },
   {
     name:"Pika",
@@ -30,7 +30,7 @@ const VIDEO_TOOLS = [
     pros:["Easy experimentation","Creative effects","Good fit for short-form content"],
     cons:["Credits/limits vary","Advanced generation may require paid access"],
     verdict:"A practical choice for quick social and experimental AI video.",
-    url:"https://pika.art/"
+    url:"https://pika.art/",logo:"https://pika.art/favicon.ico"
   },
   {
     name:"Luma Dream Machine",
@@ -41,7 +41,7 @@ const VIDEO_TOOLS = [
     pros:["Strong visual generation","Image and video workflows","Multiple quality tiers"],
     cons:["Credits vary by model","Higher-quality generations can be credit intensive"],
     verdict:"An excellent choice for cinematic visual exploration and image-to-video.",
-    url:"https://lumalabs.ai/dream-machine"
+    url:"https://lumalabs.ai/dream-machine",logo:"https://lumalabs.ai/favicon.ico"
   },
   {
     name:"Google Veo",
@@ -52,7 +52,7 @@ const VIDEO_TOOLS = [
     pros:["High-quality generation","Google ecosystem","Advanced video capabilities"],
     cons:["Access differs by product","Usage and pricing depend on the entry point"],
     verdict:"A major model family to watch for high-end generative video.",
-    url:"https://deepmind.google/models/veo/"
+    url:"https://deepmind.google/models/veo/",logo:"https://deepmind.google/favicon.ico"
   },
   {
     name:"Adobe Firefly Video",
@@ -63,7 +63,7 @@ const VIDEO_TOOLS = [
     pros:["Adobe ecosystem","Creative production workflow","Commercial-oriented positioning"],
     cons:["Generative credits vary by plan","Best workflow is within Adobe ecosystem"],
     verdict:"Especially attractive for Adobe users building production-ready creative work.",
-    url:"https://firefly.adobe.com/"
+    url:"https://firefly.adobe.com/",logo:"https://firefly.adobe.com/favicon.ico"
   },
   {
     name:"HeyGen",
@@ -74,7 +74,7 @@ const VIDEO_TOOLS = [
     pros:["Strong avatar workflows","Localization features","Business-focused use cases"],
     cons:["Best features are paid","Avatar-style output is different from cinematic generation"],
     verdict:"A strong choice for business presenters, training and localized video.",
-    url:"https://www.heygen.com/"
+    url:"https://www.heygen.com/",logo:"https://www.heygen.com/favicon.ico"
   },
   {
     name:"Synthesia",
@@ -85,7 +85,7 @@ const VIDEO_TOOLS = [
     pros:["Business-focused","Structured presentation workflows","Large avatar/language ecosystem"],
     cons:["Primarily presenter-oriented","Advanced usage requires paid plans"],
     verdict:"One of the strongest options for professional training and corporate video.",
-    url:"https://www.synthesia.io/"
+    url:"https://www.synthesia.io/",logo:"https://www.synthesia.io/favicon.ico"
   },
   {
     name:"CapCut",
@@ -96,7 +96,7 @@ const VIDEO_TOOLS = [
     pros:["Excellent short-form workflow","Large template ecosystem","Accessible editing tools"],
     cons:["Some AI features are region/plan dependent","Best suited to social and creator workflows"],
     verdict:"A highly practical choice for creators producing frequent short-form content.",
-    url:"https://www.capcut.com/"
+    url:"https://www.capcut.com/",logo:"https://www.capcut.com/favicon.ico"
   },
   {
     name:"InVideo AI",
@@ -107,6 +107,6 @@ const VIDEO_TOOLS = [
     pros:["Fast production workflow","Marketing-oriented","Useful for non-editors"],
     cons:["Free exports/limits can be restricted","Less control than specialist cinematic tools"],
     verdict:"A good productivity choice when speed matters more than frame-by-frame control.",
-    url:"https://invideo.io/"
+    url:"https://invideo.io/",logo:"https://invideo.io/favicon.ico"
   }
 ];
