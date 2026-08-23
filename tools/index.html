@@ -350,6 +350,45 @@ h2{
    FOOTER
 ========================= */
 
+.seo-section{
+  padding:15px 0 75px;
+  border-top:1px solid var(--line);
+}
+
+.seo-section h2{
+  font-size:28px;
+  letter-spacing:-.03em;
+}
+
+.seo-section p{
+  max-width:900px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
+
+.seo-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.seo-links a{
+  padding:9px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  color:#dce5f2;
+  font-size:12px;
+  transition:.2s ease;
+}
+
+.seo-links a:hover{
+  border-color:rgba(102,227,255,.4);
+  color:#fff;
+  transform:translateY(-1px);
+}
+  
 footer{
   border-top:1px solid var(--line);
   padding:30px 0;
@@ -643,6 +682,55 @@ footer{
     <!-- WRITING -->
 
     <div
+      
+    <section class="seo-section" aria-labelledby="directory-heading">
+
+  <h2 id="directory-heading">
+    Explore AI Tools by Category
+  </h2>
+
+  <p>
+    2NEXTAI organizes useful AI software by real-world tasks.
+    Explore AI writing tools for content creation, AI image tools
+    for visual production, AI video tools for creators, SEO tools
+    for search visibility, marketing tools for campaigns,
+    productivity tools for everyday work, and AI agent platforms
+    for multi-step automation.
+  </p>
+
+  <nav class="seo-links" aria-label="AI tools category links">
+
+    <a href="/tools/writing/">
+      AI Writing Tools
+    </a>
+
+    <a href="/tools/image/">
+      AI Image Tools
+    </a>
+
+    <a href="/tools/video/">
+      AI Video Tools
+    </a>
+
+    <a href="/tools/seo/">
+      AI SEO Tools
+    </a>
+
+    <a href="/tools/marketing/">
+      AI Marketing Tools
+    </a>
+
+    <a href="/tools/productivity/">
+      AI Productivity Tools
+    </a>
+
+    <a href="/tools/ai-agents/">
+      AI Agents
+    </a>
+
+  </nav>
+
+</section>
       class="card"
       id="card-writing"
       data-cat="Writing"
