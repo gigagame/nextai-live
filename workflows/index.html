@@ -1,0 +1,1553 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>AI Workflows — 2NEXTAI</title>
+
+<meta name="description" content="Discover practical AI workflows for writing, image creation, video, SEO, marketing, research, business and productivity. Follow step-by-step workflows and find the right AI tools for each task.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://2nextai.com/workflows/">
+<meta name="theme-color" content="#070b14">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://2nextai.com/workflows/">
+<meta property="og:title" content="AI Workflows — 2NEXTAI">
+<meta property="og:description" content="Step-by-step AI workflows for content, writing, image, video, SEO, marketing, research, business and productivity.">
+<meta property="og:site_name" content="2NEXTAI">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Workflows — 2NEXTAI">
+<meta name="twitter:description" content="Step-by-step AI workflows for practical results.">
+
+<style>
+:root{
+  --bg:#070b14;
+  --bg2:#0a1020;
+  --text:#f4f7fb;
+  --muted:#9eabc0;
+  --line:rgba(255,255,255,.09);
+  --line2:rgba(255,255,255,.14);
+  --a:#66e3ff;
+  --b:#8b7cff;
+  --green:#4ade80;
+  --yellow:#facc15;
+  --orange:#fb923c;
+  --red:#fb7185;
+  --shadow:0 20px 60px rgba(0,0,0,.35)
+}
+
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(102,227,255,.11),transparent 28%),
+    radial-gradient(circle at 88% 8%,rgba(139,124,255,.13),transparent 30%),
+    linear-gradient(135deg,#050810,#070b14 55%,#050811)
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+button,
+input,
+select{
+  font:inherit
+}
+
+button{
+  cursor:pointer
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(7,11,20,.86);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line)
+}
+
+nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px
+}
+
+.brand{
+  font-size:22px;
+  font-weight:950;
+  letter-spacing:-.7px;
+  flex-shrink:0
+}
+
+.brand span{
+  color:var(--a)
+}
+
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:7px
+}
+
+.navlink{
+  padding:9px 12px;
+  border-radius:10px;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  border:1px solid transparent;
+  transition:.2s
+}
+
+.navlink:hover{
+  color:#fff;
+  background:rgba(255,255,255,.05);
+  border-color:var(--line)
+}
+
+.navlink.active{
+  color:#fff;
+  background:rgba(102,227,255,.08);
+  border-color:rgba(102,227,255,.16)
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:72px 0 35px
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--a);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase
+}
+
+.eyebrow:before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--a);
+  box-shadow:0 0 14px var(--a)
+}
+
+h1{
+  max-width:900px;
+  font-size:clamp(44px,7vw,76px);
+  line-height:.98;
+  letter-spacing:-.06em;
+  margin:15px 0 18px
+}
+
+.hero h1 span{
+  background:linear-gradient(90deg,var(--a),var(--b));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent
+}
+
+.hero p{
+  max-width:850px;
+  margin:0;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.75
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls{
+  display:grid;
+  grid-template-columns:minmax(260px,1fr) 190px 190px;
+  gap:12px;
+  margin:30px 0 38px
+}
+
+.search-wrap{
+  position:relative
+}
+
+.search-icon{
+  position:absolute;
+  left:15px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#71809b;
+  font-size:16px;
+  pointer-events:none
+}
+
+.search{
+  width:100%;
+  height:50px;
+  padding:0 16px 0 42px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(255,255,255,.045);
+  color:#fff;
+  outline:none;
+  transition:.2s
+}
+
+.search::placeholder{
+  color:#71809b
+}
+
+.search:focus{
+  border-color:rgba(102,227,255,.42);
+  box-shadow:0 0 0 3px rgba(102,227,255,.07)
+}
+
+.select{
+  width:100%;
+  height:50px;
+  padding:0 14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#0d1422;
+  color:#fff;
+  outline:none
+}
+
+.select:focus{
+  border-color:rgba(139,124,255,.45)
+}
+
+/* =========================
+   RESULTS BAR
+========================= */
+
+.results-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:15px
+}
+
+.results-count{
+  color:#8390a8;
+  font-size:12px
+}
+
+.clear-btn{
+  border:0;
+  background:none;
+  color:var(--a);
+  font-size:12px;
+  font-weight:800;
+  padding:5px 0
+}
+
+.clear-btn:hover{
+  text-decoration:underline
+}
+
+/* =========================
+   WORKFLOW GRID
+========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  padding-bottom:85px
+}
+
+.workflow{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  padding:23px;
+  box-shadow:0 10px 35px rgba(0,0,0,.12);
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease
+}
+
+.workflow:hover{
+  transform:translateY(-4px);
+  border-color:rgba(102,227,255,.20);
+  box-shadow:var(--shadow)
+}
+
+.workflow-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px
+}
+
+.workflow-title{
+  min-width:0
+}
+
+.workflow-title h2{
+  margin:0 0 7px;
+  font-size:21px;
+  line-height:1.2;
+  letter-spacing:-.02em
+}
+
+.category{
+  color:#8f9cb4;
+  font-size:11px;
+  font-weight:700
+}
+
+.level{
+  flex-shrink:0;
+  font-size:10px;
+  font-weight:900;
+  padding:6px 9px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  white-space:nowrap
+}
+
+.level.beginner{
+  color:#86efac;
+  background:rgba(74,222,128,.07);
+  border-color:rgba(74,222,128,.18)
+}
+
+.level.intermediate{
+  color:#fde047;
+  background:rgba(250,204,21,.07);
+  border-color:rgba(250,204,21,.18)
+}
+
+.level.advanced{
+  color:#fdba74;
+  background:rgba(251,146,60,.07);
+  border-color:rgba(251,146,60,.18)
+}
+
+.level.expert{
+  color:#fda4af;
+  background:rgba(251,113,133,.07);
+  border-color:rgba(251,113,133,.18)
+}
+
+.workflow-desc{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+  margin:18px 0 15px
+}
+
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:16px
+}
+
+.meta-chip{
+  font-size:10px;
+  color:#cbd5e1;
+  border:1px solid var(--line);
+  padding:6px 8px;
+  border-radius:999px;
+  background:rgba(255,255,255,.025)
+}
+
+.preview{
+  border-top:1px solid var(--line);
+  padding-top:15px
+}
+
+.preview-title{
+  font-size:10px;
+  font-weight:900;
+  color:#d8dfeb;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:10px
+}
+
+.steps-preview{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px
+}
+
+.step-chip{
+  font-size:10px;
+  color:#aebbd0;
+  padding:6px 8px;
+  border-radius:8px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.06)
+}
+
+.more-steps{
+  font-size:10px;
+  color:var(--a);
+  padding:6px 8px
+}
+
+.workflow-actions{
+  display:flex;
+  gap:9px;
+  margin-top:18px
+}
+
+.btn{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:10px 12px;
+  border-radius:11px;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  color:#07101b;
+  font-size:12px;
+  font-weight:950;
+  border:0
+}
+
+.btn.secondary{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  color:#dce5f2
+}
+
+.btn:hover{
+  filter:brightness(1.06)
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty{
+  grid-column:1/-1;
+  text-align:center;
+  border:1px dashed var(--line2);
+  border-radius:20px;
+  padding:50px 25px;
+  color:var(--muted)
+}
+
+.empty strong{
+  display:block;
+  color:#fff;
+  font-size:18px;
+  margin-bottom:7px
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(10px)
+}
+
+.modal.open{
+  display:flex
+}
+
+.modal-panel{
+  width:min(900px,100%);
+  max-height:min(88vh,900px);
+  overflow:auto;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(139,124,255,.13),transparent 30%),
+    linear-gradient(145deg,#0b1020,#070b14);
+  box-shadow:0 35px 100px rgba(0,0,0,.65);
+  padding:28px
+}
+
+.modal-header{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-start;
+  margin-bottom:24px
+}
+
+.modal-header h2{
+  margin:7px 0 8px;
+  font-size:30px;
+  line-height:1.1;
+  letter-spacing:-.035em
+}
+
+.modal-close{
+  width:38px;
+  height:38px;
+  flex-shrink:0;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:rgba(255,255,255,.04);
+  color:#fff;
+  font-size:20px
+}
+
+.modal-close:hover{
+  background:rgba(255,255,255,.08)
+}
+
+.modal-goal{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:24px
+}
+
+.detail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px
+}
+
+.detail-box{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:17px;
+  background:rgba(255,255,255,.025)
+}
+
+.detail-box.full{
+  grid-column:1/-1
+}
+
+.detail-box h3{
+  margin:0 0 11px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em
+}
+
+.detail-box ul{
+  margin:0;
+  padding-left:19px
+}
+
+.detail-box li{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+  margin:3px 0
+}
+
+.tool-tags,
+.prompt-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px
+}
+
+.tool-tag{
+  color:#dce5f2;
+  font-size:11px;
+  padding:7px 9px;
+  border-radius:9px;
+  border:1px solid rgba(102,227,255,.14);
+  background:rgba(102,227,255,.05)
+}
+
+.prompt{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+  background:rgba(0,0,0,.18);
+  color:#cbd5e1;
+  font-size:12px;
+  line-height:1.6
+}
+
+.result-box{
+  color:#d8f8ff;
+  font-size:13px;
+  line-height:1.65;
+  padding:14px;
+  border-radius:12px;
+  background:rgba(102,227,255,.05);
+  border:1px solid rgba(102,227,255,.12)
+}
+
+.modal-footer{
+  display:flex;
+  gap:10px;
+  margin-top:22px
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 40px;
+  color:#78859d;
+  font-size:12px
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px
+}
+
+.footer-inner strong{
+  color:#dbe5f5
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+  .controls{
+    grid-template-columns:1fr 1fr
+  }
+
+  .search-wrap{
+    grid-column:1/-1
+  }
+
+  .grid{
+    grid-template-columns:1fr
+  }
+
+}
+
+@media(max-width:700px){
+
+  nav{
+    min-height:65px
+  }
+
+  .navlinks{
+    gap:3px
+  }
+
+  .navlink{
+    padding:8px 9px;
+    font-size:11px
+  }
+
+  .hero{
+    padding-top:50px
+  }
+
+  h1{
+    font-size:48px
+  }
+
+  .hero p{
+    font-size:16px
+  }
+
+  .detail-grid{
+    grid-template-columns:1fr
+  }
+
+  .detail-box.full{
+    grid-column:auto
+  }
+
+  .modal{
+    padding:12px
+  }
+
+  .modal-panel{
+    padding:20px;
+    border-radius:20px
+  }
+
+}
+
+@media(max-width:520px){
+
+  .controls{
+    grid-template-columns:1fr
+  }
+
+  .search-wrap{
+    grid-column:auto
+  }
+
+  .workflow{
+    padding:19px
+  }
+
+  .workflow-actions{
+    flex-direction:column
+  }
+
+  .modal-footer{
+    flex-direction:column
+  }
+
+  .footer-inner{
+    flex-direction:column
+  }
+
+}
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto
+  }
+
+  *,
+  *::before,
+  *::after{
+    transition:none!important
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+
+    <nav>
+
+      <a class="brand" href="/">
+        2<span>NEXTAI</span>
+      </a>
+
+      <div class="navlinks">
+
+        <a class="navlink" href="/">
+          Home
+        </a>
+
+        <a class="navlink" href="/tools/">
+          AI Tools
+        </a>
+
+        <a class="navlink active" href="/workflows/" aria-current="page">
+          Workflows
+        </a>
+
+      </div>
+
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero container">
+
+  <div class="eyebrow">
+    2NEXTAI · AI Workflows
+  </div>
+
+  <h1>
+    Turn AI tools into
+    <span>real results.</span>
+  </h1>
+
+  <p>
+    Follow practical, step-by-step AI workflows for writing, images,
+    video, SEO, marketing, research, business and productivity.
+    Choose your level, find your workflow and start building.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <div class="controls">
+
+    <div class="search-wrap">
+
+      <span class="search-icon" aria-hidden="true">
+        ⌕
+      </span>
+
+      <input
+        id="search"
+        class="search"
+        type="search"
+        placeholder="Search workflows, goals or categories..."
+        aria-label="Search workflows"
+        autocomplete="off"
+      >
+
+    </div>
+
+    <select id="level" class="select" aria-label="Filter by level">
+
+      <option value="all">
+        All levels
+      </option>
+
+      <option value="Beginner">
+        🟢 Beginner
+      </option>
+
+      <option value="Intermediate">
+        🟡 Intermediate
+      </option>
+
+      <option value="Advanced">
+        🟠 Advanced
+      </option>
+
+      <option value="Expert">
+        🔴 Expert
+      </option>
+
+    </select>
+
+    <select id="category" class="select" aria-label="Filter by category">
+
+      <option value="all">
+        All categories
+      </option>
+
+    </select>
+
+  </div>
+
+  <div class="results-bar">
+
+    <span id="resultsCount" class="results-count">
+      Loading workflows...
+    </span>
+
+    <button
+      id="clearFilters"
+      class="clear-btn"
+      type="button"
+    >
+      Clear filters
+    </button>
+
+  </div>
+
+  <div id="grid" class="grid"></div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div>
+        <strong>2NEXTAI</strong>
+        · AI workflows for practical results.
+      </div>
+
+      <div>
+        Tools and features may change.
+        Verify current information on provider websites.
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- =========================
+     WORKFLOW DETAIL MODAL
+========================= -->
+
+<div
+  id="workflowModal"
+  class="modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+  aria-hidden="true"
+>
+
+  <div class="modal-panel">
+
+    <div class="modal-header">
+
+      <div>
+
+        <div id="modalLevel"></div>
+
+        <h2 id="modalTitle">
+          Workflow
+        </h2>
+
+        <div id="modalCategory" class="category">
+          Category
+        </div>
+
+      </div>
+
+      <button
+        id="modalClose"
+        class="modal-close"
+        type="button"
+        aria-label="Close workflow"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div id="modalGoal" class="modal-goal"></div>
+
+    <div class="detail-grid">
+
+      <div class="detail-box">
+
+        <h3>
+          Estimated time
+        </h3>
+
+        <div id="modalTime" class="result-box"></div>
+
+      </div>
+
+      <div class="detail-box">
+
+        <h3>
+          Recommended tools
+        </h3>
+
+        <div id="modalTools" class="tool-tags"></div>
+
+      </div>
+
+      <div class="detail-box full">
+
+        <h3>
+          Required inputs
+        </h3>
+
+        <ul id="modalInputs"></ul>
+
+      </div>
+
+      <div class="detail-box full">
+
+        <h3>
+          Workflow steps
+        </h3>
+
+        <ul id="modalSteps"></ul>
+
+      </div>
+
+      <div class="detail-box full">
+
+        <h3>
+          Ready-to-use prompts
+        </h3>
+
+        <div id="modalPrompts" class="prompt-list"></div>
+
+      </div>
+
+      <div class="detail-box full">
+
+        <h3>
+          Expected result
+        </h3>
+
+        <div id="modalResult" class="result-box"></div>
+
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+
+      <a
+        id="toolsLink"
+        class="btn"
+        href="/tools/"
+      >
+        Explore AI Tools ↗
+      </a>
+
+      <button
+        id="modalCloseBottom"
+        class="btn secondary"
+        type="button"
+      >
+        Back to Workflows
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="data.js"></script>
+
+<script>
+
+/* =========================
+   DOM
+========================= */
+
+const grid = document.querySelector("#grid");
+const search = document.querySelector("#search");
+const level = document.querySelector("#level");
+const category = document.querySelector("#category");
+const resultsCount = document.querySelector("#resultsCount");
+const clearFilters = document.querySelector("#clearFilters");
+
+const modal = document.querySelector("#workflowModal");
+const modalClose = document.querySelector("#modalClose");
+const modalCloseBottom = document.querySelector("#modalCloseBottom");
+
+const modalTitle = document.querySelector("#modalTitle");
+const modalLevel = document.querySelector("#modalLevel");
+const modalCategory = document.querySelector("#modalCategory");
+const modalGoal = document.querySelector("#modalGoal");
+const modalTime = document.querySelector("#modalTime");
+const modalTools = document.querySelector("#modalTools");
+const modalInputs = document.querySelector("#modalInputs");
+const modalSteps = document.querySelector("#modalSteps");
+const modalPrompts = document.querySelector("#modalPrompts");
+const modalResult = document.querySelector("#modalResult");
+
+let lastFocusedElement = null;
+
+
+/* =========================
+   SECURITY / ESCAPING
+========================= */
+
+function esc(value){
+
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    char => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    }[char])
+  );
+
+}
+
+
+/* =========================
+   DATA VALIDATION
+========================= */
+
+const workflows = Array.isArray(window.WORKFLOWS)
+  ? window.WORKFLOWS
+  : [];
+
+
+/* =========================
+   LEVEL CLASS
+========================= */
+
+function levelClass(value){
+
+  return String(value || "")
+    .toLowerCase()
+    .replace(/\s+/g,"-");
+
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+function buildCategories(){
+
+  const categories = [
+    ...new Set(
+      workflows
+        .map(item => item.category)
+        .filter(Boolean)
+    )
+  ].sort((a,b) => a.localeCompare(b));
+
+  category.innerHTML =
+    '<option value="all">All categories</option>' +
+    categories
+      .map(item =>
+        `<option value="${esc(item)}">${esc(item)}</option>`
+      )
+      .join("");
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+function getFilteredWorkflows(){
+
+  const query = search.value
+    .toLowerCase()
+    .trim();
+
+  const selectedLevel = level.value;
+  const selectedCategory = category.value;
+
+  return workflows.filter(item => {
+
+    const searchable = [
+      item.title,
+      item.category,
+      item.level,
+      item.goal,
+      item.result,
+      ...(item.inputs || []),
+      ...(item.steps || []),
+      ...(item.tools || [])
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+
+    const matchesSearch =
+      !query ||
+      searchable.includes(query);
+
+    const matchesLevel =
+      selectedLevel === "all" ||
+      item.level === selectedLevel;
+
+    const matchesCategory =
+      selectedCategory === "all" ||
+      item.category === selectedCategory;
+
+    return (
+      matchesSearch &&
+      matchesLevel &&
+      matchesCategory
+    );
+
+  });
+
+}
+
+
+/* =========================
+   RENDER CARDS
+========================= */
+
+function render(){
+
+  const list = getFilteredWorkflows();
+
+  resultsCount.textContent =
+    `${list.length} workflow${list.length === 1 ? "" : "s"} found`;
+
+  if(!list.length){
+
+    grid.innerHTML = `
+      <div class="empty">
+
+        <strong>
+          No matching workflow found.
+        </strong>
+
+        Try another keyword, level or category.
+
+      </div>
+    `;
+
+    return;
+  }
+
+  grid.innerHTML = list.map((item,index) => {
+
+    const steps = item.steps || [];
+
+    const previewSteps = steps.slice(0,4);
+
+    const more =
+      steps.length > 4
+        ? `<span class="more-steps">+${steps.length - 4} more</span>`
+        : "";
+
+    return `
+      <article class="workflow">
+
+        <div class="workflow-top">
+
+          <div class="workflow-title">
+
+            <h2>
+              ${esc(item.title)}
+            </h2>
+
+            <div class="category">
+              ${esc(item.category)}
+            </div>
+
+          </div>
+
+          <span class="level ${levelClass(item.level)}">
+            ${esc(item.level)}
+          </span>
+
+        </div>
+
+        <p class="workflow-desc">
+          ${esc(item.goal)}
+        </p>
+
+        <div class="meta">
+
+          <span class="meta-chip">
+            ⏱ ${esc(item.time || "Flexible")}
+          </span>
+
+          <span class="meta-chip">
+            ${esc(item.category)}
+          </span>
+
+          <span class="meta-chip">
+            ${esc(item.level)}
+          </span>
+
+        </div>
+
+        <div class="preview">
+
+          <div class="preview-title">
+            Workflow steps
+          </div>
+
+          <div class="steps-preview">
+
+            ${previewSteps
+              .map(
+                (step,stepIndex) =>
+                  `<span class="step-chip">
+                    ${stepIndex + 1}. ${esc(step)}
+                  </span>`
+              )
+              .join("")
+            }
+
+            ${more}
+
+          </div>
+
+        </div>
+
+        <div class="workflow-actions">
+
+          <button
+            class="btn"
+            type="button"
+            data-open-workflow="${esc(item.id || index)}"
+          >
+            View Workflow →
+          </button>
+
+          <a
+            class="btn secondary"
+            href="/tools/"
+          >
+            AI Tools
+          </a>
+
+        </div>
+
+      </article>
+    `;
+
+  }).join("");
+
+}
+
+
+/* =========================
+   FIND WORKFLOW
+========================= */
+
+function findWorkflow(id){
+
+  return workflows.find(
+    (item,index) =>
+      String(item.id || index) === String(id)
+  );
+
+}
+
+
+/* =========================
+   OPEN MODAL
+========================= */
+
+function openWorkflow(id){
+
+  const item = findWorkflow(id);
+
+  if(!item){
+    return;
+  }
+
+  lastFocusedElement =
+    document.activeElement;
+
+  modalTitle.textContent =
+    item.title || "AI Workflow";
+
+  modalCategory.textContent =
+    item.category || "AI Workflow";
+
+  modalGoal.textContent =
+    item.goal || "";
+
+  modalTime.textContent =
+    item.time || "Flexible";
+
+  modalLevel.innerHTML = `
+    <span class="level ${levelClass(item.level)}">
+      ${esc(item.level || "Level")}
+    </span>
+  `;
+
+  modalTools.innerHTML =
+    (item.tools || []).length
+      ? item.tools
+          .map(
+            tool =>
+              `<span class="tool-tag">
+                ${esc(tool)}
+              </span>`
+          )
+          .join("")
+      : `<span class="category">No specific tool category listed.</span>`;
+
+  modalInputs.innerHTML =
+    (item.inputs || []).length
+      ? item.inputs
+          .map(
+            input =>
+              `<li>${esc(input)}</li>`
+          )
+          .join("")
+      : `<li>No specific inputs listed.</li>`;
+
+  modalSteps.innerHTML =
+    (item.steps || []).length
+      ? item.steps
+          .map(
+            step =>
+              `<li>${esc(step)}</li>`
+          )
+          .join("")
+      : `<li>No steps listed.</li>`;
+
+  modalPrompts.innerHTML =
+    (item.prompts || []).length
+      ? item.prompts
+          .map(
+            prompt =>
+              `<div class="prompt">${esc(prompt)}</div>`
+          )
+          .join("")
+      : `<div class="category">No ready-to-use prompts listed.</div>`;
+
+  modalResult.textContent =
+    item.result || "Workflow result not specified.";
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+
+  document.body.style.overflow = "hidden";
+
+  modalClose.focus();
+
+}
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+function closeWorkflow(){
+
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+
+  document.body.style.overflow = "";
+
+  if(lastFocusedElement){
+    lastFocusedElement.focus();
+  }
+
+}
+
+
+/* =========================
+   EVENTS
+========================= */
+
+search.addEventListener(
+  "input",
+  render
+);
+
+level.addEventListener(
+  "change",
+  render
+);
+
+category.addEventListener(
+  "change",
+  render
+);
+
+clearFilters.addEventListener(
+  "click",
+  () => {
+
+    search.value = "";
+    level.value = "all";
+    category.value = "all";
+
+    render();
+
+  }
+);
+
+grid.addEventListener(
+  "click",
+  event => {
+
+    const button =
+      event.target.closest(
+        "[data-open-workflow]"
+      );
+
+    if(!button){
+      return;
+    }
+
+    openWorkflow(
+      button.dataset.openWorkflow
+    );
+
+  }
+);
+
+modalClose.addEventListener(
+  "click",
+  closeWorkflow
+);
+
+modalCloseBottom.addEventListener(
+  "click",
+  closeWorkflow
+);
+
+modal.addEventListener(
+  "click",
+  event => {
+
+    if(event.target === modal){
+      closeWorkflow();
+    }
+
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if(
+      event.key === "Escape" &&
+      modal.classList.contains("open")
+    ){
+
+      closeWorkflow();
+
+    }
+
+  }
+);
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+buildCategories();
+render();
+
+</script>
+
+</body>
+</html>
