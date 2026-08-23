@@ -85,7 +85,7 @@ const IMAGE_TOOLS = [
     pros:["Accessible workflow","Image editing capabilities","Useful experimentation"],
     cons:["Limits vary","Product features can change"],
     verdict:"A useful option for quick image creation and experimentation.",
-    url:"https://playground.com/",logo:"https://playground.com/favicon.ico"
+    url:"https://playground.com/",logo:"https://www.google.com/s2/favicons?domain=playgroundai.com&sz=128"
   },
   {
     name:"Microsoft Designer",
