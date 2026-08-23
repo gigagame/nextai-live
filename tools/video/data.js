@@ -96,7 +96,7 @@ const VIDEO_TOOLS = [
     pros:["Excellent short-form workflow","Large template ecosystem","Accessible editing tools"],
     cons:["Some AI features are region/plan dependent","Best suited to social and creator workflows"],
     verdict:"A highly practical choice for creators producing frequent short-form content.",
-    url:"https://www.capcut.com/",logo:"https://www.capcut.com/favicon.ico"
+    url:"https://www.capcut.com/",logo:"https://www.google.com/s2/favicons?domain=invideo.io&sz=128"
   },
   {
     name:"InVideo AI",
