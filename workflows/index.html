@@ -743,32 +743,81 @@ for V1 reliability. No external data.js dependency.
 
 const WORKFLOWS = [
 
+  /* =====================================================
+     WRITING
+  ===================================================== */
+
   {
-    id:"seo-article",
-    title:"Create an SEO Article",
-    category:"SEO",
+    id:"professional-email",
+    title:"Write a Professional Email",
+    category:"Writing",
     level:"Beginner",
-    icon:"🔎",
-    description:"Build a search-focused article from a topic and target keyword.",
-    goal:"Create a structured SEO article designed around search intent and useful content.",
-    inputs:[
-      "Main topic",
-      "Target keyword",
-      "Target audience",
-      "Desired article length"
-    ],
+    icon:"✉️",
+    description:"Create a clear, professional email from a simple objective.",
+    goal:"Turn a short objective and key information into a polished professional email.",
+    inputs:["Email objective","Recipient","Key information","Preferred tone"],
     steps:[
-      "Define the search intent behind the target keyword.",
-      "Generate a logical article structure with H2 and H3 sections.",
-      "Create the first draft with clear explanations and useful examples.",
-      "Improve title, headings, introduction and keyword placement.",
-      "Review readability, originality and factual accuracy.",
-      "Prepare the final article for publication."
+      "Define the purpose of the email.",
+      "Identify the essential information the recipient needs.",
+      "Create a concise email structure.",
+      "Generate the first draft.",
+      "Improve clarity, tone and professionalism.",
+      "Proofread the final version before sending."
     ],
-    tools:"SEO tools + AI Writing tools",
-    prompt:"Create an SEO-focused article about [TOPIC] targeting the keyword [KEYWORD]. First identify the likely search intent, then create a useful structure with H2 and H3 sections. Write clearly for [AUDIENCE]. Avoid keyword stuffing and prioritize helpful, original information.",
-    result:"A structured, search-focused article ready for human review and publication."
+    tools:"AI Writing + Productivity tools",
+    prompt:"Write a professional email about [OBJECTIVE] for [RECIPIENT]. Include these key points: [POINTS]. Use a clear, concise and professional tone.",
+    result:"A polished professional email ready for human review and sending."
   },
+
+  {
+    id:"blog-article",
+    title:"Create a Blog Article",
+    category:"Writing",
+    level:"Beginner",
+    icon:"📝",
+    description:"Turn a topic or idea into a structured and readable blog article.",
+    goal:"Create useful long-form content with a logical structure and engaging writing.",
+    inputs:["Topic","Audience","Article objective","Desired length"],
+    steps:[
+      "Define the article objective.",
+      "Identify the target audience.",
+      "Create the article outline.",
+      "Write the introduction.",
+      "Develop each main section.",
+      "Add examples and useful details.",
+      "Improve readability and transitions.",
+      "Proofread and prepare for publication."
+    ],
+    tools:"AI Writing + Research tools",
+    prompt:"Write a useful blog article about [TOPIC] for [AUDIENCE]. Create a strong introduction, logical sections, practical examples and a clear conclusion. Keep the writing natural and informative.",
+    result:"A structured blog article ready for editing and publication."
+  },
+
+  {
+    id:"rewrite-improve",
+    title:"Rewrite and Improve Text",
+    category:"Writing",
+    level:"Beginner",
+    icon:"✨",
+    description:"Improve existing text without changing its original meaning.",
+    goal:"Make existing content clearer, more professional and easier to read.",
+    inputs:["Original text","Target audience","Desired tone"],
+    steps:[
+      "Review the original text.",
+      "Identify unclear or repetitive sections.",
+      "Improve sentence structure.",
+      "Adjust the tone for the audience.",
+      "Remove unnecessary wording.",
+      "Proofread the final version."
+    ],
+    tools:"AI Writing tools",
+    prompt:"Rewrite the following text while preserving its original meaning. Improve clarity, structure, grammar and readability. Adapt the tone for [AUDIENCE]: [TEXT].",
+    result:"A clearer and more polished version of the original text."
+  },
+
+  /* =====================================================
+     IMAGE
+  ===================================================== */
 
   {
     id:"ai-image",
@@ -778,12 +827,7 @@ const WORKFLOWS = [
     icon:"🎨",
     description:"Turn an idea into a precise image-generation prompt and visual concept.",
     goal:"Create a strong visual concept suitable for websites, social media or marketing.",
-    inputs:[
-      "Subject",
-      "Visual style",
-      "Aspect ratio",
-      "Target platform"
-    ],
+    inputs:["Subject","Visual style","Aspect ratio","Target platform"],
     steps:[
       "Define the main subject and visual objective.",
       "Specify composition, environment and lighting.",
@@ -793,9 +837,59 @@ const WORKFLOWS = [
       "Select and refine the strongest result."
     ],
     tools:"AI Image tools",
-    prompt:"Create a professional image-generation prompt for [SUBJECT]. Style: [STYLE]. Composition: [COMPOSITION]. Lighting: [LIGHTING]. Aspect ratio: [RATIO]. The result should be visually striking, clean and suitable for [PLATFORM].",
-    result:"A production-ready image concept and optimized generation prompt."
+    prompt:"Create a professional image-generation prompt for [SUBJECT]. Style: [STYLE]. Composition: [COMPOSITION]. Lighting: [LIGHTING]. Aspect ratio: [RATIO]. The result should be visually striking and suitable for [PLATFORM].",
+    result:"A production-ready visual concept and optimized generation prompt."
   },
+
+  {
+    id:"product-image",
+    title:"Create a Product Image",
+    category:"Image",
+    level:"Intermediate",
+    icon:"📦",
+    description:"Create professional product visuals for e-commerce, advertising or social media.",
+    goal:"Transform a product description into a polished commercial visual concept.",
+    inputs:["Product","Brand style","Background","Target platform"],
+    steps:[
+      "Define the product's visual identity.",
+      "Choose the background and environment.",
+      "Define lighting and composition.",
+      "Create the generation prompt.",
+      "Generate multiple variations.",
+      "Select the strongest visual.",
+      "Review branding and product accuracy."
+    ],
+    tools:"AI Image + Marketing tools",
+    prompt:"Create a premium commercial product image for [PRODUCT]. Brand style: [STYLE]. Background: [BACKGROUND]. Use professional lighting, realistic materials and a clean composition suitable for [PLATFORM].",
+    result:"A professional product visual concept ready for marketing use."
+  },
+
+  {
+    id:"social-visual",
+    title:"Create a Social Media Visual",
+    category:"Image",
+    level:"Beginner",
+    icon:"📱",
+    description:"Create an attractive visual adapted to a specific social platform.",
+    goal:"Produce a visually consistent social media image that supports a content message.",
+    inputs:["Post topic","Platform","Brand style","Message"],
+    steps:[
+      "Define the message of the post.",
+      "Choose the appropriate visual format.",
+      "Define the main visual subject.",
+      "Create the image prompt.",
+      "Generate variations.",
+      "Select the strongest composition.",
+      "Check readability and brand consistency."
+    ],
+    tools:"AI Image + Social Media tools",
+    prompt:"Create a high-impact social media visual for [PLATFORM] about [TOPIC]. Brand style: [STYLE]. The image should communicate [MESSAGE] clearly and look professional and modern.",
+    result:"A platform-ready social media visual."
+  },
+
+  /* =====================================================
+     VIDEO
+  ===================================================== */
 
   {
     id:"youtube-video",
@@ -805,26 +899,150 @@ const WORKFLOWS = [
     icon:"🎬",
     description:"Build a complete YouTube production workflow from idea to final video.",
     goal:"Produce a structured video with a strong hook, script and visual plan.",
-    inputs:[
-      "Video topic",
-      "Target audience",
-      "Video duration",
-      "Channel objective"
-    ],
+    inputs:["Video topic","Target audience","Video duration","Channel objective"],
     steps:[
       "Research the topic and audience needs.",
-      "Create three potential video angles.",
-      "Select the strongest angle and write the hook.",
-      "Generate the complete script.",
+      "Create several video angles.",
+      "Select the strongest angle.",
+      "Write the hook and script.",
       "Create a scene-by-scene visual plan.",
       "Generate or collect visual assets.",
-      "Edit the video and optimize the title and thumbnail.",
-      "Review the final video before publishing."
+      "Edit the video.",
+      "Create the title and thumbnail.",
+      "Review and publish."
     ],
     tools:"AI Writing + AI Video + Image + SEO tools",
-    prompt:"Create a YouTube video workflow for [TOPIC] targeting [AUDIENCE]. Start with a strong curiosity-driven hook. Build a structured script, scene plan, visual recommendations and a final call to action. Keep the content useful and engaging.",
+    prompt:"Create a YouTube video workflow for [TOPIC] targeting [AUDIENCE]. Start with a strong hook, then create the script, scene plan, visual recommendations and final call to action.",
     result:"A complete YouTube production plan from concept to publication."
   },
+
+  {
+    id:"youtube-shorts",
+    title:"Create a YouTube Short",
+    category:"Video",
+    level:"Beginner",
+    icon:"📱",
+    description:"Turn one idea into a short-form vertical video designed for fast consumption.",
+    goal:"Create a concise and engaging short video with a strong opening.",
+    inputs:["Topic","Target audience","Key message","Desired duration"],
+    steps:[
+      "Define one clear message.",
+      "Create a strong first-second hook.",
+      "Write a short script.",
+      "Plan the visual sequence.",
+      "Generate or edit the video.",
+      "Add captions.",
+      "Review pacing and clarity.",
+      "Prepare the title and description."
+    ],
+    tools:"AI Writing + AI Video + Image tools",
+    prompt:"Create a short-form video script about [TOPIC]. The first sentence must immediately capture attention. Keep the structure fast, clear and useful for [AUDIENCE].",
+    result:"A concise short-form video package ready for publishing."
+  },
+
+  {
+    id:"marketing-video",
+    title:"Create an AI Marketing Video",
+    category:"Video",
+    level:"Advanced",
+    icon:"📺",
+    description:"Build a marketing video from a product, service or campaign objective.",
+    goal:"Create a persuasive video that communicates value and encourages action.",
+    inputs:["Product or service","Audience","Offer","Call to action"],
+    steps:[
+      "Define the marketing objective.",
+      "Identify the audience pain point.",
+      "Create the core message.",
+      "Write the video script.",
+      "Plan scenes and visuals.",
+      "Create the video assets.",
+      "Edit the final video.",
+      "Add the call to action.",
+      "Review the final message."
+    ],
+    tools:"AI Video + Writing + Image + Marketing tools",
+    prompt:"Create a marketing video for [PRODUCT] targeting [AUDIENCE]. Highlight the main problem, present the value proposition and finish with a clear call to action: [CTA].",
+    result:"A structured marketing video ready for campaign use."
+  },
+
+  /* =====================================================
+     SEO
+  ===================================================== */
+
+  {
+    id:"seo-article",
+    title:"Create an SEO Article",
+    category:"SEO",
+    level:"Intermediate",
+    icon:"🔎",
+    description:"Build a search-focused article from a topic and target keyword.",
+    goal:"Create a structured SEO article designed around search intent and useful content.",
+    inputs:["Main topic","Target keyword","Target audience","Desired article length"],
+    steps:[
+      "Define the search intent.",
+      "Research competing content.",
+      "Create a logical article structure.",
+      "Write the first draft.",
+      "Optimize title and headings.",
+      "Improve readability and usefulness.",
+      "Review factual accuracy.",
+      "Prepare the article for publication."
+    ],
+    tools:"SEO + Writing + Research tools",
+    prompt:"Create an SEO-focused article about [TOPIC] targeting [KEYWORD]. Identify the likely search intent, create a useful H2/H3 structure and write naturally for [AUDIENCE]. Avoid keyword stuffing.",
+    result:"A structured search-focused article ready for review and publication."
+  },
+
+  {
+    id:"keyword-research",
+    title:"Run AI Keyword Research",
+    category:"SEO",
+    level:"Intermediate",
+    icon:"🔑",
+    description:"Generate and organize keyword opportunities around a topic or business.",
+    goal:"Build a practical keyword universe that can guide future content creation.",
+    inputs:["Website topic","Target market","Audience","Main product or service"],
+    steps:[
+      "Define the main topic.",
+      "Generate keyword ideas.",
+      "Group keywords by search intent.",
+      "Separate informational and commercial opportunities.",
+      "Identify long-tail opportunities.",
+      "Prioritize keywords by strategic relevance.",
+      "Create content opportunities from the results."
+    ],
+    tools:"SEO + Research tools",
+    prompt:"Create a keyword research framework for [TOPIC] targeting [MARKET]. Group keywords by search intent and identify informational, commercial and long-tail opportunities. Prioritize the most strategically useful topics.",
+    result:"An organized keyword opportunity map for future SEO work."
+  },
+
+  {
+    id:"seo-optimization",
+    title:"Optimize Existing Content for SEO",
+    category:"SEO",
+    level:"Advanced",
+    icon:"📈",
+    description:"Improve an existing page using search intent, structure and content quality principles.",
+    goal:"Identify practical SEO improvements without rewriting useful content unnecessarily.",
+    inputs:["Existing article","Target keyword","Search intent","Target audience"],
+    steps:[
+      "Review the current content.",
+      "Identify the search intent.",
+      "Analyze title and heading structure.",
+      "Identify content gaps.",
+      "Improve internal relevance.",
+      "Improve readability and usefulness.",
+      "Review metadata opportunities.",
+      "Create an optimization checklist."
+    ],
+    tools:"SEO + Writing tools",
+    prompt:"Analyze this article for SEO improvement around [KEYWORD]. Identify search intent, content gaps, structural problems and practical improvements while preserving useful original information.",
+    result:"A prioritized SEO optimization plan for an existing page."
+  },
+
+  /* =====================================================
+     MARKETING
+  ===================================================== */
 
   {
     id:"marketing-campaign",
@@ -834,12 +1052,7 @@ const WORKFLOWS = [
     icon:"📣",
     description:"Create a coordinated marketing campaign using AI for content and messaging.",
     goal:"Build a consistent multi-channel campaign around one offer or objective.",
-    inputs:[
-      "Product or service",
-      "Target audience",
-      "Campaign objective",
-      "Main offer"
-    ],
+    inputs:["Product or service","Target audience","Campaign objective","Main offer"],
     steps:[
       "Define the campaign objective.",
       "Identify the target audience and pain points.",
@@ -851,9 +1064,61 @@ const WORKFLOWS = [
       "Define measurable campaign KPIs."
     ],
     tools:"AI Marketing + Writing + Image tools",
-    prompt:"Build a marketing campaign for [PRODUCT] targeting [AUDIENCE]. Objective: [OBJECTIVE]. Create the core message, value proposition, social content, email sequence, visual concepts and KPIs.",
+    prompt:"Build a marketing campaign for [PRODUCT] targeting [AUDIENCE]. Objective: [OBJECTIVE]. Create the core message, value proposition, social content, email content, visual concepts and KPIs.",
     result:"A complete multi-channel campaign framework."
   },
+
+  {
+    id:"social-campaign",
+    title:"Build a Social Media Campaign",
+    category:"Marketing",
+    level:"Intermediate",
+    icon:"📲",
+    description:"Create a coordinated social campaign around a product, service or message.",
+    goal:"Develop consistent content across multiple social media publications.",
+    inputs:["Campaign topic","Audience","Platform","Campaign duration"],
+    steps:[
+      "Define the campaign objective.",
+      "Choose the target platforms.",
+      "Create the main campaign message.",
+      "Generate content pillars.",
+      "Create post ideas.",
+      "Create visual concepts.",
+      "Build the publication calendar.",
+      "Define engagement and performance metrics."
+    ],
+    tools:"AI Marketing + Social Media + Image tools",
+    prompt:"Create a [DURATION]-day social media campaign about [TOPIC] for [AUDIENCE]. Define content pillars, post ideas, visual concepts, calls to action and measurable KPIs.",
+    result:"A structured social media campaign calendar."
+  },
+
+  {
+    id:"email-campaign",
+    title:"Create an AI Email Campaign",
+    category:"Marketing",
+    level:"Advanced",
+    icon:"📧",
+    description:"Build a structured email campaign around an offer or marketing objective.",
+    goal:"Create a consistent sequence that informs, engages and guides recipients toward an action.",
+    inputs:["Audience","Offer","Campaign objective","Number of emails"],
+    steps:[
+      "Define the audience segment.",
+      "Define the campaign objective.",
+      "Create the email sequence.",
+      "Write subject lines.",
+      "Write the email content.",
+      "Add calls to action.",
+      "Review tone and consistency.",
+      "Define campaign metrics."
+    ],
+    tools:"AI Marketing + Writing + Productivity tools",
+    prompt:"Create a [NUMBER]-email campaign for [AUDIENCE] promoting [OFFER]. Define the purpose of each email, subject line, main message, call to action and recommended timing.",
+    result:"A structured email campaign ready for implementation."
+  },
+
+  /* =====================================================
+     RESEARCH
+  ===================================================== */
 
   {
     id:"research-report",
@@ -863,26 +1128,72 @@ const WORKFLOWS = [
     icon:"📚",
     description:"Transform a research question into a structured evidence-based report.",
     goal:"Organize information into a clear research workflow with source verification.",
-    inputs:[
-      "Research question",
-      "Scope",
-      "Target audience",
-      "Required depth"
-    ],
+    inputs:["Research question","Scope","Target audience","Required depth"],
     steps:[
       "Define the research question precisely.",
-      "Break the question into research subtopics.",
+      "Break it into research subtopics.",
       "Collect reliable sources.",
-      "Compare and organize the findings.",
+      "Organize and compare findings.",
       "Identify contradictions and information gaps.",
       "Build the report structure.",
       "Write the report with source attribution.",
       "Perform a final verification pass."
     ],
-    tools:"AI Research + Writing + SEO tools",
-    prompt:"Create a research framework for [QUESTION]. Break it into key subtopics, identify the evidence required, distinguish facts from assumptions and propose a structure for a rigorous report. Do not invent sources or unsupported facts.",
+    tools:"AI Research + Writing tools",
+    prompt:"Create a research framework for [QUESTION]. Break it into key subtopics, identify the evidence required and distinguish facts from assumptions. Do not invent sources or unsupported facts.",
     result:"A structured research report framework designed for verification."
   },
+
+  {
+    id:"competitor-analysis",
+    title:"Run an AI Competitor Analysis",
+    category:"Research",
+    level:"Advanced",
+    icon:"🕵️",
+    description:"Compare competitors and convert research into actionable business insights.",
+    goal:"Understand competitor positioning, strengths, weaknesses and opportunities.",
+    inputs:["Market","Competitor list","Research criteria","Business objective"],
+    steps:[
+      "Define the competitive research objective.",
+      "Collect comparable competitor information.",
+      "Organize findings using consistent criteria.",
+      "Compare products, positioning and messaging.",
+      "Identify strengths and weaknesses.",
+      "Identify market gaps.",
+      "Develop strategic recommendations."
+    ],
+    tools:"AI Research + Marketing + Writing tools",
+    prompt:"Create a competitor analysis framework for [MARKET]. Compare [COMPETITORS] across positioning, audience, offer, strengths, weaknesses, messaging and opportunities. Separate observed information from assumptions.",
+    result:"A structured competitor comparison with actionable insights."
+  },
+
+  {
+    id:"market-research",
+    title:"Conduct AI Market Research",
+    category:"Research",
+    level:"Expert",
+    icon:"🌍",
+    description:"Structure a market research project around customers, competitors and opportunities.",
+    goal:"Develop a comprehensive framework for understanding a target market.",
+    inputs:["Market","Target geography","Audience","Research objective"],
+    steps:[
+      "Define the research scope.",
+      "Identify market segments.",
+      "Research customer needs and pain points.",
+      "Analyze competitors.",
+      "Identify trends and opportunities.",
+      "Identify risks and barriers.",
+      "Organize findings.",
+      "Create strategic recommendations."
+    ],
+    tools:"AI Research + Business + Marketing tools",
+    prompt:"Design a market research framework for [MARKET] in [GEOGRAPHY]. Analyze customer segments, needs, competitors, trends, opportunities, barriers and risks. Clearly distinguish verified information from assumptions.",
+    result:"A comprehensive market research framework requiring source verification."
+  },
+
+  /* =====================================================
+     BUSINESS
+  ===================================================== */
 
   {
     id:"business-plan",
@@ -892,12 +1203,7 @@ const WORKFLOWS = [
     icon:"💼",
     description:"Use AI to structure a business idea into a practical planning framework.",
     goal:"Turn a business concept into a structured plan covering market, offer and operations.",
-    inputs:[
-      "Business idea",
-      "Target market",
-      "Customer problem",
-      "Revenue model"
-    ],
+    inputs:["Business idea","Target market","Customer problem","Revenue model"],
     steps:[
       "Define the customer problem.",
       "Identify the target market.",
@@ -915,19 +1221,42 @@ const WORKFLOWS = [
   },
 
   {
+    id:"lead-generation",
+    title:"Build an AI Lead Generation Workflow",
+    category:"Business",
+    level:"Advanced",
+    icon:"🎯",
+    description:"Create a structured process for identifying, qualifying and following up with potential leads.",
+    goal:"Build a repeatable lead-generation framework without relying on a single provider.",
+    inputs:["Target customer","Market","Offer","Qualification criteria"],
+    steps:[
+      "Define the ideal customer profile.",
+      "Define qualification criteria.",
+      "Identify relevant lead sources.",
+      "Create a qualification framework.",
+      "Develop personalized outreach templates.",
+      "Create a follow-up sequence.",
+      "Define CRM fields.",
+      "Measure conversion performance."
+    ],
+    tools:"AI Research + Marketing + Writing + CRM tools",
+    prompt:"Create a lead-generation workflow for [OFFER] targeting [CUSTOMER]. Define the ideal customer profile, qualification criteria, outreach messaging, follow-up sequence and performance metrics.",
+    result:"A structured lead-generation and qualification process."
+  },
+
+  /* =====================================================
+     PRODUCTIVITY
+  ===================================================== */
+
+  {
     id:"productivity-system",
     title:"Build a Personal AI Productivity System",
     category:"Productivity",
     level:"Intermediate",
     icon:"⚡",
-    description:"Organize tasks, priorities, notes and recurring work into one AI-assisted system.",
+    description:"Organize tasks, projects, notes and recurring work into one AI-assisted system.",
     goal:"Reduce repetitive work and create a clearer daily execution system.",
-    inputs:[
-      "Current tasks",
-      "Projects",
-      "Deadlines",
-      "Recurring activities"
-    ],
+    inputs:["Current tasks","Projects","Deadlines","Recurring activities"],
     steps:[
       "Collect all current tasks.",
       "Separate projects from individual actions.",
@@ -943,6 +1272,57 @@ const WORKFLOWS = [
   },
 
   {
+    id:"meeting-summary",
+    title:"Turn a Meeting into Action Items",
+    category:"Productivity",
+    level:"Beginner",
+    icon:"🗓️",
+    description:"Transform meeting notes or a transcript into a concise summary and action plan.",
+    goal:"Convert unstructured meeting information into clear decisions and next actions.",
+    inputs:["Meeting transcript or notes","Participants","Meeting objective"],
+    steps:[
+      "Provide the meeting notes or transcript.",
+      "Identify the main discussion points.",
+      "Extract decisions.",
+      "Identify action items.",
+      "Assign responsible people when known.",
+      "Identify deadlines when available.",
+      "Create a concise follow-up summary."
+    ],
+    tools:"AI Productivity + Writing tools",
+    prompt:"Summarize this meeting. Separate key points, decisions, open questions and action items. Include responsible people and deadlines only when they are explicitly available in the source.",
+    result:"A concise meeting summary with actionable next steps."
+  },
+
+  {
+    id:"daily-planning",
+    title:"Create an AI Daily Plan",
+    category:"Productivity",
+    level:"Beginner",
+    icon:"📅",
+    description:"Turn a list of tasks and constraints into a realistic daily plan.",
+    goal:"Prioritize important work while keeping the plan practical and achievable.",
+    inputs:["Tasks","Deadlines","Available hours","Fixed commitments"],
+    steps:[
+      "List all tasks.",
+      "Identify deadlines and priorities.",
+      "Separate urgent from important work.",
+      "Account for fixed commitments.",
+      "Estimate realistic work blocks.",
+      "Create the daily schedule.",
+      "Leave buffer time for unexpected tasks.",
+      "Review the plan at the end of the day."
+    ],
+    tools:"AI Productivity tools",
+    prompt:"Create a realistic daily plan from these tasks: [TASKS]. Available time: [HOURS]. Fixed commitments: [COMMITMENTS]. Prioritize important work, avoid overloading the schedule and include reasonable buffer time.",
+    result:"A realistic daily execution plan."
+  },
+
+  /* =====================================================
+     EXPERT
+  ===================================================== */
+
+  {
     id:"expert-content-machine",
     title:"Build an Expert Content Machine",
     category:"Writing",
@@ -950,12 +1330,7 @@ const WORKFLOWS = [
     icon:"🧠",
     description:"Create a scalable content system connecting research, writing, SEO and distribution.",
     goal:"Build a repeatable content production system rather than creating isolated articles.",
-    inputs:[
-      "Expertise area",
-      "Target audience",
-      "Content goals",
-      "Publishing channels"
-    ],
+    inputs:["Expertise area","Target audience","Content goals","Publishing channels"],
     steps:[
       "Define the authority topic and audience.",
       "Create a topic and keyword universe.",
