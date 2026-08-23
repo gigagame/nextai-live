@@ -41,18 +41,25 @@ header{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.86);backdrop-fi
 }
 
 .logo.logo-light{
-  background:#fff;
-  border:1px solid rgba(255,255,255,.25);
-  box-shadow:0 4px 14px rgba(0,0,0,.28);
+  width:46px;
+  height:46px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 4px 14px rgba(0,0,0,.20);
   padding:6px;
+  flex:none;
 }
 
 .logo.logo-light img{
   width:100%;
   height:100%;
-  padding:0;
   object-fit:contain;
   display:block;
+  border-radius:8px;
 }
 
 .logo-fallback{
