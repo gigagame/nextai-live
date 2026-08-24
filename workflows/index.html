@@ -6,37 +6,80 @@
 
 <title>AI Workflows — 2NEXTAI</title>
 
-<meta name="description" content="Discover practical AI workflows for writing, image creation, video, SEO, marketing, research, business and productivity at every skill level.">
+<meta name="description"
+content="Practical AI workflows for writing, image, video, SEO, marketing, research, business and productivity.">
+
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://2nextai.com/workflows/">
+
+<link rel="canonical"
+href="https://2nextai.com/workflows/">
 
 <style>
 :root{
-  --bg:#070b14;
-  --text:#f4f7fb;
-  --muted:#9eabc0;
-  --line:rgba(255,255,255,.09);
-  --a:#66e3ff;
-  --b:#8b7cff;
+  --bg:#030713;
+  --panel:#071124;
+  --panel2:#0a1630;
+  --text:#f5f8ff;
+  --muted:#9aa9c4;
+  --line:rgba(120,170,255,.18);
+
+  --cyan:#14d9ff;
+  --blue:#329cff;
+  --violet:#8758ff;
+  --purple:#b34dff;
+
+  --green:#28e5a1;
+  --orange:#ff9b32;
+
+  --shadow:
+    0 20px 60px rgba(0,0,0,.35);
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
+  min-height:100vh;
+
   background:
-    radial-gradient(circle at 15% 0%,rgba(102,227,255,.10),transparent 30%),
-    radial-gradient(circle at 90% 10%,rgba(139,124,255,.12),transparent 32%),
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(53,94,255,.22),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 5% 40%,
+      rgba(0,217,255,.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 55%,
+      rgba(145,55,255,.10),
+      transparent 30%
+    ),
     var(--bg);
+
   color:var(--text);
-  font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
 button,
@@ -45,478 +88,854 @@ select{
   font:inherit;
 }
 
-.container{
-  width:min(1180px,92%);
-  margin:auto;
-}
-
-/* =========================
+/* =========================================
    HEADER
-========================= */
+========================================= */
 
-header{
+.site-header{
   position:sticky;
   top:0;
-  z-index:50;
-  background:rgba(7,11,20,.88);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
+  z-index:100;
+
+  background:
+    rgba(3,7,19,.84);
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:
+    1px solid rgba(120,170,255,.13);
 }
 
-nav{
-  min-height:72px;
+.nav{
+  width:min(1440px,94%);
+  min-height:70px;
+  margin:auto;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
 }
 
 .brand{
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:-.03em;
+  font-size:25px;
+  font-weight:950;
+  letter-spacing:-.05em;
 }
 
-.brand i{
-  color:var(--a);
-  font-style:normal;
+.brand span{
+  color:#1edcff;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:24px;
+  gap:34px;
 }
 
 .nav-links a{
-  color:var(--muted);
+  position:relative;
+
+  color:#aebbd0;
   font-size:14px;
+  font-weight:600;
+
+  padding:25px 0;
 }
 
 .nav-links a:hover{
   color:#fff;
 }
 
-/* =========================
+.nav-links .active{
+  color:#16d9ff;
+}
+
+.nav-links .active:after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:3px;
+
+  border-radius:5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--cyan),
+      var(--violet)
+    );
+
+  box-shadow:
+    0 0 14px rgba(20,217,255,.65);
+}
+
+/* =========================================
+   MAIN
+========================================= */
+
+.container{
+  width:min(1440px,94%);
+  margin:auto;
+}
+
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero{
-  padding:78px 0 42px;
   text-align:center;
+  padding:55px 0 26px;
 }
 
 .eyebrow{
-  display:inline-block;
-  color:var(--a);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  padding:9px 14px;
+  display:inline-flex;
+  align-items:center;
+
+  padding:8px 15px;
+
+  border:
+    1px solid rgba(20,217,255,.35);
+
   border-radius:999px;
-  border:1px solid rgba(102,227,255,.22);
-  background:rgba(102,227,255,.04);
+
+  background:
+    rgba(20,217,255,.055);
+
+  color:#55e4ff;
+
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.09em;
 }
 
-h1{
-  font-size:clamp(44px,7vw,76px);
+.hero h1{
+  margin:18px 0 12px;
+
+  font-size:
+    clamp(42px,5.2vw,72px);
+
   line-height:.98;
-  letter-spacing:-.06em;
-  margin:20px 0 18px;
+
+  letter-spacing:-.065em;
 }
 
 .gradient{
-  background:linear-gradient(100deg,#fff,#66e3ff,#8b7cff);
+  background:
+    linear-gradient(
+      90deg,
+      #fff 0%,
+      #fff 22%,
+      #12dfff 52%,
+      #8c58ff 82%
+    );
+
   -webkit-background-clip:text;
   background-clip:text;
+
   color:transparent;
 }
 
 .hero p{
-  max-width:820px;
-  margin:auto;
-  color:var(--muted);
-  font-size:18px;
-  line-height:1.7;
+  max-width:920px;
+  margin:0 auto;
+
+  color:#aebbd0;
+
+  font-size:16px;
+  line-height:1.65;
 }
 
-/* =========================
+/* =========================================
    CONTROLS
-========================= */
+========================================= */
 
 .controls{
-  max-width:980px;
-  margin:36px auto 32px;
-  display:flex;
+  margin:28px auto 15px;
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(300px,1fr)
+    180px
+    200px;
+
   gap:12px;
-  flex-wrap:wrap;
+
+  max-width:1050px;
 }
 
-.search-wrap{
+.search-box{
   position:relative;
-  flex:1;
-  min-width:280px;
 }
 
-.search-icon{
+.search-box svg{
   position:absolute;
+
   left:16px;
   top:50%;
+
   transform:translateY(-50%);
-  color:#8190a7;
-  pointer-events:none;
+
+  width:20px;
+  height:20px;
+
+  opacity:.8;
+}
+
+.search,
+.select{
+  width:100%;
+
+  height:50px;
+
+  border:
+    1px solid rgba(103,153,230,.24);
+
+  border-radius:13px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14,27,53,.88),
+      rgba(7,17,36,.88)
+    );
+
+  color:#fff;
+
+  outline:none;
 }
 
 .search{
-  width:100%;
-  padding:15px 16px 15px 45px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:rgba(255,255,255,.04);
-  color:#fff;
-  outline:0;
+  padding:
+    0 16px 0 47px;
 }
 
-.search:focus{
-  border-color:rgba(102,227,255,.45);
-  box-shadow:0 0 0 3px rgba(102,227,255,.06);
+.search::placeholder{
+  color:#8291ab;
+}
+
+.search:focus,
+.select:focus{
+  border-color:
+    rgba(20,217,255,.55);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(20,217,255,.06);
 }
 
 .select{
-  min-width:180px;
-  padding:15px 16px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:#0d1422;
-  color:#fff;
-  outline:0;
+  padding:0 14px;
 }
 
-/* =========================
+/* =========================================
    STATS
-========================= */
+========================================= */
 
 .stats{
   display:flex;
   justify-content:center;
-  gap:8px;
+  align-items:center;
+
+  gap:10px;
+
   flex-wrap:wrap;
-  margin-bottom:36px;
+
+  margin:10px 0 25px;
 }
 
 .stat{
-  padding:7px 11px;
-  border:1px solid var(--line);
+  display:inline-flex;
+  align-items:center;
+
+  min-height:30px;
+
+  padding:6px 11px;
+
+  border:
+    1px solid rgba(105,157,239,.20);
+
   border-radius:999px;
-  background:rgba(255,255,255,.025);
-  color:#bdc8d8;
+
+  background:
+    rgba(10,25,52,.65);
+
+  color:#b9c8df;
+
   font-size:11px;
+  font-weight:650;
 }
 
-/* =========================
-   GRID
-========================= */
+/* =========================================
+   WORKFLOW GRID
+========================================= */
 
-.grid{
+.workflow-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  padding-bottom:80px;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:14px;
+
+  padding-bottom:70px;
 }
 
-/* =========================
+/* =========================================
    WORKFLOW CARD
-========================= */
+========================================= */
 
-.workflow{
-  border:1px solid var(--line);
-  border-radius:22px;
+.workflow-card{
+  position:relative;
+
+  min-width:0;
+
+  padding:17px;
+
+  border:
+    1px solid rgba(78,145,235,.24);
+
+  border-radius:18px;
+
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,.055),
-      rgba(255,255,255,.018)
+      rgba(13,29,57,.96),
+      rgba(6,16,34,.95)
     );
-  padding:23px;
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,.25);
+
+  overflow:hidden;
+
   transition:
-    transform .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease;
+    transform .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease;
 }
 
-.workflow:hover{
-  transform:translateY(-3px);
-  border-color:rgba(102,227,255,.20);
-  box-shadow:0 18px 50px rgba(0,0,0,.18);
+.workflow-card:before{
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  left:-80px;
+  top:-90px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(19,214,255,.08),
+      transparent 70%
+    );
+
+  pointer-events:none;
 }
 
-.card-top{
+.workflow-card:hover{
+  transform:translateY(-4px);
+
+  border-color:
+    rgba(35,190,255,.46);
+
+  box-shadow:
+    0 22px 60px rgba(0,0,0,.38),
+    0 0 30px rgba(35,170,255,.06);
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header{
   display:flex;
+
   justify-content:space-between;
   align-items:flex-start;
-  gap:15px;
+
+  gap:10px;
 }
 
-.card-title{
+.card-identity{
   display:flex;
+
   align-items:center;
-  gap:13px;
+
+  gap:11px;
+
+  min-width:0;
 }
 
-/* =========================
-   CATEGORY ICON
-   Same visual language as
-   AI Tools logo containers
-========================= */
+/* =========================================
+   3D ICON CONTAINER
+========================================= */
 
-.workflow-logo{
-  width:46px;
-  height:46px;
-  min-width:46px;
-  border-radius:13px;
+.icon-3d{
+  position:relative;
+
+  width:64px;
+  height:64px;
+
+  min-width:64px;
+
   display:grid;
   place-items:center;
+
+  border:
+    1px solid rgba(150,195,255,.30);
+
+  border-radius:15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(28,48,82,.88),
+      rgba(7,18,40,.96)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 8px 20px rgba(0,0,0,.35);
+
   overflow:hidden;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:0 4px 14px rgba(0,0,0,.20);
-  padding:6px;
-  flex:none;
 }
 
-.workflow-logo-inner{
-  width:100%;
-  height:100%;
-  border-radius:8px;
-  display:grid;
-  place-items:center;
+.icon-3d:before{
+  content:"";
+
+  position:absolute;
+
+  inset:5px;
+
+  border-radius:11px;
+
   background:
-    linear-gradient(
-      135deg,
-      rgba(102,227,255,.16),
-      rgba(139,124,255,.20)
+    radial-gradient(
+      circle at 35% 20%,
+      rgba(255,255,255,.12),
+      transparent 32%
     );
-  border:1px solid rgba(255,255,255,.06);
-  font-size:20px;
-  line-height:1;
+
+  pointer-events:none;
 }
 
-/* Category-specific visual treatment */
+.icon-3d svg{
+  width:52px;
+  height:52px;
 
-.workflow-logo[data-category="Writing"] .workflow-logo-inner{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(102,227,255,.18),
-      rgba(139,124,255,.18)
-    );
-}
+  position:relative;
+  z-index:2;
 
-.workflow-logo[data-category="Image"] .workflow-logo-inner{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(139,124,255,.20),
-      rgba(102,227,255,.14)
+  filter:
+    drop-shadow(
+      0 5px 8px rgba(0,0,0,.42)
     );
 }
 
-.workflow-logo[data-category="Video"] .workflow-logo-inner{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(102,227,255,.18),
-      rgba(139,124,255,.22)
-    );
+/* =========================================
+   CATEGORY GLOW
+========================================= */
+
+.icon-writing{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 24px rgba(91,123,255,.16),
+    0 8px 20px rgba(0,0,0,.35);
 }
 
-.workflow-logo[data-category="SEO"] .workflow-logo-inner{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(102,227,255,.20),
-      rgba(139,124,255,.15)
-    );
+.icon-image{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 24px rgba(161,89,255,.18),
+    0 8px 20px rgba(0,0,0,.35);
 }
 
-.workflow-logo[data-category="Marketing"] .workflow-logo-inner{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(139,124,255,.22),
-      rgba(102,227,255,.13)
-    );
+.icon-video{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 24px rgba(255,88,86,.14),
+    0 8px 20px rgba(0,0,0,.35);
 }
 
-.workflow-logo[data-category="Research"] .workflow-logo-inner{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(102,227,255,.15),
-      rgba(139,124,255,.20)
-    );
+.icon-seo{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 24px rgba(38,211,255,.16),
+    0 8px 20px rgba(0,0,0,.35);
 }
 
-.workflow-logo[data-category="Business"] .workflow-logo-inner{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(139,124,255,.18),
-      rgba(102,227,255,.18)
-    );
+.icon-marketing{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 24px rgba(186,75,255,.16),
+    0 8px 20px rgba(0,0,0,.35);
 }
 
-.workflow-logo[data-category="Productivity"] .workflow-logo-inner{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(102,227,255,.22),
-      rgba(139,124,255,.15)
-    );
+.icon-research{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 24px rgba(65,190,255,.15),
+    0 8px 20px rgba(0,0,0,.35);
 }
 
-.workflow h2{
+.icon-business{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 24px rgba(255,163,65,.13),
+    0 8px 20px rgba(0,0,0,.35);
+}
+
+.icon-productivity{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 24px rgba(255,79,108,.14),
+    0 8px 20px rgba(0,0,0,.35);
+}
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.title-wrap{
+  min-width:0;
+}
+
+.workflow-title{
   margin:0;
-  font-size:21px;
-  line-height:1.25;
+
+  font-size:17px;
+
+  line-height:1.2;
+
+  letter-spacing:-.02em;
 }
 
-.category{
+.workflow-category{
   margin-top:4px;
-  color:#9eabc0;
-  font-size:11px;
+
+  font-size:10px;
+
+  font-weight:850;
+
+  letter-spacing:.07em;
+
+  text-transform:uppercase;
 }
+
+.category-writing{
+  color:#28dfff;
+}
+
+.category-image{
+  color:#d16aff;
+}
+
+.category-video{
+  color:#ff9d32;
+}
+
+.category-seo{
+  color:#28dfff;
+}
+
+.category-marketing{
+  color:#c867ff;
+}
+
+.category-research{
+  color:#46d8ff;
+}
+
+.category-business{
+  color:#ffb25b;
+}
+
+.category-productivity{
+  color:#ff657c;
+}
+
+/* =========================================
+   LEVEL
+========================================= */
 
 .level{
-  height:max-content;
+  flex:none;
+
   padding:6px 8px;
-  border:1px solid var(--line);
+
   border-radius:999px;
-  color:#cbd5e1;
-  font-size:10px;
-  white-space:nowrap;
+
+  border:
+    1px solid rgba(42,222,167,.42);
+
+  background:
+    rgba(22,184,135,.07);
+
+  color:#4ff0ba;
+
+  font-size:9px;
+
+  font-weight:750;
 }
 
-/* =========================
+.level-intermediate{
+  color:#39d8ff;
+
+  border-color:
+    rgba(39,216,255,.42);
+
+  background:
+    rgba(39,216,255,.06);
+}
+
+.level-advanced{
+  color:#c084ff;
+
+  border-color:
+    rgba(192,132,255,.42);
+
+  background:
+    rgba(192,132,255,.06);
+}
+
+.level-expert{
+  color:#ff9dca;
+
+  border-color:
+    rgba(255,157,202,.42);
+
+  background:
+    rgba(255,157,202,.06);
+}
+
+/* =========================================
    DESCRIPTION
-========================= */
+========================================= */
 
 .description{
-  min-height:67px;
-  margin:18px 0 14px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.65;
+  min-height:47px;
+
+  margin:13px 0 10px;
+
+  color:#a8b8d2;
+
+  font-size:12px;
+
+  line-height:1.55;
 }
 
-/* =========================
+/* =========================================
    CHIPS
-========================= */
+========================================= */
 
 .chips{
   display:flex;
-  gap:7px;
+
   flex-wrap:wrap;
-  margin:14px 0;
+
+  gap:6px;
+
+  margin-bottom:10px;
 }
 
 .chip{
-  padding:6px 8px;
-  border:1px solid var(--line);
+  padding:5px 8px;
+
+  border:
+    1px solid rgba(104,151,221,.20);
+
   border-radius:999px;
-  color:#cbd5e1;
-  font-size:11px;
+
+  background:
+    rgba(11,28,57,.55);
+
+  color:#b9c7db;
+
+  font-size:9px;
 }
 
-/* =========================
-   QUICK INFO
-========================= */
+/* =========================================
+   GOAL / TOOLS
+========================================= */
 
-.quick{
+.info-row{
   display:grid;
+
   grid-template-columns:1fr 1fr;
-  gap:14px;
-  border-top:1px solid var(--line);
-  padding-top:15px;
+
+  margin-top:4px;
+
+  border:
+    1px solid rgba(87,139,214,.18);
+
+  border-radius:12px;
+
+  background:
+    rgba(5,15,32,.62);
+
+  overflow:hidden;
 }
 
-.quick-box{
-  min-height:82px;
+.info-box{
+  padding:10px;
+
+  min-width:0;
 }
 
-.quick-box strong{
-  display:block;
-  margin-bottom:6px;
-  font-size:11px;
+.info-box + .info-box{
+  border-left:
+    1px solid rgba(87,139,214,.18);
 }
 
-.quick-box span{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
+.info-label{
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  margin-bottom:4px;
+
+  font-size:10px;
+
+  font-weight:850;
+
+  color:#eef5ff;
 }
 
-/* =========================
+.info-label svg{
+  width:15px;
+  height:15px;
+}
+
+.info-value{
+  color:#a7b6cd;
+
+  font-size:9px;
+
+  line-height:1.4;
+}
+
+/* =========================================
    ACTIONS
-========================= */
+========================================= */
 
 .actions{
-  display:flex;
-  gap:9px;
-  margin-top:17px;
+  display:grid;
+
+  grid-template-columns:1.35fr .9fr;
+
+  gap:8px;
+
+  margin-top:10px;
 }
 
 .btn{
-  flex:1;
-  text-align:center;
-  padding:11px;
-  border-radius:11px;
-  border:0;
-  background:linear-gradient(135deg,var(--a),var(--b));
-  color:#07101b;
-  font-size:12px;
-  font-weight:900;
-  cursor:pointer;
-}
+  height:36px;
 
-.btn.secondary{
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--line);
-  color:#dce5f2;
+  border-radius:9px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:5px;
+
+  cursor:pointer;
+
+  font-size:10px;
+
+  font-weight:850;
+
+  border:1px solid transparent;
+
+  transition:
+    transform .18s ease,
+    filter .18s ease;
 }
 
 .btn:hover{
-  filter:brightness(1.06);
+  transform:translateY(-1px);
+  filter:brightness(1.08);
 }
 
-/* =========================
+.btn-primary{
+  color:#fff;
+
+  background:
+    linear-gradient(
+      100deg,
+      #16cfff,
+      #7358ff,
+      #b14aff
+    );
+
+  box-shadow:
+    0 7px 20px rgba(78,93,255,.20);
+}
+
+.btn-secondary{
+  color:#d8e5f7;
+
+  border:
+    1px solid rgba(104,156,236,.25);
+
+  background:
+    rgba(12,28,56,.72);
+}
+
+/* =========================================
    EMPTY
-========================= */
+========================================= */
 
 .empty{
   grid-column:1/-1;
-  padding:50px 20px;
+
+  padding:60px 20px;
+
   text-align:center;
-  border:1px dashed var(--line);
-  border-radius:20px;
-  color:var(--muted);
+
+  border:
+    1px dashed rgba(102,158,235,.25);
+
+  border-radius:18px;
+
+  color:#91a2bc;
 }
 
-/* =========================
+/* =========================================
    MODAL
-========================= */
+========================================= */
 
 .modal{
   position:fixed;
+
   inset:0;
-  z-index:100;
+
+  z-index:200;
+
   display:none;
+
   align-items:center;
   justify-content:center;
+
   padding:20px;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(8px);
+
+  background:
+    rgba(0,3,12,.78);
+
+  backdrop-filter:blur(12px);
 }
 
 .modal.open{
@@ -524,71 +943,83 @@ h1{
 }
 
 .modal-card{
-  width:min(760px,100%);
-  max-height:88vh;
+  width:min(850px,100%);
+
+  max-height:90vh;
+
   overflow:auto;
-  padding:26px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:#0b1120;
-  box-shadow:0 30px 100px rgba(0,0,0,.45);
+
+  padding:25px;
+
+  border:
+    1px solid rgba(99,155,237,.25);
+
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #09152b,
+      #050c1d
+    );
+
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.55);
 }
 
-.modal-head{
+.modal-header{
   display:flex;
+
   justify-content:space-between;
-  align-items:flex-start;
+
   gap:20px;
 }
 
-.modal-title-wrap{
+.modal-title-area{
   display:flex;
+
   align-items:center;
-  gap:13px;
+
+  gap:14px;
 }
 
-.modal-logo{
-  width:46px;
-  height:46px;
-  min-width:46px;
-  border-radius:13px;
-  display:grid;
-  place-items:center;
-  overflow:hidden;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.10);
-  padding:6px;
+.modal-icon{
+  width:64px;
+  height:64px;
 }
 
-.modal-logo-inner{
-  width:100%;
-  height:100%;
-  border-radius:8px;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,rgba(102,227,255,.16),rgba(139,124,255,.20));
-  font-size:20px;
-}
-
-.modal h2{
+.modal-title{
   margin:0;
-  font-size:27px;
+
+  font-size:25px;
+
+  letter-spacing:-.03em;
 }
 
-.modal-sub{
-  margin-top:5px;
-  color:var(--muted);
-  font-size:12px;
+.modal-subtitle{
+  margin-top:4px;
+
+  color:#8fa2c0;
+
+  font-size:11px;
 }
 
 .close{
   width:38px;
   height:38px;
+
+  border:
+    1px solid rgba(105,157,230,.22);
+
   border-radius:10px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.04);
+
+  background:
+    rgba(255,255,255,.04);
+
   color:#fff;
+
   cursor:pointer;
+
   font-size:20px;
 }
 
@@ -598,104 +1029,133 @@ h1{
 
 .modal-section h3{
   margin:0 0 9px;
-  font-size:13px;
+
+  font-size:12px;
 }
 
 .modal-section p,
 .modal-section li{
-  color:var(--muted);
+  color:#aab9cf;
+
   font-size:13px;
+
   line-height:1.65;
 }
 
 .modal-section ul,
 .modal-section ol{
   margin:0;
+
   padding-left:20px;
 }
 
 .prompt{
   padding:15px;
+
+  border:
+    1px solid rgba(20,217,255,.17);
+
   border-radius:13px;
-  border:1px solid rgba(102,227,255,.12);
-  background:rgba(102,227,255,.055);
-  color:#d8f8ff;
-  font-size:13px;
-  line-height:1.6;
+
+  background:
+    rgba(20,217,255,.045);
+
+  color:#d6f8ff;
+
+  font-size:12px;
+
+  line-height:1.65;
 }
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer{
-  border-top:1px solid var(--line);
-  padding:30px 0;
-  color:var(--muted);
-  font-size:12px;
+  border-top:
+    1px solid rgba(103,157,235,.13);
+
+  padding:28px 0;
+
+  color:#74849d;
+
+  font-size:11px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
-@media(max-width:760px){
+@media(max-width:1150px){
 
-  .grid{
-    grid-template-columns:1fr;
+  .workflow-grid{
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
   }
 
-  .quick{
-    grid-template-columns:1fr;
+}
+
+@media(max-width:850px){
+
+  .workflow-grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
   }
 
-  .actions{
-    flex-direction:column;
+  .controls{
+    grid-template-columns:1fr 1fr;
   }
 
-  .card-top{
-    flex-direction:column;
+  .search-box{
+    grid-column:1/-1;
   }
 
-  .level{
-    align-self:flex-start;
+}
+
+@media(max-width:620px){
+
+  .nav{
+    min-height:62px;
+  }
+
+  .brand{
+    font-size:20px;
   }
 
   .nav-links{
-    gap:12px;
+    gap:15px;
   }
 
-  .nav-links a:nth-child(n+3){
+  .nav-links a{
+    font-size:12px;
+  }
+
+  .nav-links a:first-child{
     display:none;
   }
 
-  .modal-title-wrap{
-    align-items:flex-start;
-  }
-
-}
-
-@media(max-width:520px){
-
   .hero{
-    padding-top:55px;
+    padding-top:40px;
   }
 
-  .workflow{
-    padding:19px;
+  .hero h1{
+    font-size:42px;
   }
 
-  .workflow-logo{
-    width:46px;
-    height:46px;
+  .workflow-grid{
+    grid-template-columns:1fr;
   }
 
-  .workflow h2{
-    font-size:19px;
+  .controls{
+    grid-template-columns:1fr;
   }
 
-  .modal-card{
-    padding:20px;
+  .search-box{
+    grid-column:auto;
+  }
+
+  .workflow-card{
+    padding:16px;
   }
 
 }
@@ -704,86 +1164,146 @@ footer{
 
 <body>
 
-<header>
-<div class="container">
-<nav>
+<header class="site-header">
 
-<a class="brand" href="/">
-2<i>NEXTAI</i>
+<nav class="nav">
+
+<a href="/" class="brand">
+2<span>NEXTAI</span>
 </a>
 
 <div class="nav-links">
+
 <a href="/">Home</a>
-<a href="/tools/">AI Tools</a>
-<a href="/workflows/">Workflows</a>
+
+<a href="/tools/">
+AI Tools
+</a>
+
+<a href="/workflows/" class="active">
+Workflows
+</a>
+
 </div>
 
 </nav>
-</div>
+
 </header>
+
 
 <main>
 
 <section class="hero container">
 
 <div class="eyebrow">
-2NEXTAI · AI Workflows V1.2
+AI WORKFLOWS
 </div>
 
 <h1>
-Turn AI tools into<br>
-<span class="gradient">real workflows.</span>
+Turn ideas into
+<span class="gradient">
+real results
+</span>
 </h1>
 
 <p>
-Discover practical step-by-step AI workflows for writing,
-images, video, SEO, marketing, research, business and productivity —
-from beginner to expert.
+Step-by-step AI workflows for writing, image, video, SEO,
+marketing, research, business and productivity.
 </p>
 
 <div class="controls">
 
-<div class="search-wrap">
+<div class="search-box">
 
-<span class="search-icon">⌕</span>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2">
+<circle cx="11" cy="11" r="7"/>
+<path d="m20 20-4-4"/>
+</svg>
 
 <input
 id="search"
 class="search"
 type="search"
-autocomplete="off"
 placeholder="Search workflows, goals or categories..."
-aria-label="Search workflows or use cases..."
+autocomplete="off"
 >
 
 </div>
 
 <select id="level" class="select">
-<option value="all">All levels</option>
-<option value="Beginner">Beginner</option>
-<option value="Intermediate">Intermediate</option>
-<option value="Advanced">Advanced</option>
-<option value="Expert">Expert</option>
+
+<option value="all">
+All Levels
+</option>
+
+<option value="Beginner">
+Beginner
+</option>
+
+<option value="Intermediate">
+Intermediate
+</option>
+
+<option value="Advanced">
+Advanced
+</option>
+
+<option value="Expert">
+Expert
+</option>
+
 </select>
 
 <select id="category" class="select">
-<option value="all">All categories</option>
-<option value="Writing">Writing</option>
-<option value="Image">Image</option>
-<option value="Video">Video</option>
-<option value="SEO">SEO</option>
-<option value="Marketing">Marketing</option>
-<option value="Research">Research</option>
-<option value="Business">Business</option>
-<option value="Productivity">Productivity</option>
+
+<option value="all">
+All Categories
+</option>
+
+<option value="Writing">
+Writing
+</option>
+
+<option value="Image">
+Image
+</option>
+
+<option value="Video">
+Video
+</option>
+
+<option value="SEO">
+SEO
+</option>
+
+<option value="Marketing">
+Marketing
+</option>
+
+<option value="Research">
+Research
+</option>
+
+<option value="Business">
+Business
+</option>
+
+<option value="Productivity">
+Productivity
+</option>
+
 </select>
 
 </div>
 
+
 <div class="stats">
 
-<span class="stat" id="resultCount">
-0 workflows
+<span class="stat">
+<span id="resultCount">20</span>&nbsp;workflows
 </span>
 
 <span class="stat">
@@ -802,55 +1322,67 @@ Practical use cases
 
 </section>
 
+
 <section class="container">
 
-<div id="grid" class="grid"></div>
+<div
+id="workflowGrid"
+class="workflow-grid">
+</div>
 
 </section>
 
 </main>
 
+
 <footer>
+
 <div class="container">
-<strong>2NEXTAI</strong>
-· Workflows are educational frameworks. Tools, pricing and features may change.
-Verify current capabilities on the official provider website.
+
+<strong>
+2NEXTAI
+</strong>
+
+· Practical AI workflows. Verify current tool capabilities,
+pricing and availability with the official provider.
+
 </div>
+
 </footer>
 
+
+<!-- =========================================
+     MODAL
+========================================= -->
 
 <div
 id="modal"
 class="modal"
-role="dialog"
-aria-modal="true"
 aria-hidden="true"
 >
 
 <div class="modal-card">
 
-<div class="modal-head">
+<div class="modal-header">
 
-<div class="modal-title-wrap">
+<div class="modal-title-area">
 
 <div
-id="modalLogo"
-class="modal-logo"
->
-<div
-id="modalLogoInner"
-class="modal-logo-inner"
-></div>
+id="modalIcon"
+class="icon-3d modal-icon">
 </div>
 
 <div>
 
-<h2 id="modalTitle"></h2>
+<h2
+id="modalTitle"
+class="modal-title">
+</h2>
 
 <div
-id="modalSub"
-class="modal-sub"
-></div>
+id="modalSubtitle"
+class="modal-subtitle">
+</div>
 
 </div>
 
@@ -859,9 +1391,7 @@ class="modal-sub"
 <button
 id="closeModal"
 class="close"
-type="button"
-aria-label="Close"
->
+type="button">
 ×
 </button>
 
@@ -870,7 +1400,9 @@ aria-label="Close"
 
 <div class="modal-section">
 
-<h3>Goal</h3>
+<h3>
+Goal
+</h3>
 
 <p id="modalGoal"></p>
 
@@ -879,7 +1411,9 @@ aria-label="Close"
 
 <div class="modal-section">
 
-<h3>Required inputs</h3>
+<h3>
+Required inputs
+</h3>
 
 <ul id="modalInputs"></ul>
 
@@ -888,7 +1422,9 @@ aria-label="Close"
 
 <div class="modal-section">
 
-<h3>Workflow steps</h3>
+<h3>
+Workflow steps
+</h3>
 
 <ol id="modalSteps"></ol>
 
@@ -897,7 +1433,9 @@ aria-label="Close"
 
 <div class="modal-section">
 
-<h3>Recommended AI tools</h3>
+<h3>
+Recommended AI tools
+</h3>
 
 <p id="modalTools"></p>
 
@@ -906,19 +1444,23 @@ aria-label="Close"
 
 <div class="modal-section">
 
-<h3>Ready-to-use prompt</h3>
+<h3>
+Ready-to-use prompt
+</h3>
 
 <div
 id="modalPrompt"
-class="prompt"
-></div>
+class="prompt">
+</div>
 
 </div>
 
 
 <div class="modal-section">
 
-<h3>Expected result</h3>
+<h3>
+Expected result
+</h3>
 
 <p id="modalResult"></p>
 
@@ -928,18 +1470,16 @@ class="prompt"
 <div class="actions">
 
 <a
-class="btn secondary"
 href="/tools/"
->
-Explore AI Tools
+class="btn btn-secondary">
+AI Tools
 </a>
 
 <button
 id="closeModalBottom"
-class="btn"
-type="button"
->
-Close workflow
+class="btn btn-primary"
+type="button">
+Close Workflow
 </button>
 
 </div>
@@ -951,10 +1491,360 @@ Close workflow
 
 <script>
 
-/* ========================================================
-   WORKFLOWS V1.2
-   Same validated V1.1 catalog.
-======================================================== */
+/* =====================================================
+   3D CATEGORY ICON SYSTEM
+   Self-contained SVG
+===================================================== */
+
+const ICONS = {
+
+Writing: `
+<svg viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="wr1" x1="8" y1="8" x2="56" y2="58">
+  <stop stop-color="#F7FBFF"/>
+  <stop offset=".32" stop-color="#63E7FF"/>
+  <stop offset=".7" stop-color="#5578FF"/>
+  <stop offset="1" stop-color="#A63CFF"/>
+ </linearGradient>
+ <linearGradient id="wr2" x1="20" y1="15" x2="44" y2="50">
+  <stop stop-color="#FFFFFF"/>
+  <stop offset=".45" stop-color="#75DFFF"/>
+  <stop offset="1" stop-color="#633DFF"/>
+ </linearGradient>
+</defs>
+
+<path
+d="M13 43 37 19l9 9-24 24H13z"
+fill="url(#wr1)"
+stroke="#DDF9FF"
+stroke-width="1.5"/>
+
+<path
+d="m37 19 5-5c2-2 5-2 7 0l2 2c2 2 2 5 0 7l-5 5z"
+fill="url(#wr2)"
+stroke="#FFFFFF"
+stroke-width="1.3"/>
+
+<path
+d="m18 47 8-2-6-6-2 8Z"
+fill="#B7F5FF"/>
+
+<circle cx="47" cy="43" r="7"
+fill="url(#wr1)"
+opacity=".9"/>
+
+<path
+d="m47 38 1.4 3.6L52 43l-3.6 1.4L47 48l-1.4-3.6L42 43l3.6-1.4L47 38Z"
+fill="#FFFFFF"/>
+</svg>
+`,
+
+Image: `
+<svg viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="im1" x1="7" y1="8" x2="57" y2="57">
+  <stop stop-color="#F8FFFF"/>
+  <stop offset=".3" stop-color="#66E7FF"/>
+  <stop offset=".7" stop-color="#6475FF"/>
+  <stop offset="1" stop-color="#BD48FF"/>
+ </linearGradient>
+</defs>
+
+<rect
+x="8" y="11"
+width="48"
+height="42"
+rx="8"
+fill="url(#im1)"
+stroke="#DFFFFF"
+stroke-width="1.5"/>
+
+<rect
+x="14" y="17"
+width="36"
+height="30"
+rx="5"
+fill="#091A38"
+opacity=".86"/>
+
+<circle
+cx="40"
+cy="25"
+r="5"
+fill="#FFBC43"/>
+
+<path
+d="m15 44 11-11 8 7 6-6 10 10H15Z"
+fill="#58DFFF"/>
+
+<path
+d="m15 44 11-11 8 7"
+stroke="#B7F7FF"
+stroke-width="2"
+opacity=".7"/>
+</svg>
+`,
+
+Video: `
+<svg viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="vi1" x1="7" y1="9" x2="57" y2="56">
+  <stop stop-color="#FFFFFF"/>
+  <stop offset=".32" stop-color="#73E8FF"/>
+  <stop offset=".65" stop-color="#6675FF"/>
+  <stop offset="1" stop-color="#A943FF"/>
+ </linearGradient>
+</defs>
+
+<rect
+x="7" y="14"
+width="50"
+height="37"
+rx="7"
+fill="url(#vi1)"
+stroke="#F7FFFF"
+stroke-width="1.5"/>
+
+<path
+d="m27 22 20 10-20 10V22Z"
+fill="#07142C"/>
+
+<path
+d="M13 10h8v8h-8zM25 10h8v8h-8zM37 10h8v8h-8zM49 10h4v8h-4z"
+fill="#B8F7FF"
+opacity=".9"/>
+
+<path
+d="M13 51h8v4h-8zM25 51h8v4h-8zM37 51h8v4h-8zM49 51h4v4h-4z"
+fill="#805CFF"
+opacity=".9"/>
+</svg>
+`,
+
+SEO: `
+<svg viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="se1" x1="8" y1="7" x2="55" y2="58">
+  <stop stop-color="#FFFFFF"/>
+  <stop offset=".35" stop-color="#54E8FF"/>
+  <stop offset=".7" stop-color="#5D83FF"/>
+  <stop offset="1" stop-color="#A947FF"/>
+ </linearGradient>
+</defs>
+
+<circle
+cx="29"
+cy="29"
+r="17"
+fill="url(#se1)"
+stroke="#EFFFFF"
+stroke-width="1.5"/>
+
+<circle
+cx="29"
+cy="29"
+r="10"
+fill="#07162F"/>
+
+<path
+d="m41 41 13 13"
+stroke="#61E7FF"
+stroke-width="8"
+stroke-linecap="round"/>
+
+<circle
+cx="24"
+cy="23"
+r="3"
+fill="#FFFFFF"/>
+
+<path
+d="M19 33c4-4 9-4 14 0"
+stroke="#7EEAFF"
+stroke-width="2"
+stroke-linecap="round"/>
+</svg>
+`,
+
+Marketing: `
+<svg viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="ma1" x1="8" y1="8" x2="56" y2="57">
+  <stop stop-color="#FFFFFF"/>
+  <stop offset=".35" stop-color="#74E9FF"/>
+  <stop offset=".7" stop-color="#885CFF"/>
+  <stop offset="1" stop-color="#D448FF"/>
+ </linearGradient>
+</defs>
+
+<path
+d="M12 26h15l24-12v36L27 38H12V26Z"
+fill="url(#ma1)"
+stroke="#F6FFFF"
+stroke-width="1.4"/>
+
+<path
+d="M27 38 31 53h-8l-5-15"
+fill="#597BFF"/>
+
+<path
+d="M54 22c4 3 4 17 0 20"
+stroke="#69E7FF"
+stroke-width="3"
+stroke-linecap="round"/>
+
+<path
+d="M58 16c7 7 7 25 0 32"
+stroke="#A45CFF"
+stroke-width="2.5"
+stroke-linecap="round"
+opacity=".9"/>
+</svg>
+`,
+
+Research: `
+<svg viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="re1" x1="9" y1="8" x2="56" y2="58">
+  <stop stop-color="#FFFFFF"/>
+  <stop offset=".35" stop-color="#64E9FF"/>
+  <stop offset=".7" stop-color="#5B7DFF"/>
+  <stop offset="1" stop-color="#B44CFF"/>
+ </linearGradient>
+</defs>
+
+<path
+d="m35 13 8 5-12 20-8-5 12-20Z"
+fill="url(#re1)"
+stroke="#F4FFFF"
+stroke-width="1.3"/>
+
+<path
+d="m23 33 9 5-7 12-9-5 7-12Z"
+fill="#5679FF"/>
+
+<path
+d="M19 48 12 55"
+stroke="#75E8FF"
+stroke-width="6"
+stroke-linecap="round"/>
+
+<path
+d="M37 17 45 8"
+stroke="#D8F9FF"
+stroke-width="3"
+stroke-linecap="round"/>
+
+<circle
+cx="48"
+cy="45"
+r="9"
+fill="url(#re1)"
+opacity=".9"/>
+
+<circle
+cx="48"
+cy="45"
+r="4"
+fill="#07152F"/>
+</svg>
+`,
+
+Business: `
+<svg viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="bu1" x1="7" y1="8" x2="56" y2="57">
+  <stop stop-color="#FFFFFF"/>
+  <stop offset=".3" stop-color="#6FE9FF"/>
+  <stop offset=".68" stop-color="#687AFF"/>
+  <stop offset="1" stop-color="#B74CFF"/>
+ </linearGradient>
+</defs>
+
+<rect
+x="8" y="18"
+width="48"
+height="36"
+rx="7"
+fill="url(#bu1)"
+stroke="#F8FFFF"
+stroke-width="1.5"/>
+
+<path
+d="M23 18v-5h18v5"
+stroke="#C8F8FF"
+stroke-width="5"
+stroke-linecap="round"/>
+
+<path
+d="M8 31h48"
+stroke="#07162E"
+stroke-width="4"
+opacity=".65"/>
+
+<rect
+x="27"
+y="28"
+width="10"
+height="7"
+rx="2"
+fill="#DFFFFF"/>
+
+<path
+d="M17 43h30"
+stroke="#B5F5FF"
+stroke-width="3"
+stroke-linecap="round"
+opacity=".8"/>
+</svg>
+`,
+
+Productivity: `
+<svg viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="pr1" x1="8" y1="9" x2="56" y2="58">
+  <stop stop-color="#FFFFFF"/>
+  <stop offset=".3" stop-color="#68E9FF"/>
+  <stop offset=".65" stop-color="#6A6FFF"/>
+  <stop offset="1" stop-color="#D448FF"/>
+ </linearGradient>
+</defs>
+
+<path
+d="M31 6 58 32 31 58 36 39 8 33 36 25 31 6Z"
+fill="url(#pr1)"
+stroke="#F8FFFF"
+stroke-width="1.4"/>
+
+<path
+d="m37 20 8 7"
+stroke="#FFFFFF"
+stroke-width="3"
+stroke-linecap="round"
+opacity=".8"/>
+
+<circle
+cx="49"
+cy="14"
+r="4"
+fill="#67E7FF"/>
+
+<circle
+cx="55"
+cy="21"
+r="2.5"
+fill="#A85CFF"/>
+</svg>
+`
+
+};
+
+
+/* =====================================================
+   WORKFLOWS
+   20 workflows — V1.1 data preserved
+===================================================== */
 
 const WORKFLOWS = [
 
@@ -963,7 +1853,6 @@ id:"professional-email",
 title:"Write a Professional Email",
 category:"Writing",
 level:"Beginner",
-icon:"✉️",
 description:"Create a clear, professional email from a simple objective.",
 goal:"Turn a short objective and key information into a polished professional email.",
 inputs:["Email objective","Recipient","Key information","Preferred tone"],
@@ -985,7 +1874,6 @@ id:"blog-article",
 title:"Create a Blog Article",
 category:"Writing",
 level:"Beginner",
-icon:"📝",
 description:"Turn a topic or idea into a structured and readable blog article.",
 goal:"Create useful long-form content with a logical structure and engaging writing.",
 inputs:["Topic","Audience","Article objective","Desired length"],
@@ -1000,7 +1888,7 @@ steps:[
 "Proofread and prepare for publication."
 ],
 tools:"AI Writing + Research tools",
-prompt:"Write a useful blog article about [TOPIC] for [AUDIENCE]. Create a strong introduction, logical sections, practical examples and a clear conclusion. Keep the writing natural and informative.",
+prompt:"Write a useful blog article about [TOPIC] for [AUDIENCE]. Create a strong introduction, logical sections, practical examples and a clear conclusion.",
 result:"A structured blog article ready for editing and publication."
 },
 
@@ -1009,7 +1897,6 @@ id:"rewrite-improve",
 title:"Rewrite and Improve Text",
 category:"Writing",
 level:"Beginner",
-icon:"✨",
 description:"Improve existing text without changing its original meaning.",
 goal:"Make existing content clearer, more professional and easier to read.",
 inputs:["Original text","Target audience","Desired tone"],
@@ -1031,7 +1918,6 @@ id:"ai-image",
 title:"Create an AI Image",
 category:"Image",
 level:"Beginner",
-icon:"🎨",
 description:"Turn an idea into a precise image-generation prompt and visual concept.",
 goal:"Create a strong visual concept suitable for websites, social media or marketing.",
 inputs:["Subject","Visual style","Aspect ratio","Target platform"],
@@ -1044,7 +1930,7 @@ steps:[
 "Select and refine the strongest result."
 ],
 tools:"AI Image tools",
-prompt:"Create a professional image-generation prompt for [SUBJECT]. Style: [STYLE]. Composition: [COMPOSITION]. Lighting: [LIGHTING]. Aspect ratio: [RATIO]. The result should be visually striking and suitable for [PLATFORM].",
+prompt:"Create a professional image-generation prompt for [SUBJECT]. Style: [STYLE]. Composition: [COMPOSITION]. Lighting: [LIGHTING]. Aspect ratio: [RATIO].",
 result:"A production-ready visual concept and optimized generation prompt."
 },
 
@@ -1053,7 +1939,6 @@ id:"product-image",
 title:"Create a Product Image",
 category:"Image",
 level:"Intermediate",
-icon:"📦",
 description:"Create professional product visuals for e-commerce, advertising or social media.",
 goal:"Transform a product description into a polished commercial visual concept.",
 inputs:["Product","Brand style","Background","Target platform"],
@@ -1067,7 +1952,7 @@ steps:[
 "Review branding and product accuracy."
 ],
 tools:"AI Image + Marketing tools",
-prompt:"Create a premium commercial product image for [PRODUCT]. Brand style: [STYLE]. Background: [BACKGROUND]. Use professional lighting, realistic materials and a clean composition suitable for [PLATFORM].",
+prompt:"Create a premium commercial product image for [PRODUCT]. Brand style: [STYLE]. Background: [BACKGROUND].",
 result:"A professional product visual concept ready for marketing use."
 },
 
@@ -1076,7 +1961,6 @@ id:"social-visual",
 title:"Create a Social Media Visual",
 category:"Image",
 level:"Beginner",
-icon:"📱",
 description:"Create an attractive visual adapted to a specific social platform.",
 goal:"Produce a visually consistent social media image that supports a content message.",
 inputs:["Post topic","Platform","Brand style","Message"],
@@ -1090,7 +1974,7 @@ steps:[
 "Check readability and brand consistency."
 ],
 tools:"AI Image + Social Media tools",
-prompt:"Create a high-impact social media visual for [PLATFORM] about [TOPIC]. Brand style: [STYLE]. The image should communicate [MESSAGE] clearly and look professional and modern.",
+prompt:"Create a high-impact social media visual for [PLATFORM] about [TOPIC]. Brand style: [STYLE].",
 result:"A platform-ready social media visual."
 },
 
@@ -1099,7 +1983,6 @@ id:"youtube-video",
 title:"Create a YouTube Video",
 category:"Video",
 level:"Intermediate",
-icon:"🎬",
 description:"Build a complete YouTube production workflow from idea to final video.",
 goal:"Produce a structured video with a strong hook, script and visual plan.",
 inputs:["Video topic","Target audience","Video duration","Channel objective"],
@@ -1115,7 +1998,7 @@ steps:[
 "Review and publish."
 ],
 tools:"AI Writing + AI Video + Image + SEO tools",
-prompt:"Create a YouTube video workflow for [TOPIC] targeting [AUDIENCE]. Start with a strong hook, then create the script, scene plan, visual recommendations and final call to action.",
+prompt:"Create a YouTube video workflow for [TOPIC] targeting [AUDIENCE]. Start with a strong hook, then create the script, scene plan and final call to action.",
 result:"A complete YouTube production plan from concept to publication."
 },
 
@@ -1124,7 +2007,6 @@ id:"youtube-shorts",
 title:"Create a YouTube Short",
 category:"Video",
 level:"Beginner",
-icon:"📱",
 description:"Turn one idea into a short-form vertical video designed for fast consumption.",
 goal:"Create a concise and engaging short video with a strong opening.",
 inputs:["Topic","Target audience","Key message","Desired duration"],
@@ -1139,7 +2021,7 @@ steps:[
 "Prepare the title and description."
 ],
 tools:"AI Writing + AI Video + Image tools",
-prompt:"Create a short-form video script about [TOPIC]. The first sentence must immediately capture attention. Keep the structure fast, clear and useful for [AUDIENCE].",
+prompt:"Create a short-form video script about [TOPIC]. The first sentence must immediately capture attention.",
 result:"A concise short-form video package ready for publishing."
 },
 
@@ -1148,7 +2030,6 @@ id:"marketing-video",
 title:"Create an AI Marketing Video",
 category:"Video",
 level:"Advanced",
-icon:"📺",
 description:"Build a marketing video from a product, service or campaign objective.",
 goal:"Create a persuasive video that communicates value and encourages action.",
 inputs:["Product or service","Audience","Offer","Call to action"],
@@ -1164,7 +2045,7 @@ steps:[
 "Review the final message."
 ],
 tools:"AI Video + Writing + Image + Marketing tools",
-prompt:"Create a marketing video for [PRODUCT] targeting [AUDIENCE]. Highlight the main problem, present the value proposition and finish with a clear call to action: [CTA].",
+prompt:"Create a marketing video for [PRODUCT] targeting [AUDIENCE]. Highlight the main problem, present the value proposition and finish with [CTA].",
 result:"A structured marketing video ready for campaign use."
 },
 
@@ -1173,7 +2054,6 @@ id:"seo-article",
 title:"Create an SEO Article",
 category:"SEO",
 level:"Intermediate",
-icon:"🔎",
 description:"Build a search-focused article from a topic and target keyword.",
 goal:"Create a structured SEO article designed around search intent and useful content.",
 inputs:["Main topic","Target keyword","Target audience","Desired article length"],
@@ -1188,7 +2068,7 @@ steps:[
 "Prepare the article for publication."
 ],
 tools:"SEO + Writing + Research tools",
-prompt:"Create an SEO-focused article about [TOPIC] targeting [KEYWORD]. Identify the likely search intent, create a useful H2/H3 structure and write naturally for [AUDIENCE]. Avoid keyword stuffing.",
+prompt:"Create an SEO-focused article about [TOPIC] targeting [KEYWORD]. Identify search intent and create a useful H2/H3 structure.",
 result:"A structured search-focused article ready for review and publication."
 },
 
@@ -1197,7 +2077,6 @@ id:"keyword-research",
 title:"Run AI Keyword Research",
 category:"SEO",
 level:"Intermediate",
-icon:"🔑",
 description:"Generate and organize keyword opportunities around a topic or business.",
 goal:"Build a practical keyword universe that can guide future content creation.",
 inputs:["Website topic","Target market","Audience","Main product or service"],
@@ -1208,10 +2087,10 @@ steps:[
 "Separate informational and commercial opportunities.",
 "Identify long-tail opportunities.",
 "Prioritize keywords by strategic relevance.",
-"Create content opportunities from the results."
+"Create content opportunities."
 ],
 tools:"SEO + Research tools",
-prompt:"Create a keyword research framework for [TOPIC] targeting [MARKET]. Group keywords by search intent and identify informational, commercial and long-tail opportunities. Prioritize the most strategically useful topics.",
+prompt:"Create a keyword research framework for [TOPIC] targeting [MARKET]. Group keywords by search intent.",
 result:"An organized keyword opportunity map for future SEO work."
 },
 
@@ -1220,7 +2099,6 @@ id:"seo-optimization",
 title:"Optimize Existing Content for SEO",
 category:"SEO",
 level:"Advanced",
-icon:"📈",
 description:"Improve an existing page using search intent, structure and content quality principles.",
 goal:"Identify practical SEO improvements without rewriting useful content unnecessarily.",
 inputs:["Existing article","Target keyword","Search intent","Target audience"],
@@ -1235,8 +2113,8 @@ steps:[
 "Create an optimization checklist."
 ],
 tools:"SEO + Writing tools",
-prompt:"Analyze this article for SEO improvement around [KEYWORD]. Identify search intent, content gaps, structural problems and practical improvements while preserving useful original information.",
-result:"A prioritized SEO optimization plan for an existing page."
+prompt:"Analyze this article for SEO improvement around [KEYWORD]. Identify search intent, content gaps and structural improvements.",
+result:"A prioritized SEO optimization plan."
 },
 
 {
@@ -1244,7 +2122,6 @@ id:"marketing-campaign",
 title:"Launch an AI Marketing Campaign",
 category:"Marketing",
 level:"Intermediate",
-icon:"📣",
 description:"Create a coordinated marketing campaign using AI for content and messaging.",
 goal:"Build a consistent multi-channel campaign around one offer or objective.",
 inputs:["Product or service","Target audience","Campaign objective","Main offer"],
@@ -1259,7 +2136,7 @@ steps:[
 "Define measurable campaign KPIs."
 ],
 tools:"AI Marketing + Writing + Image tools",
-prompt:"Build a marketing campaign for [PRODUCT] targeting [AUDIENCE]. Objective: [OBJECTIVE]. Create the core message, value proposition, social content, email content, visual concepts and KPIs.",
+prompt:"Build a marketing campaign for [PRODUCT] targeting [AUDIENCE]. Objective: [OBJECTIVE]. Create the core message and channel content.",
 result:"A complete multi-channel campaign framework."
 },
 
@@ -1268,22 +2145,21 @@ id:"social-campaign",
 title:"Build a Social Media Campaign",
 category:"Marketing",
 level:"Intermediate",
-icon:"📲",
 description:"Create a coordinated social campaign around a product, service or message.",
 goal:"Develop consistent content across multiple social media publications.",
 inputs:["Campaign topic","Audience","Platform","Campaign duration"],
 steps:[
 "Define the campaign objective.",
-"Choose the target platforms.",
+"Choose target platforms.",
 "Create the main campaign message.",
 "Generate content pillars.",
 "Create post ideas.",
 "Create visual concepts.",
 "Build the publication calendar.",
-"Define engagement and performance metrics."
+"Define performance metrics."
 ],
 tools:"AI Marketing + Social Media + Image tools",
-prompt:"Create a [DURATION]-day social media campaign about [TOPIC] for [AUDIENCE]. Define content pillars, post ideas, visual concepts, calls to action and measurable KPIs.",
+prompt:"Create a [DURATION]-day social media campaign about [TOPIC] for [AUDIENCE].",
 result:"A structured social media campaign calendar."
 },
 
@@ -1292,7 +2168,6 @@ id:"email-campaign",
 title:"Create an AI Email Campaign",
 category:"Marketing",
 level:"Advanced",
-icon:"📧",
 description:"Build a structured email campaign around an offer or marketing objective.",
 goal:"Create a consistent sequence that informs, engages and guides recipients toward an action.",
 inputs:["Audience","Offer","Campaign objective","Number of emails"],
@@ -1307,7 +2182,7 @@ steps:[
 "Define campaign metrics."
 ],
 tools:"AI Marketing + Writing + Productivity tools",
-prompt:"Create a [NUMBER]-email campaign for [AUDIENCE] promoting [OFFER]. Define the purpose of each email, subject line, main message, call to action and recommended timing.",
+prompt:"Create a [NUMBER]-email campaign for [AUDIENCE] promoting [OFFER].",
 result:"A structured email campaign ready for implementation."
 },
 
@@ -1316,7 +2191,6 @@ id:"research-report",
 title:"Build an AI Research Report",
 category:"Research",
 level:"Advanced",
-icon:"📚",
 description:"Transform a research question into a structured evidence-based report.",
 goal:"Organize information into a clear research workflow with source verification.",
 inputs:["Research question","Scope","Target audience","Required depth"],
@@ -1325,13 +2199,13 @@ steps:[
 "Break it into research subtopics.",
 "Collect reliable sources.",
 "Organize and compare findings.",
-"Identify contradictions and information gaps.",
+"Identify contradictions and gaps.",
 "Build the report structure.",
-"Write the report with source attribution.",
-"Perform a final verification pass."
+"Write with source attribution.",
+"Perform final verification."
 ],
 tools:"AI Research + Writing tools",
-prompt:"Create a research framework for [QUESTION]. Break it into key subtopics, identify the evidence required and distinguish facts from assumptions. Do not invent sources or unsupported facts.",
+prompt:"Create a research framework for [QUESTION]. Break it into key subtopics and distinguish facts from assumptions.",
 result:"A structured research report framework designed for verification."
 },
 
@@ -1340,21 +2214,20 @@ id:"competitor-analysis",
 title:"Run an AI Competitor Analysis",
 category:"Research",
 level:"Advanced",
-icon:"🕵️",
 description:"Compare competitors and convert research into actionable business insights.",
 goal:"Understand competitor positioning, strengths, weaknesses and opportunities.",
 inputs:["Market","Competitor list","Research criteria","Business objective"],
 steps:[
 "Define the competitive research objective.",
-"Collect comparable competitor information.",
-"Organize findings using consistent criteria.",
-"Compare products, positioning and messaging.",
+"Collect comparable information.",
+"Organize findings consistently.",
+"Compare products and positioning.",
 "Identify strengths and weaknesses.",
 "Identify market gaps.",
-"Develop strategic recommendations."
+"Develop recommendations."
 ],
 tools:"AI Research + Marketing + Writing tools",
-prompt:"Create a competitor analysis framework for [MARKET]. Compare [COMPETITORS] across positioning, audience, offer, strengths, weaknesses, messaging and opportunities. Separate observed information from assumptions.",
+prompt:"Create a competitor analysis framework for [MARKET]. Compare [COMPETITORS] across positioning, audience, offer, strengths and weaknesses.",
 result:"A structured competitor comparison with actionable insights."
 },
 
@@ -1363,23 +2236,22 @@ id:"market-research",
 title:"Conduct AI Market Research",
 category:"Research",
 level:"Expert",
-icon:"🌍",
 description:"Structure a market research project around customers, competitors and opportunities.",
 goal:"Develop a comprehensive framework for understanding a target market.",
 inputs:["Market","Target geography","Audience","Research objective"],
 steps:[
 "Define the research scope.",
 "Identify market segments.",
-"Research customer needs and pain points.",
+"Research customer needs.",
 "Analyze competitors.",
 "Identify trends and opportunities.",
 "Identify risks and barriers.",
 "Organize findings.",
-"Create strategic recommendations."
+"Create recommendations."
 ],
 tools:"AI Research + Business + Marketing tools",
-prompt:"Design a market research framework for [MARKET] in [GEOGRAPHY]. Analyze customer segments, needs, competitors, trends, opportunities, barriers and risks. Clearly distinguish verified information from assumptions.",
-result:"A comprehensive market research framework requiring source verification."
+prompt:"Design a market research framework for [MARKET] in [GEOGRAPHY]. Analyze customer segments, needs, competitors, trends and opportunities.",
+result:"A comprehensive market research framework requiring verification."
 },
 
 {
@@ -1387,7 +2259,6 @@ id:"business-plan",
 title:"Build an AI-Assisted Business Plan",
 category:"Business",
 level:"Advanced",
-icon:"💼",
 description:"Use AI to structure a business idea into a practical planning framework.",
 goal:"Turn a business concept into a structured plan covering market, offer and operations.",
 inputs:["Business idea","Target market","Customer problem","Revenue model"],
@@ -1400,10 +2271,10 @@ steps:[
 "Define acquisition channels.",
 "Create an operating model.",
 "Develop financial assumptions.",
-"Identify major risks."
+"Identify risks."
 ],
 tools:"AI Research + Writing + Productivity tools",
-prompt:"Build a structured business plan for [BUSINESS IDEA] targeting [MARKET]. Cover customer problem, market, competition, value proposition, offer, acquisition, operations, revenue model, costs, assumptions and risks.",
+prompt:"Build a structured business plan for [BUSINESS IDEA] targeting [MARKET]. Cover problem, market, competition, value proposition, offer, acquisition, operations and revenue model.",
 result:"A structured business-plan foundation requiring human validation."
 },
 
@@ -1412,7 +2283,6 @@ id:"lead-generation",
 title:"Build an AI Lead Generation Workflow",
 category:"Business",
 level:"Advanced",
-icon:"🎯",
 description:"Create a structured process for identifying, qualifying and following up with potential leads.",
 goal:"Build a repeatable lead-generation framework without relying on a single provider.",
 inputs:["Target customer","Market","Offer","Qualification criteria"],
@@ -1421,14 +2291,14 @@ steps:[
 "Define qualification criteria.",
 "Identify relevant lead sources.",
 "Create a qualification framework.",
-"Develop personalized outreach templates.",
+"Develop outreach templates.",
 "Create a follow-up sequence.",
 "Define CRM fields.",
 "Measure conversion performance."
 ],
 tools:"AI Research + Marketing + Writing + CRM tools",
-prompt:"Create a lead-generation workflow for [OFFER] targeting [CUSTOMER]. Define the ideal customer profile, qualification criteria, outreach messaging, follow-up sequence and performance metrics.",
-result:"A structured lead-generation and qualification process."
+prompt:"Create a lead-generation workflow for [OFFER] targeting [CUSTOMER]. Define the ideal customer profile, qualification criteria, outreach and follow-up.",
+result:"A structured lead-generation process."
 },
 
 {
@@ -1436,21 +2306,20 @@ id:"productivity-system",
 title:"Build a Personal AI Productivity System",
 category:"Productivity",
 level:"Intermediate",
-icon:"⚡",
 description:"Organize tasks, projects, notes and recurring work into one AI-assisted system.",
 goal:"Reduce repetitive work and create a clearer daily execution system.",
 inputs:["Current tasks","Projects","Deadlines","Recurring activities"],
 steps:[
 "Collect all current tasks.",
 "Separate projects from individual actions.",
-"Prioritize tasks by impact and urgency.",
+"Prioritize tasks.",
 "Identify repetitive activities.",
-"Create reusable AI prompts and templates.",
-"Define a daily review process.",
-"Define a weekly planning process."
+"Create reusable AI prompts.",
+"Define daily review.",
+"Define weekly planning."
 ],
 tools:"AI Productivity + Writing tools",
-prompt:"Organize the following tasks into projects, priorities, deadlines and next actions. Identify repetitive activities that could be improved with AI. Then create a simple daily and weekly review system.",
+prompt:"Organize these tasks into projects, priorities, deadlines and next actions. Identify repetitive activities that could be improved with AI.",
 result:"A practical AI-assisted productivity framework."
 },
 
@@ -1459,21 +2328,20 @@ id:"meeting-summary",
 title:"Turn a Meeting into Action Items",
 category:"Productivity",
 level:"Beginner",
-icon:"🗓️",
 description:"Transform meeting notes or a transcript into a concise summary and action plan.",
 goal:"Convert unstructured meeting information into clear decisions and next actions.",
 inputs:["Meeting transcript or notes","Participants","Meeting objective"],
 steps:[
-"Provide the meeting notes or transcript.",
-"Identify the main discussion points.",
+"Provide meeting notes or transcript.",
+"Identify discussion points.",
 "Extract decisions.",
 "Identify action items.",
 "Assign responsible people when known.",
 "Identify deadlines when available.",
-"Create a concise follow-up summary."
+"Create a concise summary."
 ],
 tools:"AI Productivity + Writing tools",
-prompt:"Summarize this meeting. Separate key points, decisions, open questions and action items. Include responsible people and deadlines only when they are explicitly available in the source.",
+prompt:"Summarize this meeting. Separate key points, decisions, open questions and action items.",
 result:"A concise meeting summary with actionable next steps."
 },
 
@@ -1482,22 +2350,21 @@ id:"daily-planning",
 title:"Create an AI Daily Plan",
 category:"Productivity",
 level:"Beginner",
-icon:"📅",
 description:"Turn a list of tasks and constraints into a realistic daily plan.",
 goal:"Prioritize important work while keeping the plan practical and achievable.",
 inputs:["Tasks","Deadlines","Available hours","Fixed commitments"],
 steps:[
 "List all tasks.",
 "Identify deadlines and priorities.",
-"Separate urgent from important work.",
+"Separate urgent from important.",
 "Account for fixed commitments.",
-"Estimate realistic work blocks.",
+"Estimate work blocks.",
 "Create the daily schedule.",
-"Leave buffer time for unexpected tasks.",
-"Review the plan at the end of the day."
+"Leave buffer time.",
+"Review the plan."
 ],
 tools:"AI Productivity tools",
-prompt:"Create a realistic daily plan from these tasks: [TASKS]. Available time: [HOURS]. Fixed commitments: [COMMITMENTS]. Prioritize important work, avoid overloading the schedule and include reasonable buffer time.",
+prompt:"Create a realistic daily plan from these tasks: [TASKS]. Available time: [HOURS]. Fixed commitments: [COMMITMENTS].",
 result:"A realistic daily execution plan."
 },
 
@@ -1506,93 +2373,118 @@ id:"expert-content-machine",
 title:"Build an Expert Content Machine",
 category:"Writing",
 level:"Expert",
-icon:"🧠",
 description:"Create a scalable content system connecting research, writing, SEO and distribution.",
-goal:"Build a repeatable content production system rather than creating isolated articles.",
+goal:"Build a repeatable content production system rather than isolated articles.",
 inputs:["Expertise area","Target audience","Content goals","Publishing channels"],
 steps:[
 "Define the authority topic and audience.",
-"Create a topic and keyword universe.",
+"Create topic and keyword universe.",
 "Group topics into content clusters.",
 "Build reusable research templates.",
-"Create long-form pillar content.",
-"Repurpose each pillar into multiple formats.",
-"Optimize content for search visibility.",
-"Create a distribution workflow.",
+"Create pillar content.",
+"Repurpose each pillar.",
+"Optimize for search.",
+"Create distribution workflow.",
 "Measure performance.",
-"Improve the system using real results."
+"Improve using real results."
 ],
 tools:"AI Agents + SEO + Writing + Marketing + Productivity tools",
-prompt:"Design an expert-level content production system for [EXPERTISE]. Target audience: [AUDIENCE]. Goals: [GOALS]. Build the workflow from research to production, SEO optimization, repurposing, distribution, measurement and continuous improvement.",
-result:"A scalable content operating system connecting multiple AI capabilities."
+prompt:"Design an expert-level content production system for [EXPERTISE]. Target audience: [AUDIENCE]. Goals: [GOALS]. Build the workflow from research to production, SEO, repurposing, distribution and measurement.",
+result:"A scalable content operating system."
 }
 
 ];
 
 
-/* ========================================================
-   DOM
-======================================================== */
-
-const grid=document.getElementById("grid");
-const search=document.getElementById("search");
-const level=document.getElementById("level");
-const category=document.getElementById("category");
-const resultCount=document.getElementById("resultCount");
-
-const modal=document.getElementById("modal");
-const closeModal=document.getElementById("closeModal");
-const closeModalBottom=document.getElementById("closeModalBottom");
-
-const modalTitle=document.getElementById("modalTitle");
-const modalSub=document.getElementById("modalSub");
-const modalGoal=document.getElementById("modalGoal");
-const modalInputs=document.getElementById("modalInputs");
-const modalSteps=document.getElementById("modalSteps");
-const modalTools=document.getElementById("modalTools");
-const modalPrompt=document.getElementById("modalPrompt");
-const modalResult=document.getElementById("modalResult");
-const modalLogoInner=document.getElementById("modalLogoInner");
-
-
-/* ========================================================
-   ESCAPE
-======================================================== */
+/* =====================================================
+   HELPERS
+===================================================== */
 
 function esc(value){
 
   return String(value ?? "").replace(
     /[&<>"']/g,
-    function(char){
-
-      return {
-        "&":"&amp;",
-        "<":"&lt;",
-        ">":"&gt;",
-        '"':"&quot;",
-        "'":"&#39;"
-
-      }[char];
-
-    }
+    char => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    })[char]
   );
 
 }
 
 
-/* ========================================================
+function categoryClass(category){
+
+  return category
+    .toLowerCase()
+    .replace(/\s+/g,"-");
+
+}
+
+
+function levelClass(level){
+
+  return "level-" +
+    level.toLowerCase();
+
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+function iconFor(category){
+
+  return ICONS[category] || ICONS.Writing;
+
+}
+
+
+function iconContainer(category,extra=""){
+
+  return `
+    <div class="icon-3d icon-${categoryClass(category)} ${extra}">
+      ${iconFor(category)}
+    </div>
+  `;
+
+}
+
+
+/* =====================================================
    FILTER
-======================================================== */
+===================================================== */
 
-function getFilteredWorkflows(){
+const grid =
+  document.getElementById("workflowGrid");
 
-  const query=search.value.toLowerCase().trim();
-  const selectedLevel=level.value;
-  const selectedCategory=category.value;
+const search =
+  document.getElementById("search");
 
-  return WORKFLOWS.filter(function(workflow){
+const level =
+  document.getElementById("level");
 
-    const searchableText=[
+const category =
+  document.getElementById("category");
+
+const resultCount =
+  document.getElementById("resultCount");
+
+
+function filteredWorkflows(){
+
+  const query =
+    search.value
+      .trim()
+      .toLowerCase();
+
+  return WORKFLOWS.filter(workflow => {
+
+    const text = [
 
       workflow.title,
       workflow.category,
@@ -1601,25 +2493,30 @@ function getFilteredWorkflows(){
       workflow.goal,
       workflow.tools,
       workflow.prompt,
+
       ...(workflow.inputs || []),
       ...(workflow.steps || [])
 
-    ].join(" ").toLowerCase();
+    ]
+    .join(" ")
+    .toLowerCase();
+
+    const matchesSearch =
+      !query ||
+      text.includes(query);
+
+    const matchesLevel =
+      level.value === "all" ||
+      workflow.level === level.value;
+
+    const matchesCategory =
+      category.value === "all" ||
+      workflow.category === category.value;
 
     return (
-
-      (!query || searchableText.includes(query)) &&
-
-      (
-        selectedLevel==="all" ||
-        workflow.level===selectedLevel
-      ) &&
-
-      (
-        selectedCategory==="all" ||
-        workflow.category===selectedCategory
-      )
-
+      matchesSearch &&
+      matchesLevel &&
+      matchesCategory
     );
 
   });
@@ -1627,21 +2524,21 @@ function getFilteredWorkflows(){
 }
 
 
-/* ========================================================
-   RENDER
-======================================================== */
+/* =====================================================
+   CARD
+===================================================== */
 
 function render(){
 
-  const list=getFilteredWorkflows();
+  const list =
+    filteredWorkflows();
 
-  resultCount.textContent=
-    list.length +
-    (list.length===1 ? " workflow" : " workflows");
+  resultCount.textContent =
+    list.length;
 
   if(!list.length){
 
-    grid.innerHTML=`
+    grid.innerHTML = `
       <div class="empty">
         <strong>No matching workflow found.</strong>
         <br><br>
@@ -1652,171 +2549,231 @@ function render(){
     return;
   }
 
-  grid.innerHTML=list.map(function(workflow){
+  grid.innerHTML =
+    list.map(workflow => {
 
-    return `
+      return `
 
-      <article class="workflow">
+        <article class="workflow-card">
 
-        <div class="card-top">
+          <div class="card-header">
 
-          <div class="card-title">
+            <div class="card-identity">
 
-            <div
-              class="workflow-logo"
-              data-category="${esc(workflow.category)}"
-              aria-hidden="true"
-            >
+              ${iconContainer(workflow.category)}
 
-              <div class="workflow-logo-inner">
-                ${esc(workflow.icon)}
+              <div class="title-wrap">
+
+                <h2 class="workflow-title">
+                  ${esc(workflow.title)}
+                </h2>
+
+                <div class="
+                  workflow-category
+                  category-${categoryClass(workflow.category)}
+                ">
+                  ${esc(workflow.category)}
+                </div>
+
               </div>
 
             </div>
 
-            <div>
+            <span class="
+              level
+              ${levelClass(workflow.level)}
+            ">
+              ${esc(workflow.level)}
+            </span>
 
-              <h2>
-                ${esc(workflow.title)}
-              </h2>
+          </div>
 
-              <div class="category">
-                ${esc(workflow.category)}
+
+          <p class="description">
+            ${esc(workflow.description)}
+          </p>
+
+
+          <div class="chips">
+
+            <span class="chip">
+              ${esc(workflow.category)}
+            </span>
+
+            <span class="chip">
+              ${esc(workflow.level)}
+            </span>
+
+            <span class="chip">
+              Step-by-step
+            </span>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <div class="info-box">
+
+              <div class="info-label">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#16d9ff"
+                  stroke-width="2">
+                  <circle cx="12" cy="12" r="8"/>
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 4V2"/>
+                  <path d="M20 12h2"/>
+                </svg>
+
+                Goal
+
+              </div>
+
+              <div class="info-value">
+                ${esc(workflow.goal)}
+              </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+              <div class="info-label">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#16d9ff"
+                  stroke-width="2">
+                  <path d="M7 7h10v4H7z"/>
+                  <path d="M4 13h16v5H4z"/>
+                  <path d="M9 18v3"/>
+                  <path d="M15 18v3"/>
+                </svg>
+
+                Tools
+
+              </div>
+
+              <div class="info-value">
+                ${esc(workflow.tools)}
               </div>
 
             </div>
 
           </div>
 
-          <span class="level">
-            ${esc(workflow.level)}
-          </span>
 
-        </div>
+          <div class="actions">
 
+            <button
+              class="btn btn-primary"
+              data-workflow="${esc(workflow.id)}"
+              type="button">
+              View Workflow →
+            </button>
 
-        <p class="description">
-          ${esc(workflow.description)}
-        </p>
-
-
-        <div class="chips">
-
-          <span class="chip">
-            ${esc(workflow.category)}
-          </span>
-
-          <span class="chip">
-            ${esc(workflow.level)}
-          </span>
-
-          <span class="chip">
-            Step-by-step
-          </span>
-
-        </div>
-
-
-        <div class="quick">
-
-          <div class="quick-box">
-
-            <strong>Goal</strong>
-
-            <span>
-              ${esc(workflow.goal)}
-            </span>
+            <a
+              class="btn btn-secondary"
+              href="/tools/">
+              AI Tools ↗
+            </a>
 
           </div>
 
-          <div class="quick-box">
+        </article>
 
-            <strong>Tools</strong>
+      `;
 
-            <span>
-              ${esc(workflow.tools)}
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="actions">
-
-          <button
-            class="btn"
-            type="button"
-            data-workflow="${esc(workflow.id)}"
-          >
-            View Workflow →
-          </button>
-
-          <a
-            class="btn secondary"
-            href="/tools/"
-          >
-            AI Tools
-          </a>
-
-        </div>
-
-      </article>
-
-    `;
-
-  }).join("");
+    }).join("");
 
 }
 
 
-/* ========================================================
+/* =====================================================
    MODAL
-======================================================== */
+===================================================== */
+
+const modal =
+  document.getElementById("modal");
+
+const modalIcon =
+  document.getElementById("modalIcon");
+
+const modalTitle =
+  document.getElementById("modalTitle");
+
+const modalSubtitle =
+  document.getElementById("modalSubtitle");
+
+const modalGoal =
+  document.getElementById("modalGoal");
+
+const modalInputs =
+  document.getElementById("modalInputs");
+
+const modalSteps =
+  document.getElementById("modalSteps");
+
+const modalTools =
+  document.getElementById("modalTools");
+
+const modalPrompt =
+  document.getElementById("modalPrompt");
+
+const modalResult =
+  document.getElementById("modalResult");
+
 
 function openWorkflow(id){
 
-  const workflow=WORKFLOWS.find(function(item){
-
-    return item.id===id;
-
-  });
+  const workflow =
+    WORKFLOWS.find(
+      item => item.id === id
+    );
 
   if(!workflow)return;
 
-  modalTitle.textContent=workflow.title;
+  modalIcon.innerHTML =
+    iconFor(workflow.category);
 
-  modalSub.textContent=
-    workflow.category +
-    " · " +
-    workflow.level;
+  modalIcon.className =
+    `icon-3d modal-icon icon-${categoryClass(workflow.category)}`;
 
-  modalGoal.textContent=workflow.goal;
+  modalTitle.textContent =
+    workflow.title;
 
-  modalInputs.innerHTML=
-    (workflow.inputs || []).map(function(item){
+  modalSubtitle.textContent =
+    `${workflow.category} · ${workflow.level}`;
 
-      return `<li>${esc(item)}</li>`;
+  modalGoal.textContent =
+    workflow.goal;
 
-    }).join("");
+  modalInputs.innerHTML =
+    workflow.inputs
+      .map(item =>
+        `<li>${esc(item)}</li>`
+      )
+      .join("");
 
-  modalSteps.innerHTML=
-    (workflow.steps || []).map(function(item){
+  modalSteps.innerHTML =
+    workflow.steps
+      .map(item =>
+        `<li>${esc(item)}</li>`
+      )
+      .join("");
 
-      return `<li>${esc(item)}</li>`;
+  modalTools.textContent =
+    workflow.tools;
 
-    }).join("");
+  modalPrompt.textContent =
+    workflow.prompt;
 
-  modalTools.textContent=workflow.tools;
-
-  modalPrompt.textContent=workflow.prompt;
-
-  modalResult.textContent=workflow.result;
-
-  modalLogoInner.textContent=workflow.icon;
-
-  modalLogoInner.parentElement.dataset.category=
-    workflow.category;
+  modalResult.textContent =
+    workflow.result;
 
   modal.classList.add("open");
 
@@ -1825,7 +2782,8 @@ function openWorkflow(id){
     "false"
   );
 
-  document.body.style.overflow="hidden";
+  document.body.style.overflow =
+    "hidden";
 
 }
 
@@ -1839,49 +2797,68 @@ function closeWorkflow(){
     "true"
   );
 
-  document.body.style.overflow="";
+  document.body.style.overflow =
+    "";
 
 }
 
 
-/* ========================================================
+/* =====================================================
    EVENTS
-======================================================== */
+===================================================== */
 
-search.addEventListener("input",render);
+search.addEventListener(
+  "input",
+  render
+);
 
-level.addEventListener("change",render);
+level.addEventListener(
+  "change",
+  render
+);
 
-category.addEventListener("change",render);
+category.addEventListener(
+  "change",
+  render
+);
 
-grid.addEventListener("click",function(event){
+grid.addEventListener(
+  "click",
+  event => {
 
-  const button=
-    event.target.closest("[data-workflow]");
+    const button =
+      event.target.closest(
+        "[data-workflow]"
+      );
 
-  if(!button)return;
+    if(!button)return;
 
-  openWorkflow(
-    button.dataset.workflow
+    openWorkflow(
+      button.dataset.workflow
+    );
+
+  }
+);
+
+document
+  .getElementById("closeModal")
+  .addEventListener(
+    "click",
+    closeWorkflow
   );
 
-});
-
-closeModal.addEventListener(
-  "click",
-  closeWorkflow
-);
-
-closeModalBottom.addEventListener(
-  "click",
-  closeWorkflow
-);
+document
+  .getElementById("closeModalBottom")
+  .addEventListener(
+    "click",
+    closeWorkflow
+  );
 
 modal.addEventListener(
   "click",
-  function(event){
+  event => {
 
-    if(event.target===modal){
+    if(event.target === modal){
 
       closeWorkflow();
 
@@ -1892,9 +2869,9 @@ modal.addEventListener(
 
 document.addEventListener(
   "keydown",
-  function(event){
+  event => {
 
-    if(event.key==="Escape"){
+    if(event.key === "Escape"){
 
       closeWorkflow();
 
@@ -1904,9 +2881,9 @@ document.addEventListener(
 );
 
 
-/* ========================================================
-   INITIAL RENDER
-======================================================== */
+/* =====================================================
+   INITIALIZATION
+===================================================== */
 
 render();
 
