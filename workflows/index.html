@@ -6,29 +6,23 @@
 
 <title>AI Workflows — 2NEXTAI</title>
 
-<meta name="description"
-content="Discover practical AI workflows for writing, image creation, video, SEO, marketing, research, business and productivity at every skill level.">
-
+<meta name="description" content="Discover practical AI workflows for writing, image creation, video, SEO, marketing, research, business and productivity at every skill level.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://2nextai.com/workflows/">
 
 <style>
 :root{
   --bg:#070b14;
-  --bg2:#0b1120;
   --text:#f4f7fb;
   --muted:#9eabc0;
   --line:rgba(255,255,255,.09);
   --a:#66e3ff;
   --b:#8b7cff;
-  --card:rgba(255,255,255,.045);
 }
 
 *{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -45,12 +39,20 @@ a{
   color:inherit;
 }
 
+button,
+input,
+select{
+  font:inherit;
+}
+
 .container{
   width:min(1180px,92%);
   margin:auto;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
   position:sticky;
@@ -82,12 +84,12 @@ nav{
 
 .nav-links{
   display:flex;
-  gap:24px;
   align-items:center;
+  gap:24px;
 }
 
 .nav-links a{
-  color:#aeb9ca;
+  color:var(--muted);
   font-size:14px;
 }
 
@@ -95,10 +97,12 @@ nav{
   color:#fff;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  padding:82px 0 42px;
+  padding:78px 0 42px;
   text-align:center;
 }
 
@@ -109,9 +113,9 @@ nav{
   font-weight:900;
   letter-spacing:.12em;
   text-transform:uppercase;
-  border:1px solid rgba(102,227,255,.22);
-  border-radius:999px;
   padding:9px 14px;
+  border-radius:999px;
+  border:1px solid rgba(102,227,255,.22);
   background:rgba(102,227,255,.04);
 }
 
@@ -137,20 +141,22 @@ h1{
   line-height:1.7;
 }
 
-/* CONTROLS */
+/* =========================
+   CONTROLS
+========================= */
 
 .controls{
-  margin:36px auto 34px;
+  max-width:980px;
+  margin:36px auto 32px;
   display:flex;
   gap:12px;
   flex-wrap:wrap;
-  max-width:980px;
 }
 
 .search-wrap{
+  position:relative;
   flex:1;
   min-width:280px;
-  position:relative;
 }
 
 .search-icon{
@@ -164,13 +170,12 @@ h1{
 
 .search{
   width:100%;
-  padding:15px 18px 15px 45px;
+  padding:15px 16px 15px 45px;
   border:1px solid var(--line);
-  border-radius:15px;
-  background:rgba(255,255,255,.045);
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
   color:#fff;
-  outline:none;
-  font-size:14px;
+  outline:0;
 }
 
 .search:focus{
@@ -182,42 +187,47 @@ h1{
   min-width:180px;
   padding:15px 16px;
   border:1px solid var(--line);
-  border-radius:15px;
+  border-radius:14px;
   background:#0d1422;
   color:#fff;
-  outline:none;
-  font-size:14px;
+  outline:0;
 }
 
-/* STATS */
+/* =========================
+   STATS
+========================= */
 
 .stats{
   display:flex;
   justify-content:center;
-  gap:10px;
+  gap:8px;
   flex-wrap:wrap;
   margin-bottom:36px;
 }
 
 .stat{
-  padding:8px 12px;
-  border-radius:999px;
+  padding:7px 11px;
   border:1px solid var(--line);
+  border-radius:999px;
   background:rgba(255,255,255,.025);
-  color:#b9c5d7;
-  font-size:12px;
+  color:#bdc8d8;
+  font-size:11px;
 }
 
-/* GRID */
+/* =========================
+   GRID
+========================= */
 
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:18px;
-  padding-bottom:90px;
+  padding-bottom:80px;
 }
 
-/* CARD */
+/* =========================
+   WORKFLOW CARD
+========================= */
 
 .workflow{
   border:1px solid var(--line);
@@ -237,108 +247,208 @@ h1{
 
 .workflow:hover{
   transform:translateY(-3px);
-  border-color:rgba(102,227,255,.22);
+  border-color:rgba(102,227,255,.20);
   box-shadow:0 18px 50px rgba(0,0,0,.18);
 }
 
 .card-top{
   display:flex;
   justify-content:space-between;
-  gap:14px;
   align-items:flex-start;
+  gap:15px;
 }
 
 .card-title{
   display:flex;
-  gap:13px;
   align-items:center;
+  gap:13px;
 }
 
-.icon{
-  width:48px;
-  height:48px;
-  min-width:48px;
-  border-radius:14px;
+/* =========================
+   CATEGORY ICON
+   Same visual language as
+   AI Tools logo containers
+========================= */
+
+.workflow-logo{
+  width:46px;
+  height:46px;
+  min-width:46px;
+  border-radius:13px;
   display:grid;
   place-items:center;
-  font-size:22px;
+  overflow:hidden;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 4px 14px rgba(0,0,0,.20);
+  padding:6px;
+  flex:none;
+}
+
+.workflow-logo-inner{
+  width:100%;
+  height:100%;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(102,227,255,.16),
+      rgba(139,124,255,.20)
+    );
+  border:1px solid rgba(255,255,255,.06);
+  font-size:20px;
+  line-height:1;
+}
+
+/* Category-specific visual treatment */
+
+.workflow-logo[data-category="Writing"] .workflow-logo-inner{
   background:
     linear-gradient(
       135deg,
       rgba(102,227,255,.18),
+      rgba(139,124,255,.18)
+    );
+}
+
+.workflow-logo[data-category="Image"] .workflow-logo-inner{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139,124,255,.20),
+      rgba(102,227,255,.14)
+    );
+}
+
+.workflow-logo[data-category="Video"] .workflow-logo-inner{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(102,227,255,.18),
+      rgba(139,124,255,.22)
+    );
+}
+
+.workflow-logo[data-category="SEO"] .workflow-logo-inner{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(102,227,255,.20),
+      rgba(139,124,255,.15)
+    );
+}
+
+.workflow-logo[data-category="Marketing"] .workflow-logo-inner{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139,124,255,.22),
+      rgba(102,227,255,.13)
+    );
+}
+
+.workflow-logo[data-category="Research"] .workflow-logo-inner{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(102,227,255,.15),
       rgba(139,124,255,.20)
     );
-  border:1px solid rgba(255,255,255,.09);
+}
+
+.workflow-logo[data-category="Business"] .workflow-logo-inner{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139,124,255,.18),
+      rgba(102,227,255,.18)
+    );
+}
+
+.workflow-logo[data-category="Productivity"] .workflow-logo-inner{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(102,227,255,.22),
+      rgba(139,124,255,.15)
+    );
 }
 
 .workflow h2{
   margin:0;
-  font-size:20px;
+  font-size:21px;
   line-height:1.25;
 }
 
 .category{
   margin-top:4px;
+  color:#9eabc0;
   font-size:11px;
-  color:#8998ad;
 }
 
 .level{
-  font-size:10px;
-  padding:6px 9px;
-  border-radius:999px;
+  height:max-content;
+  padding:6px 8px;
   border:1px solid var(--line);
-  color:#d3dbea;
+  border-radius:999px;
+  color:#cbd5e1;
+  font-size:10px;
   white-space:nowrap;
 }
 
+/* =========================
+   DESCRIPTION
+========================= */
+
 .description{
-  color:var(--muted);
-  line-height:1.65;
-  font-size:14px;
   min-height:67px;
   margin:18px 0 14px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.65;
 }
+
+/* =========================
+   CHIPS
+========================= */
 
 .chips{
   display:flex;
-  flex-wrap:wrap;
   gap:7px;
-  margin-bottom:17px;
+  flex-wrap:wrap;
+  margin:14px 0;
 }
 
 .chip{
-  font-size:11px;
-  color:#cbd5e1;
+  padding:6px 8px;
   border:1px solid var(--line);
-  padding:6px 9px;
   border-radius:999px;
+  color:#cbd5e1;
+  font-size:11px;
 }
 
-/* DETAILS */
+/* =========================
+   QUICK INFO
+========================= */
 
 .quick{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:14px;
   border-top:1px solid var(--line);
   padding-top:15px;
 }
 
 .quick-box{
-  background:rgba(255,255,255,.025);
-  border:1px solid rgba(255,255,255,.05);
-  border-radius:12px;
-  padding:11px;
+  min-height:82px;
 }
 
 .quick-box strong{
   display:block;
-  font-size:10px;
-  color:#dce5f2;
-  margin-bottom:5px;
-  text-transform:uppercase;
-  letter-spacing:.05em;
+  margin-bottom:6px;
+  font-size:11px;
 }
 
 .quick-box span{
@@ -347,7 +457,9 @@ h1{
   line-height:1.5;
 }
 
-/* BUTTON */
+/* =========================
+   ACTIONS
+========================= */
 
 .actions{
   display:flex;
@@ -358,13 +470,13 @@ h1{
 .btn{
   flex:1;
   text-align:center;
-  padding:11px 12px;
+  padding:11px;
   border-radius:11px;
+  border:0;
   background:linear-gradient(135deg,var(--a),var(--b));
   color:#07101b;
   font-size:12px;
   font-weight:900;
-  border:0;
   cursor:pointer;
 }
 
@@ -374,18 +486,26 @@ h1{
   color:#dce5f2;
 }
 
-/* EMPTY */
+.btn:hover{
+  filter:brightness(1.06);
+}
+
+/* =========================
+   EMPTY
+========================= */
 
 .empty{
   grid-column:1/-1;
+  padding:50px 20px;
   text-align:center;
-  color:var(--muted);
-  padding:55px 20px;
   border:1px dashed var(--line);
   border-radius:20px;
+  color:var(--muted);
 }
 
-/* MODAL */
+/* =========================
+   MODAL
+========================= */
 
 .modal{
   position:fixed;
@@ -407,18 +527,58 @@ h1{
   width:min(760px,100%);
   max-height:88vh;
   overflow:auto;
+  padding:26px;
   border:1px solid var(--line);
   border-radius:24px;
   background:#0b1120;
   box-shadow:0 30px 100px rgba(0,0,0,.45);
-  padding:26px;
 }
 
 .modal-head{
   display:flex;
   justify-content:space-between;
-  gap:20px;
   align-items:flex-start;
+  gap:20px;
+}
+
+.modal-title-wrap{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.modal-logo{
+  width:46px;
+  height:46px;
+  min-width:46px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  padding:6px;
+}
+
+.modal-logo-inner{
+  width:100%;
+  height:100%;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,rgba(102,227,255,.16),rgba(139,124,255,.20));
+  font-size:20px;
+}
+
+.modal h2{
+  margin:0;
+  font-size:27px;
+}
+
+.modal-sub{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:12px;
 }
 
 .close{
@@ -432,24 +592,13 @@ h1{
   font-size:20px;
 }
 
-.modal h2{
-  margin:0;
-  font-size:28px;
-}
-
-.modal-sub{
-  color:var(--muted);
-  font-size:13px;
-  margin-top:6px;
-}
-
 .modal-section{
   margin-top:22px;
 }
 
 .modal-section h3{
-  font-size:13px;
   margin:0 0 9px;
+  font-size:13px;
 }
 
 .modal-section p,
@@ -459,7 +608,8 @@ h1{
   line-height:1.65;
 }
 
-.modal-section ul{
+.modal-section ul,
+.modal-section ol{
   margin:0;
   padding-left:20px;
 }
@@ -467,14 +617,16 @@ h1{
 .prompt{
   padding:15px;
   border-radius:13px;
-  background:rgba(102,227,255,.055);
   border:1px solid rgba(102,227,255,.12);
+  background:rgba(102,227,255,.055);
   color:#d8f8ff;
   font-size:13px;
   line-height:1.6;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   border-top:1px solid var(--line);
@@ -483,25 +635,11 @@ footer{
   font-size:12px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:760px){
-
-  nav{
-    min-height:64px;
-  }
-
-  .nav-links{
-    gap:12px;
-  }
-
-  .nav-links a:nth-child(n+3){
-    display:none;
-  }
-
-  .hero{
-    padding-top:55px;
-  }
 
   .grid{
     grid-template-columns:1fr;
@@ -523,6 +661,43 @@ footer{
     align-self:flex-start;
   }
 
+  .nav-links{
+    gap:12px;
+  }
+
+  .nav-links a:nth-child(n+3){
+    display:none;
+  }
+
+  .modal-title-wrap{
+    align-items:flex-start;
+  }
+
+}
+
+@media(max-width:520px){
+
+  .hero{
+    padding-top:55px;
+  }
+
+  .workflow{
+    padding:19px;
+  }
+
+  .workflow-logo{
+    width:46px;
+    height:46px;
+  }
+
+  .workflow h2{
+    font-size:19px;
+  }
+
+  .modal-card{
+    padding:20px;
+  }
+
 }
 </style>
 </head>
@@ -530,863 +705,865 @@ footer{
 <body>
 
 <header>
-  <div class="container">
-    <nav>
+<div class="container">
+<nav>
 
-      <a class="brand" href="/">
-        2<i>NEXTAI</i>
-      </a>
+<a class="brand" href="/">
+2<i>NEXTAI</i>
+</a>
 
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/tools/">AI Tools</a>
-        <a href="/workflows/">Workflows</a>
-        <a href="/tools/">Resources</a>
-      </div>
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/tools/">AI Tools</a>
+<a href="/workflows/">Workflows</a>
+</div>
 
-    </nav>
-  </div>
+</nav>
+</div>
 </header>
 
 <main>
 
 <section class="hero container">
 
-  <div class="eyebrow">
-    2NEXTAI · AI Workflows V1
-  </div>
+<div class="eyebrow">
+2NEXTAI · AI Workflows V1.2
+</div>
 
-  <h1>
-    Turn AI tools into<br>
-    <span class="gradient">real workflows.</span>
-  </h1>
+<h1>
+Turn AI tools into<br>
+<span class="gradient">real workflows.</span>
+</h1>
 
-  <p>
-    Discover practical step-by-step AI workflows for writing,
-    images, video, SEO, marketing, research, business and productivity —
-    from beginner to expert.
-  </p>
+<p>
+Discover practical step-by-step AI workflows for writing,
+images, video, SEO, marketing, research, business and productivity —
+from beginner to expert.
+</p>
 
-  <div class="controls">
+<div class="controls">
 
-    <div class="search-wrap">
+<div class="search-wrap">
 
-      <span class="search-icon">⌕</span>
+<span class="search-icon">⌕</span>
 
-      <input
-        id="search"
-        class="search"
-        type="search"
-        autocomplete="off"
-        placeholder="Search workflows, goals or categories..."
-        aria-label="Search workflows, goals or categories..."
-      >
+<input
+id="search"
+class="search"
+type="search"
+autocomplete="off"
+placeholder="Search workflows, goals or categories..."
+aria-label="Search workflows or use cases..."
+>
 
-    </div>
+</div>
 
-    <select id="level" class="select" aria-label="Filter by level">
-      <option value="all">All levels</option>
-      <option value="Beginner">Beginner</option>
-      <option value="Intermediate">Intermediate</option>
-      <option value="Advanced">Advanced</option>
-      <option value="Expert">Expert</option>
-    </select>
+<select id="level" class="select">
+<option value="all">All levels</option>
+<option value="Beginner">Beginner</option>
+<option value="Intermediate">Intermediate</option>
+<option value="Advanced">Advanced</option>
+<option value="Expert">Expert</option>
+</select>
 
-    <select id="category" class="select" aria-label="Filter by category">
-      <option value="all">All categories</option>
-      <option value="Writing">Writing</option>
-      <option value="Image">Image</option>
-      <option value="Video">Video</option>
-      <option value="SEO">SEO</option>
-      <option value="Marketing">Marketing</option>
-      <option value="Research">Research</option>
-      <option value="Business">Business</option>
-      <option value="Productivity">Productivity</option>
-    </select>
+<select id="category" class="select">
+<option value="all">All categories</option>
+<option value="Writing">Writing</option>
+<option value="Image">Image</option>
+<option value="Video">Video</option>
+<option value="SEO">SEO</option>
+<option value="Marketing">Marketing</option>
+<option value="Research">Research</option>
+<option value="Business">Business</option>
+<option value="Productivity">Productivity</option>
+</select>
 
-  </div>
+</div>
 
-  <div class="stats">
-    <span class="stat" id="resultCount">0 workflows</span>
-    <span class="stat">Beginner → Expert</span>
-    <span class="stat">Step-by-step</span>
-    <span class="stat">Practical use cases</span>
-  </div>
+<div class="stats">
+
+<span class="stat" id="resultCount">
+0 workflows
+</span>
+
+<span class="stat">
+Beginner → Expert
+</span>
+
+<span class="stat">
+Step-by-step
+</span>
+
+<span class="stat">
+Practical use cases
+</span>
+
+</div>
 
 </section>
 
 <section class="container">
 
-  <div id="grid" class="grid"></div>
+<div id="grid" class="grid"></div>
 
 </section>
 
 </main>
 
 <footer>
-  <div class="container">
-    <strong>2NEXTAI</strong>
-    · Workflows are educational frameworks. Tools, pricing and features may change.
-    Verify current capabilities on the official provider website.
-  </div>
+<div class="container">
+<strong>2NEXTAI</strong>
+· Workflows are educational frameworks. Tools, pricing and features may change.
+Verify current capabilities on the official provider website.
+</div>
 </footer>
 
 
-<!-- MODAL -->
-
 <div
-  id="modal"
-  class="modal"
-  role="dialog"
-  aria-modal="true"
-  aria-hidden="true"
+id="modal"
+class="modal"
+role="dialog"
+aria-modal="true"
+aria-hidden="true"
 >
 
-  <div class="modal-card">
+<div class="modal-card">
 
-    <div class="modal-head">
+<div class="modal-head">
 
-      <div>
-        <h2 id="modalTitle"></h2>
-        <div id="modalSub" class="modal-sub"></div>
-      </div>
+<div class="modal-title-wrap">
 
-      <button
-        id="closeModal"
-        class="close"
-        type="button"
-        aria-label="Close"
-      >×</button>
+<div
+id="modalLogo"
+class="modal-logo"
+>
+<div
+id="modalLogoInner"
+class="modal-logo-inner"
+></div>
+</div>
 
-    </div>
+<div>
 
-    <div class="modal-section">
+<h2 id="modalTitle"></h2>
 
-      <h3>Goal</h3>
+<div
+id="modalSub"
+class="modal-sub"
+></div>
 
-      <p id="modalGoal"></p>
+</div>
 
-    </div>
+</div>
 
-    <div class="modal-section">
+<button
+id="closeModal"
+class="close"
+type="button"
+aria-label="Close"
+>
+×
+</button>
 
-      <h3>Required inputs</h3>
+</div>
 
-      <ul id="modalInputs"></ul>
 
-    </div>
+<div class="modal-section">
 
-    <div class="modal-section">
+<h3>Goal</h3>
 
-      <h3>Workflow steps</h3>
+<p id="modalGoal"></p>
 
-      <ol id="modalSteps"></ol>
+</div>
 
-    </div>
 
-    <div class="modal-section">
+<div class="modal-section">
 
-      <h3>Recommended AI tools</h3>
+<h3>Required inputs</h3>
 
-      <p id="modalTools"></p>
+<ul id="modalInputs"></ul>
 
-    </div>
+</div>
 
-    <div class="modal-section">
 
-      <h3>Ready-to-use prompt</h3>
+<div class="modal-section">
 
-      <div id="modalPrompt" class="prompt"></div>
+<h3>Workflow steps</h3>
 
-    </div>
+<ol id="modalSteps"></ol>
 
-    <div class="modal-section">
+</div>
 
-      <h3>Expected result</h3>
 
-      <p id="modalResult"></p>
+<div class="modal-section">
 
-    </div>
+<h3>Recommended AI tools</h3>
 
-    <div class="actions">
+<p id="modalTools"></p>
 
-      <a class="btn secondary" href="/tools/">
-        Explore AI Tools
-      </a>
+</div>
 
-      <button
-        id="closeModalBottom"
-        class="btn"
-        type="button"
-      >
-        Close workflow
-      </button>
 
-    </div>
+<div class="modal-section">
 
-  </div>
+<h3>Ready-to-use prompt</h3>
+
+<div
+id="modalPrompt"
+class="prompt"
+></div>
+
+</div>
+
+
+<div class="modal-section">
+
+<h3>Expected result</h3>
+
+<p id="modalResult"></p>
+
+</div>
+
+
+<div class="actions">
+
+<a
+class="btn secondary"
+href="/tools/"
+>
+Explore AI Tools
+</a>
+
+<button
+id="closeModalBottom"
+class="btn"
+type="button"
+>
+Close workflow
+</button>
+
+</div>
+
+</div>
 
 </div>
 
 
 <script>
 
-/*
-==========================================================
-2NEXTAI WORKFLOWS V1
-Self-contained data architecture.
-
-The workflow data is intentionally kept inside this page
-for V1 reliability. No external data.js dependency.
-==========================================================
-*/
+/* ========================================================
+   WORKFLOWS V1.2
+   Same validated V1.1 catalog.
+======================================================== */
 
 const WORKFLOWS = [
 
-  /* =====================================================
-     WRITING
-  ===================================================== */
+{
+id:"professional-email",
+title:"Write a Professional Email",
+category:"Writing",
+level:"Beginner",
+icon:"✉️",
+description:"Create a clear, professional email from a simple objective.",
+goal:"Turn a short objective and key information into a polished professional email.",
+inputs:["Email objective","Recipient","Key information","Preferred tone"],
+steps:[
+"Define the purpose of the email.",
+"Identify the essential information the recipient needs.",
+"Create a concise email structure.",
+"Generate the first draft.",
+"Improve clarity, tone and professionalism.",
+"Proofread the final version before sending."
+],
+tools:"AI Writing + Productivity tools",
+prompt:"Write a professional email about [OBJECTIVE] for [RECIPIENT]. Include these key points: [POINTS]. Use a clear, concise and professional tone.",
+result:"A polished professional email ready for human review and sending."
+},
 
-  {
-    id:"professional-email",
-    title:"Write a Professional Email",
-    category:"Writing",
-    level:"Beginner",
-    icon:"✉️",
-    description:"Create a clear, professional email from a simple objective.",
-    goal:"Turn a short objective and key information into a polished professional email.",
-    inputs:["Email objective","Recipient","Key information","Preferred tone"],
-    steps:[
-      "Define the purpose of the email.",
-      "Identify the essential information the recipient needs.",
-      "Create a concise email structure.",
-      "Generate the first draft.",
-      "Improve clarity, tone and professionalism.",
-      "Proofread the final version before sending."
-    ],
-    tools:"AI Writing + Productivity tools",
-    prompt:"Write a professional email about [OBJECTIVE] for [RECIPIENT]. Include these key points: [POINTS]. Use a clear, concise and professional tone.",
-    result:"A polished professional email ready for human review and sending."
-  },
+{
+id:"blog-article",
+title:"Create a Blog Article",
+category:"Writing",
+level:"Beginner",
+icon:"📝",
+description:"Turn a topic or idea into a structured and readable blog article.",
+goal:"Create useful long-form content with a logical structure and engaging writing.",
+inputs:["Topic","Audience","Article objective","Desired length"],
+steps:[
+"Define the article objective.",
+"Identify the target audience.",
+"Create the article outline.",
+"Write the introduction.",
+"Develop each main section.",
+"Add examples and useful details.",
+"Improve readability and transitions.",
+"Proofread and prepare for publication."
+],
+tools:"AI Writing + Research tools",
+prompt:"Write a useful blog article about [TOPIC] for [AUDIENCE]. Create a strong introduction, logical sections, practical examples and a clear conclusion. Keep the writing natural and informative.",
+result:"A structured blog article ready for editing and publication."
+},
 
-  {
-    id:"blog-article",
-    title:"Create a Blog Article",
-    category:"Writing",
-    level:"Beginner",
-    icon:"📝",
-    description:"Turn a topic or idea into a structured and readable blog article.",
-    goal:"Create useful long-form content with a logical structure and engaging writing.",
-    inputs:["Topic","Audience","Article objective","Desired length"],
-    steps:[
-      "Define the article objective.",
-      "Identify the target audience.",
-      "Create the article outline.",
-      "Write the introduction.",
-      "Develop each main section.",
-      "Add examples and useful details.",
-      "Improve readability and transitions.",
-      "Proofread and prepare for publication."
-    ],
-    tools:"AI Writing + Research tools",
-    prompt:"Write a useful blog article about [TOPIC] for [AUDIENCE]. Create a strong introduction, logical sections, practical examples and a clear conclusion. Keep the writing natural and informative.",
-    result:"A structured blog article ready for editing and publication."
-  },
+{
+id:"rewrite-improve",
+title:"Rewrite and Improve Text",
+category:"Writing",
+level:"Beginner",
+icon:"✨",
+description:"Improve existing text without changing its original meaning.",
+goal:"Make existing content clearer, more professional and easier to read.",
+inputs:["Original text","Target audience","Desired tone"],
+steps:[
+"Review the original text.",
+"Identify unclear or repetitive sections.",
+"Improve sentence structure.",
+"Adjust the tone for the audience.",
+"Remove unnecessary wording.",
+"Proofread the final version."
+],
+tools:"AI Writing tools",
+prompt:"Rewrite the following text while preserving its original meaning. Improve clarity, structure, grammar and readability. Adapt the tone for [AUDIENCE]: [TEXT].",
+result:"A clearer and more polished version of the original text."
+},
 
-  {
-    id:"rewrite-improve",
-    title:"Rewrite and Improve Text",
-    category:"Writing",
-    level:"Beginner",
-    icon:"✨",
-    description:"Improve existing text without changing its original meaning.",
-    goal:"Make existing content clearer, more professional and easier to read.",
-    inputs:["Original text","Target audience","Desired tone"],
-    steps:[
-      "Review the original text.",
-      "Identify unclear or repetitive sections.",
-      "Improve sentence structure.",
-      "Adjust the tone for the audience.",
-      "Remove unnecessary wording.",
-      "Proofread the final version."
-    ],
-    tools:"AI Writing tools",
-    prompt:"Rewrite the following text while preserving its original meaning. Improve clarity, structure, grammar and readability. Adapt the tone for [AUDIENCE]: [TEXT].",
-    result:"A clearer and more polished version of the original text."
-  },
+{
+id:"ai-image",
+title:"Create an AI Image",
+category:"Image",
+level:"Beginner",
+icon:"🎨",
+description:"Turn an idea into a precise image-generation prompt and visual concept.",
+goal:"Create a strong visual concept suitable for websites, social media or marketing.",
+inputs:["Subject","Visual style","Aspect ratio","Target platform"],
+steps:[
+"Define the main subject and visual objective.",
+"Specify composition, environment and lighting.",
+"Choose the visual style and camera perspective.",
+"Adapt the prompt to the target platform.",
+"Generate several variations.",
+"Select and refine the strongest result."
+],
+tools:"AI Image tools",
+prompt:"Create a professional image-generation prompt for [SUBJECT]. Style: [STYLE]. Composition: [COMPOSITION]. Lighting: [LIGHTING]. Aspect ratio: [RATIO]. The result should be visually striking and suitable for [PLATFORM].",
+result:"A production-ready visual concept and optimized generation prompt."
+},
 
-  /* =====================================================
-     IMAGE
-  ===================================================== */
+{
+id:"product-image",
+title:"Create a Product Image",
+category:"Image",
+level:"Intermediate",
+icon:"📦",
+description:"Create professional product visuals for e-commerce, advertising or social media.",
+goal:"Transform a product description into a polished commercial visual concept.",
+inputs:["Product","Brand style","Background","Target platform"],
+steps:[
+"Define the product's visual identity.",
+"Choose the background and environment.",
+"Define lighting and composition.",
+"Create the generation prompt.",
+"Generate multiple variations.",
+"Select the strongest visual.",
+"Review branding and product accuracy."
+],
+tools:"AI Image + Marketing tools",
+prompt:"Create a premium commercial product image for [PRODUCT]. Brand style: [STYLE]. Background: [BACKGROUND]. Use professional lighting, realistic materials and a clean composition suitable for [PLATFORM].",
+result:"A professional product visual concept ready for marketing use."
+},
 
-  {
-    id:"ai-image",
-    title:"Create an AI Image",
-    category:"Image",
-    level:"Beginner",
-    icon:"🎨",
-    description:"Turn an idea into a precise image-generation prompt and visual concept.",
-    goal:"Create a strong visual concept suitable for websites, social media or marketing.",
-    inputs:["Subject","Visual style","Aspect ratio","Target platform"],
-    steps:[
-      "Define the main subject and visual objective.",
-      "Specify composition, environment and lighting.",
-      "Choose the visual style and camera perspective.",
-      "Adapt the prompt to the target platform.",
-      "Generate several variations.",
-      "Select and refine the strongest result."
-    ],
-    tools:"AI Image tools",
-    prompt:"Create a professional image-generation prompt for [SUBJECT]. Style: [STYLE]. Composition: [COMPOSITION]. Lighting: [LIGHTING]. Aspect ratio: [RATIO]. The result should be visually striking and suitable for [PLATFORM].",
-    result:"A production-ready visual concept and optimized generation prompt."
-  },
+{
+id:"social-visual",
+title:"Create a Social Media Visual",
+category:"Image",
+level:"Beginner",
+icon:"📱",
+description:"Create an attractive visual adapted to a specific social platform.",
+goal:"Produce a visually consistent social media image that supports a content message.",
+inputs:["Post topic","Platform","Brand style","Message"],
+steps:[
+"Define the message of the post.",
+"Choose the appropriate visual format.",
+"Define the main visual subject.",
+"Create the image prompt.",
+"Generate variations.",
+"Select the strongest composition.",
+"Check readability and brand consistency."
+],
+tools:"AI Image + Social Media tools",
+prompt:"Create a high-impact social media visual for [PLATFORM] about [TOPIC]. Brand style: [STYLE]. The image should communicate [MESSAGE] clearly and look professional and modern.",
+result:"A platform-ready social media visual."
+},
 
-  {
-    id:"product-image",
-    title:"Create a Product Image",
-    category:"Image",
-    level:"Intermediate",
-    icon:"📦",
-    description:"Create professional product visuals for e-commerce, advertising or social media.",
-    goal:"Transform a product description into a polished commercial visual concept.",
-    inputs:["Product","Brand style","Background","Target platform"],
-    steps:[
-      "Define the product's visual identity.",
-      "Choose the background and environment.",
-      "Define lighting and composition.",
-      "Create the generation prompt.",
-      "Generate multiple variations.",
-      "Select the strongest visual.",
-      "Review branding and product accuracy."
-    ],
-    tools:"AI Image + Marketing tools",
-    prompt:"Create a premium commercial product image for [PRODUCT]. Brand style: [STYLE]. Background: [BACKGROUND]. Use professional lighting, realistic materials and a clean composition suitable for [PLATFORM].",
-    result:"A professional product visual concept ready for marketing use."
-  },
+{
+id:"youtube-video",
+title:"Create a YouTube Video",
+category:"Video",
+level:"Intermediate",
+icon:"🎬",
+description:"Build a complete YouTube production workflow from idea to final video.",
+goal:"Produce a structured video with a strong hook, script and visual plan.",
+inputs:["Video topic","Target audience","Video duration","Channel objective"],
+steps:[
+"Research the topic and audience needs.",
+"Create several video angles.",
+"Select the strongest angle.",
+"Write the hook and script.",
+"Create a scene-by-scene visual plan.",
+"Generate or collect visual assets.",
+"Edit the video.",
+"Create the title and thumbnail.",
+"Review and publish."
+],
+tools:"AI Writing + AI Video + Image + SEO tools",
+prompt:"Create a YouTube video workflow for [TOPIC] targeting [AUDIENCE]. Start with a strong hook, then create the script, scene plan, visual recommendations and final call to action.",
+result:"A complete YouTube production plan from concept to publication."
+},
 
-  {
-    id:"social-visual",
-    title:"Create a Social Media Visual",
-    category:"Image",
-    level:"Beginner",
-    icon:"📱",
-    description:"Create an attractive visual adapted to a specific social platform.",
-    goal:"Produce a visually consistent social media image that supports a content message.",
-    inputs:["Post topic","Platform","Brand style","Message"],
-    steps:[
-      "Define the message of the post.",
-      "Choose the appropriate visual format.",
-      "Define the main visual subject.",
-      "Create the image prompt.",
-      "Generate variations.",
-      "Select the strongest composition.",
-      "Check readability and brand consistency."
-    ],
-    tools:"AI Image + Social Media tools",
-    prompt:"Create a high-impact social media visual for [PLATFORM] about [TOPIC]. Brand style: [STYLE]. The image should communicate [MESSAGE] clearly and look professional and modern.",
-    result:"A platform-ready social media visual."
-  },
+{
+id:"youtube-shorts",
+title:"Create a YouTube Short",
+category:"Video",
+level:"Beginner",
+icon:"📱",
+description:"Turn one idea into a short-form vertical video designed for fast consumption.",
+goal:"Create a concise and engaging short video with a strong opening.",
+inputs:["Topic","Target audience","Key message","Desired duration"],
+steps:[
+"Define one clear message.",
+"Create a strong first-second hook.",
+"Write a short script.",
+"Plan the visual sequence.",
+"Generate or edit the video.",
+"Add captions.",
+"Review pacing and clarity.",
+"Prepare the title and description."
+],
+tools:"AI Writing + AI Video + Image tools",
+prompt:"Create a short-form video script about [TOPIC]. The first sentence must immediately capture attention. Keep the structure fast, clear and useful for [AUDIENCE].",
+result:"A concise short-form video package ready for publishing."
+},
 
-  /* =====================================================
-     VIDEO
-  ===================================================== */
+{
+id:"marketing-video",
+title:"Create an AI Marketing Video",
+category:"Video",
+level:"Advanced",
+icon:"📺",
+description:"Build a marketing video from a product, service or campaign objective.",
+goal:"Create a persuasive video that communicates value and encourages action.",
+inputs:["Product or service","Audience","Offer","Call to action"],
+steps:[
+"Define the marketing objective.",
+"Identify the audience pain point.",
+"Create the core message.",
+"Write the video script.",
+"Plan scenes and visuals.",
+"Create the video assets.",
+"Edit the final video.",
+"Add the call to action.",
+"Review the final message."
+],
+tools:"AI Video + Writing + Image + Marketing tools",
+prompt:"Create a marketing video for [PRODUCT] targeting [AUDIENCE]. Highlight the main problem, present the value proposition and finish with a clear call to action: [CTA].",
+result:"A structured marketing video ready for campaign use."
+},
 
-  {
-    id:"youtube-video",
-    title:"Create a YouTube Video",
-    category:"Video",
-    level:"Intermediate",
-    icon:"🎬",
-    description:"Build a complete YouTube production workflow from idea to final video.",
-    goal:"Produce a structured video with a strong hook, script and visual plan.",
-    inputs:["Video topic","Target audience","Video duration","Channel objective"],
-    steps:[
-      "Research the topic and audience needs.",
-      "Create several video angles.",
-      "Select the strongest angle.",
-      "Write the hook and script.",
-      "Create a scene-by-scene visual plan.",
-      "Generate or collect visual assets.",
-      "Edit the video.",
-      "Create the title and thumbnail.",
-      "Review and publish."
-    ],
-    tools:"AI Writing + AI Video + Image + SEO tools",
-    prompt:"Create a YouTube video workflow for [TOPIC] targeting [AUDIENCE]. Start with a strong hook, then create the script, scene plan, visual recommendations and final call to action.",
-    result:"A complete YouTube production plan from concept to publication."
-  },
+{
+id:"seo-article",
+title:"Create an SEO Article",
+category:"SEO",
+level:"Intermediate",
+icon:"🔎",
+description:"Build a search-focused article from a topic and target keyword.",
+goal:"Create a structured SEO article designed around search intent and useful content.",
+inputs:["Main topic","Target keyword","Target audience","Desired article length"],
+steps:[
+"Define the search intent.",
+"Research competing content.",
+"Create a logical article structure.",
+"Write the first draft.",
+"Optimize title and headings.",
+"Improve readability and usefulness.",
+"Review factual accuracy.",
+"Prepare the article for publication."
+],
+tools:"SEO + Writing + Research tools",
+prompt:"Create an SEO-focused article about [TOPIC] targeting [KEYWORD]. Identify the likely search intent, create a useful H2/H3 structure and write naturally for [AUDIENCE]. Avoid keyword stuffing.",
+result:"A structured search-focused article ready for review and publication."
+},
 
-  {
-    id:"youtube-shorts",
-    title:"Create a YouTube Short",
-    category:"Video",
-    level:"Beginner",
-    icon:"📱",
-    description:"Turn one idea into a short-form vertical video designed for fast consumption.",
-    goal:"Create a concise and engaging short video with a strong opening.",
-    inputs:["Topic","Target audience","Key message","Desired duration"],
-    steps:[
-      "Define one clear message.",
-      "Create a strong first-second hook.",
-      "Write a short script.",
-      "Plan the visual sequence.",
-      "Generate or edit the video.",
-      "Add captions.",
-      "Review pacing and clarity.",
-      "Prepare the title and description."
-    ],
-    tools:"AI Writing + AI Video + Image tools",
-    prompt:"Create a short-form video script about [TOPIC]. The first sentence must immediately capture attention. Keep the structure fast, clear and useful for [AUDIENCE].",
-    result:"A concise short-form video package ready for publishing."
-  },
+{
+id:"keyword-research",
+title:"Run AI Keyword Research",
+category:"SEO",
+level:"Intermediate",
+icon:"🔑",
+description:"Generate and organize keyword opportunities around a topic or business.",
+goal:"Build a practical keyword universe that can guide future content creation.",
+inputs:["Website topic","Target market","Audience","Main product or service"],
+steps:[
+"Define the main topic.",
+"Generate keyword ideas.",
+"Group keywords by search intent.",
+"Separate informational and commercial opportunities.",
+"Identify long-tail opportunities.",
+"Prioritize keywords by strategic relevance.",
+"Create content opportunities from the results."
+],
+tools:"SEO + Research tools",
+prompt:"Create a keyword research framework for [TOPIC] targeting [MARKET]. Group keywords by search intent and identify informational, commercial and long-tail opportunities. Prioritize the most strategically useful topics.",
+result:"An organized keyword opportunity map for future SEO work."
+},
 
-  {
-    id:"marketing-video",
-    title:"Create an AI Marketing Video",
-    category:"Video",
-    level:"Advanced",
-    icon:"📺",
-    description:"Build a marketing video from a product, service or campaign objective.",
-    goal:"Create a persuasive video that communicates value and encourages action.",
-    inputs:["Product or service","Audience","Offer","Call to action"],
-    steps:[
-      "Define the marketing objective.",
-      "Identify the audience pain point.",
-      "Create the core message.",
-      "Write the video script.",
-      "Plan scenes and visuals.",
-      "Create the video assets.",
-      "Edit the final video.",
-      "Add the call to action.",
-      "Review the final message."
-    ],
-    tools:"AI Video + Writing + Image + Marketing tools",
-    prompt:"Create a marketing video for [PRODUCT] targeting [AUDIENCE]. Highlight the main problem, present the value proposition and finish with a clear call to action: [CTA].",
-    result:"A structured marketing video ready for campaign use."
-  },
+{
+id:"seo-optimization",
+title:"Optimize Existing Content for SEO",
+category:"SEO",
+level:"Advanced",
+icon:"📈",
+description:"Improve an existing page using search intent, structure and content quality principles.",
+goal:"Identify practical SEO improvements without rewriting useful content unnecessarily.",
+inputs:["Existing article","Target keyword","Search intent","Target audience"],
+steps:[
+"Review the current content.",
+"Identify the search intent.",
+"Analyze title and heading structure.",
+"Identify content gaps.",
+"Improve internal relevance.",
+"Improve readability and usefulness.",
+"Review metadata opportunities.",
+"Create an optimization checklist."
+],
+tools:"SEO + Writing tools",
+prompt:"Analyze this article for SEO improvement around [KEYWORD]. Identify search intent, content gaps, structural problems and practical improvements while preserving useful original information.",
+result:"A prioritized SEO optimization plan for an existing page."
+},
 
-  /* =====================================================
-     SEO
-  ===================================================== */
+{
+id:"marketing-campaign",
+title:"Launch an AI Marketing Campaign",
+category:"Marketing",
+level:"Intermediate",
+icon:"📣",
+description:"Create a coordinated marketing campaign using AI for content and messaging.",
+goal:"Build a consistent multi-channel campaign around one offer or objective.",
+inputs:["Product or service","Target audience","Campaign objective","Main offer"],
+steps:[
+"Define the campaign objective.",
+"Identify the target audience and pain points.",
+"Create the central campaign message.",
+"Generate channel-specific content.",
+"Create social posts and email content.",
+"Prepare visual concepts.",
+"Build a publication calendar.",
+"Define measurable campaign KPIs."
+],
+tools:"AI Marketing + Writing + Image tools",
+prompt:"Build a marketing campaign for [PRODUCT] targeting [AUDIENCE]. Objective: [OBJECTIVE]. Create the core message, value proposition, social content, email content, visual concepts and KPIs.",
+result:"A complete multi-channel campaign framework."
+},
 
-  {
-    id:"seo-article",
-    title:"Create an SEO Article",
-    category:"SEO",
-    level:"Intermediate",
-    icon:"🔎",
-    description:"Build a search-focused article from a topic and target keyword.",
-    goal:"Create a structured SEO article designed around search intent and useful content.",
-    inputs:["Main topic","Target keyword","Target audience","Desired article length"],
-    steps:[
-      "Define the search intent.",
-      "Research competing content.",
-      "Create a logical article structure.",
-      "Write the first draft.",
-      "Optimize title and headings.",
-      "Improve readability and usefulness.",
-      "Review factual accuracy.",
-      "Prepare the article for publication."
-    ],
-    tools:"SEO + Writing + Research tools",
-    prompt:"Create an SEO-focused article about [TOPIC] targeting [KEYWORD]. Identify the likely search intent, create a useful H2/H3 structure and write naturally for [AUDIENCE]. Avoid keyword stuffing.",
-    result:"A structured search-focused article ready for review and publication."
-  },
+{
+id:"social-campaign",
+title:"Build a Social Media Campaign",
+category:"Marketing",
+level:"Intermediate",
+icon:"📲",
+description:"Create a coordinated social campaign around a product, service or message.",
+goal:"Develop consistent content across multiple social media publications.",
+inputs:["Campaign topic","Audience","Platform","Campaign duration"],
+steps:[
+"Define the campaign objective.",
+"Choose the target platforms.",
+"Create the main campaign message.",
+"Generate content pillars.",
+"Create post ideas.",
+"Create visual concepts.",
+"Build the publication calendar.",
+"Define engagement and performance metrics."
+],
+tools:"AI Marketing + Social Media + Image tools",
+prompt:"Create a [DURATION]-day social media campaign about [TOPIC] for [AUDIENCE]. Define content pillars, post ideas, visual concepts, calls to action and measurable KPIs.",
+result:"A structured social media campaign calendar."
+},
 
-  {
-    id:"keyword-research",
-    title:"Run AI Keyword Research",
-    category:"SEO",
-    level:"Intermediate",
-    icon:"🔑",
-    description:"Generate and organize keyword opportunities around a topic or business.",
-    goal:"Build a practical keyword universe that can guide future content creation.",
-    inputs:["Website topic","Target market","Audience","Main product or service"],
-    steps:[
-      "Define the main topic.",
-      "Generate keyword ideas.",
-      "Group keywords by search intent.",
-      "Separate informational and commercial opportunities.",
-      "Identify long-tail opportunities.",
-      "Prioritize keywords by strategic relevance.",
-      "Create content opportunities from the results."
-    ],
-    tools:"SEO + Research tools",
-    prompt:"Create a keyword research framework for [TOPIC] targeting [MARKET]. Group keywords by search intent and identify informational, commercial and long-tail opportunities. Prioritize the most strategically useful topics.",
-    result:"An organized keyword opportunity map for future SEO work."
-  },
+{
+id:"email-campaign",
+title:"Create an AI Email Campaign",
+category:"Marketing",
+level:"Advanced",
+icon:"📧",
+description:"Build a structured email campaign around an offer or marketing objective.",
+goal:"Create a consistent sequence that informs, engages and guides recipients toward an action.",
+inputs:["Audience","Offer","Campaign objective","Number of emails"],
+steps:[
+"Define the audience segment.",
+"Define the campaign objective.",
+"Create the email sequence.",
+"Write subject lines.",
+"Write the email content.",
+"Add calls to action.",
+"Review tone and consistency.",
+"Define campaign metrics."
+],
+tools:"AI Marketing + Writing + Productivity tools",
+prompt:"Create a [NUMBER]-email campaign for [AUDIENCE] promoting [OFFER]. Define the purpose of each email, subject line, main message, call to action and recommended timing.",
+result:"A structured email campaign ready for implementation."
+},
 
-  {
-    id:"seo-optimization",
-    title:"Optimize Existing Content for SEO",
-    category:"SEO",
-    level:"Advanced",
-    icon:"📈",
-    description:"Improve an existing page using search intent, structure and content quality principles.",
-    goal:"Identify practical SEO improvements without rewriting useful content unnecessarily.",
-    inputs:["Existing article","Target keyword","Search intent","Target audience"],
-    steps:[
-      "Review the current content.",
-      "Identify the search intent.",
-      "Analyze title and heading structure.",
-      "Identify content gaps.",
-      "Improve internal relevance.",
-      "Improve readability and usefulness.",
-      "Review metadata opportunities.",
-      "Create an optimization checklist."
-    ],
-    tools:"SEO + Writing tools",
-    prompt:"Analyze this article for SEO improvement around [KEYWORD]. Identify search intent, content gaps, structural problems and practical improvements while preserving useful original information.",
-    result:"A prioritized SEO optimization plan for an existing page."
-  },
+{
+id:"research-report",
+title:"Build an AI Research Report",
+category:"Research",
+level:"Advanced",
+icon:"📚",
+description:"Transform a research question into a structured evidence-based report.",
+goal:"Organize information into a clear research workflow with source verification.",
+inputs:["Research question","Scope","Target audience","Required depth"],
+steps:[
+"Define the research question precisely.",
+"Break it into research subtopics.",
+"Collect reliable sources.",
+"Organize and compare findings.",
+"Identify contradictions and information gaps.",
+"Build the report structure.",
+"Write the report with source attribution.",
+"Perform a final verification pass."
+],
+tools:"AI Research + Writing tools",
+prompt:"Create a research framework for [QUESTION]. Break it into key subtopics, identify the evidence required and distinguish facts from assumptions. Do not invent sources or unsupported facts.",
+result:"A structured research report framework designed for verification."
+},
 
-  /* =====================================================
-     MARKETING
-  ===================================================== */
+{
+id:"competitor-analysis",
+title:"Run an AI Competitor Analysis",
+category:"Research",
+level:"Advanced",
+icon:"🕵️",
+description:"Compare competitors and convert research into actionable business insights.",
+goal:"Understand competitor positioning, strengths, weaknesses and opportunities.",
+inputs:["Market","Competitor list","Research criteria","Business objective"],
+steps:[
+"Define the competitive research objective.",
+"Collect comparable competitor information.",
+"Organize findings using consistent criteria.",
+"Compare products, positioning and messaging.",
+"Identify strengths and weaknesses.",
+"Identify market gaps.",
+"Develop strategic recommendations."
+],
+tools:"AI Research + Marketing + Writing tools",
+prompt:"Create a competitor analysis framework for [MARKET]. Compare [COMPETITORS] across positioning, audience, offer, strengths, weaknesses, messaging and opportunities. Separate observed information from assumptions.",
+result:"A structured competitor comparison with actionable insights."
+},
 
-  {
-    id:"marketing-campaign",
-    title:"Launch an AI Marketing Campaign",
-    category:"Marketing",
-    level:"Intermediate",
-    icon:"📣",
-    description:"Create a coordinated marketing campaign using AI for content and messaging.",
-    goal:"Build a consistent multi-channel campaign around one offer or objective.",
-    inputs:["Product or service","Target audience","Campaign objective","Main offer"],
-    steps:[
-      "Define the campaign objective.",
-      "Identify the target audience and pain points.",
-      "Create the central campaign message.",
-      "Generate channel-specific content.",
-      "Create social posts and email content.",
-      "Prepare visual concepts.",
-      "Build a publication calendar.",
-      "Define measurable campaign KPIs."
-    ],
-    tools:"AI Marketing + Writing + Image tools",
-    prompt:"Build a marketing campaign for [PRODUCT] targeting [AUDIENCE]. Objective: [OBJECTIVE]. Create the core message, value proposition, social content, email content, visual concepts and KPIs.",
-    result:"A complete multi-channel campaign framework."
-  },
+{
+id:"market-research",
+title:"Conduct AI Market Research",
+category:"Research",
+level:"Expert",
+icon:"🌍",
+description:"Structure a market research project around customers, competitors and opportunities.",
+goal:"Develop a comprehensive framework for understanding a target market.",
+inputs:["Market","Target geography","Audience","Research objective"],
+steps:[
+"Define the research scope.",
+"Identify market segments.",
+"Research customer needs and pain points.",
+"Analyze competitors.",
+"Identify trends and opportunities.",
+"Identify risks and barriers.",
+"Organize findings.",
+"Create strategic recommendations."
+],
+tools:"AI Research + Business + Marketing tools",
+prompt:"Design a market research framework for [MARKET] in [GEOGRAPHY]. Analyze customer segments, needs, competitors, trends, opportunities, barriers and risks. Clearly distinguish verified information from assumptions.",
+result:"A comprehensive market research framework requiring source verification."
+},
 
-  {
-    id:"social-campaign",
-    title:"Build a Social Media Campaign",
-    category:"Marketing",
-    level:"Intermediate",
-    icon:"📲",
-    description:"Create a coordinated social campaign around a product, service or message.",
-    goal:"Develop consistent content across multiple social media publications.",
-    inputs:["Campaign topic","Audience","Platform","Campaign duration"],
-    steps:[
-      "Define the campaign objective.",
-      "Choose the target platforms.",
-      "Create the main campaign message.",
-      "Generate content pillars.",
-      "Create post ideas.",
-      "Create visual concepts.",
-      "Build the publication calendar.",
-      "Define engagement and performance metrics."
-    ],
-    tools:"AI Marketing + Social Media + Image tools",
-    prompt:"Create a [DURATION]-day social media campaign about [TOPIC] for [AUDIENCE]. Define content pillars, post ideas, visual concepts, calls to action and measurable KPIs.",
-    result:"A structured social media campaign calendar."
-  },
+{
+id:"business-plan",
+title:"Build an AI-Assisted Business Plan",
+category:"Business",
+level:"Advanced",
+icon:"💼",
+description:"Use AI to structure a business idea into a practical planning framework.",
+goal:"Turn a business concept into a structured plan covering market, offer and operations.",
+inputs:["Business idea","Target market","Customer problem","Revenue model"],
+steps:[
+"Define the customer problem.",
+"Identify the target market.",
+"Analyze competitors.",
+"Define the value proposition.",
+"Build the offer structure.",
+"Define acquisition channels.",
+"Create an operating model.",
+"Develop financial assumptions.",
+"Identify major risks."
+],
+tools:"AI Research + Writing + Productivity tools",
+prompt:"Build a structured business plan for [BUSINESS IDEA] targeting [MARKET]. Cover customer problem, market, competition, value proposition, offer, acquisition, operations, revenue model, costs, assumptions and risks.",
+result:"A structured business-plan foundation requiring human validation."
+},
 
-  {
-    id:"email-campaign",
-    title:"Create an AI Email Campaign",
-    category:"Marketing",
-    level:"Advanced",
-    icon:"📧",
-    description:"Build a structured email campaign around an offer or marketing objective.",
-    goal:"Create a consistent sequence that informs, engages and guides recipients toward an action.",
-    inputs:["Audience","Offer","Campaign objective","Number of emails"],
-    steps:[
-      "Define the audience segment.",
-      "Define the campaign objective.",
-      "Create the email sequence.",
-      "Write subject lines.",
-      "Write the email content.",
-      "Add calls to action.",
-      "Review tone and consistency.",
-      "Define campaign metrics."
-    ],
-    tools:"AI Marketing + Writing + Productivity tools",
-    prompt:"Create a [NUMBER]-email campaign for [AUDIENCE] promoting [OFFER]. Define the purpose of each email, subject line, main message, call to action and recommended timing.",
-    result:"A structured email campaign ready for implementation."
-  },
+{
+id:"lead-generation",
+title:"Build an AI Lead Generation Workflow",
+category:"Business",
+level:"Advanced",
+icon:"🎯",
+description:"Create a structured process for identifying, qualifying and following up with potential leads.",
+goal:"Build a repeatable lead-generation framework without relying on a single provider.",
+inputs:["Target customer","Market","Offer","Qualification criteria"],
+steps:[
+"Define the ideal customer profile.",
+"Define qualification criteria.",
+"Identify relevant lead sources.",
+"Create a qualification framework.",
+"Develop personalized outreach templates.",
+"Create a follow-up sequence.",
+"Define CRM fields.",
+"Measure conversion performance."
+],
+tools:"AI Research + Marketing + Writing + CRM tools",
+prompt:"Create a lead-generation workflow for [OFFER] targeting [CUSTOMER]. Define the ideal customer profile, qualification criteria, outreach messaging, follow-up sequence and performance metrics.",
+result:"A structured lead-generation and qualification process."
+},
 
-  /* =====================================================
-     RESEARCH
-  ===================================================== */
+{
+id:"productivity-system",
+title:"Build a Personal AI Productivity System",
+category:"Productivity",
+level:"Intermediate",
+icon:"⚡",
+description:"Organize tasks, projects, notes and recurring work into one AI-assisted system.",
+goal:"Reduce repetitive work and create a clearer daily execution system.",
+inputs:["Current tasks","Projects","Deadlines","Recurring activities"],
+steps:[
+"Collect all current tasks.",
+"Separate projects from individual actions.",
+"Prioritize tasks by impact and urgency.",
+"Identify repetitive activities.",
+"Create reusable AI prompts and templates.",
+"Define a daily review process.",
+"Define a weekly planning process."
+],
+tools:"AI Productivity + Writing tools",
+prompt:"Organize the following tasks into projects, priorities, deadlines and next actions. Identify repetitive activities that could be improved with AI. Then create a simple daily and weekly review system.",
+result:"A practical AI-assisted productivity framework."
+},
 
-  {
-    id:"research-report",
-    title:"Build an AI Research Report",
-    category:"Research",
-    level:"Advanced",
-    icon:"📚",
-    description:"Transform a research question into a structured evidence-based report.",
-    goal:"Organize information into a clear research workflow with source verification.",
-    inputs:["Research question","Scope","Target audience","Required depth"],
-    steps:[
-      "Define the research question precisely.",
-      "Break it into research subtopics.",
-      "Collect reliable sources.",
-      "Organize and compare findings.",
-      "Identify contradictions and information gaps.",
-      "Build the report structure.",
-      "Write the report with source attribution.",
-      "Perform a final verification pass."
-    ],
-    tools:"AI Research + Writing tools",
-    prompt:"Create a research framework for [QUESTION]. Break it into key subtopics, identify the evidence required and distinguish facts from assumptions. Do not invent sources or unsupported facts.",
-    result:"A structured research report framework designed for verification."
-  },
+{
+id:"meeting-summary",
+title:"Turn a Meeting into Action Items",
+category:"Productivity",
+level:"Beginner",
+icon:"🗓️",
+description:"Transform meeting notes or a transcript into a concise summary and action plan.",
+goal:"Convert unstructured meeting information into clear decisions and next actions.",
+inputs:["Meeting transcript or notes","Participants","Meeting objective"],
+steps:[
+"Provide the meeting notes or transcript.",
+"Identify the main discussion points.",
+"Extract decisions.",
+"Identify action items.",
+"Assign responsible people when known.",
+"Identify deadlines when available.",
+"Create a concise follow-up summary."
+],
+tools:"AI Productivity + Writing tools",
+prompt:"Summarize this meeting. Separate key points, decisions, open questions and action items. Include responsible people and deadlines only when they are explicitly available in the source.",
+result:"A concise meeting summary with actionable next steps."
+},
 
-  {
-    id:"competitor-analysis",
-    title:"Run an AI Competitor Analysis",
-    category:"Research",
-    level:"Advanced",
-    icon:"🕵️",
-    description:"Compare competitors and convert research into actionable business insights.",
-    goal:"Understand competitor positioning, strengths, weaknesses and opportunities.",
-    inputs:["Market","Competitor list","Research criteria","Business objective"],
-    steps:[
-      "Define the competitive research objective.",
-      "Collect comparable competitor information.",
-      "Organize findings using consistent criteria.",
-      "Compare products, positioning and messaging.",
-      "Identify strengths and weaknesses.",
-      "Identify market gaps.",
-      "Develop strategic recommendations."
-    ],
-    tools:"AI Research + Marketing + Writing tools",
-    prompt:"Create a competitor analysis framework for [MARKET]. Compare [COMPETITORS] across positioning, audience, offer, strengths, weaknesses, messaging and opportunities. Separate observed information from assumptions.",
-    result:"A structured competitor comparison with actionable insights."
-  },
+{
+id:"daily-planning",
+title:"Create an AI Daily Plan",
+category:"Productivity",
+level:"Beginner",
+icon:"📅",
+description:"Turn a list of tasks and constraints into a realistic daily plan.",
+goal:"Prioritize important work while keeping the plan practical and achievable.",
+inputs:["Tasks","Deadlines","Available hours","Fixed commitments"],
+steps:[
+"List all tasks.",
+"Identify deadlines and priorities.",
+"Separate urgent from important work.",
+"Account for fixed commitments.",
+"Estimate realistic work blocks.",
+"Create the daily schedule.",
+"Leave buffer time for unexpected tasks.",
+"Review the plan at the end of the day."
+],
+tools:"AI Productivity tools",
+prompt:"Create a realistic daily plan from these tasks: [TASKS]. Available time: [HOURS]. Fixed commitments: [COMMITMENTS]. Prioritize important work, avoid overloading the schedule and include reasonable buffer time.",
+result:"A realistic daily execution plan."
+},
 
-  {
-    id:"market-research",
-    title:"Conduct AI Market Research",
-    category:"Research",
-    level:"Expert",
-    icon:"🌍",
-    description:"Structure a market research project around customers, competitors and opportunities.",
-    goal:"Develop a comprehensive framework for understanding a target market.",
-    inputs:["Market","Target geography","Audience","Research objective"],
-    steps:[
-      "Define the research scope.",
-      "Identify market segments.",
-      "Research customer needs and pain points.",
-      "Analyze competitors.",
-      "Identify trends and opportunities.",
-      "Identify risks and barriers.",
-      "Organize findings.",
-      "Create strategic recommendations."
-    ],
-    tools:"AI Research + Business + Marketing tools",
-    prompt:"Design a market research framework for [MARKET] in [GEOGRAPHY]. Analyze customer segments, needs, competitors, trends, opportunities, barriers and risks. Clearly distinguish verified information from assumptions.",
-    result:"A comprehensive market research framework requiring source verification."
-  },
-
-  /* =====================================================
-     BUSINESS
-  ===================================================== */
-
-  {
-    id:"business-plan",
-    title:"Build an AI-Assisted Business Plan",
-    category:"Business",
-    level:"Advanced",
-    icon:"💼",
-    description:"Use AI to structure a business idea into a practical planning framework.",
-    goal:"Turn a business concept into a structured plan covering market, offer and operations.",
-    inputs:["Business idea","Target market","Customer problem","Revenue model"],
-    steps:[
-      "Define the customer problem.",
-      "Identify the target market.",
-      "Analyze competitors.",
-      "Define the value proposition.",
-      "Build the offer structure.",
-      "Define acquisition channels.",
-      "Create an operating model.",
-      "Develop financial assumptions.",
-      "Identify major risks."
-    ],
-    tools:"AI Research + Writing + Productivity tools",
-    prompt:"Build a structured business plan for [BUSINESS IDEA] targeting [MARKET]. Cover customer problem, market, competition, value proposition, offer, acquisition, operations, revenue model, costs, assumptions and risks.",
-    result:"A structured business-plan foundation requiring human validation."
-  },
-
-  {
-    id:"lead-generation",
-    title:"Build an AI Lead Generation Workflow",
-    category:"Business",
-    level:"Advanced",
-    icon:"🎯",
-    description:"Create a structured process for identifying, qualifying and following up with potential leads.",
-    goal:"Build a repeatable lead-generation framework without relying on a single provider.",
-    inputs:["Target customer","Market","Offer","Qualification criteria"],
-    steps:[
-      "Define the ideal customer profile.",
-      "Define qualification criteria.",
-      "Identify relevant lead sources.",
-      "Create a qualification framework.",
-      "Develop personalized outreach templates.",
-      "Create a follow-up sequence.",
-      "Define CRM fields.",
-      "Measure conversion performance."
-    ],
-    tools:"AI Research + Marketing + Writing + CRM tools",
-    prompt:"Create a lead-generation workflow for [OFFER] targeting [CUSTOMER]. Define the ideal customer profile, qualification criteria, outreach messaging, follow-up sequence and performance metrics.",
-    result:"A structured lead-generation and qualification process."
-  },
-
-  /* =====================================================
-     PRODUCTIVITY
-  ===================================================== */
-
-  {
-    id:"productivity-system",
-    title:"Build a Personal AI Productivity System",
-    category:"Productivity",
-    level:"Intermediate",
-    icon:"⚡",
-    description:"Organize tasks, projects, notes and recurring work into one AI-assisted system.",
-    goal:"Reduce repetitive work and create a clearer daily execution system.",
-    inputs:["Current tasks","Projects","Deadlines","Recurring activities"],
-    steps:[
-      "Collect all current tasks.",
-      "Separate projects from individual actions.",
-      "Prioritize tasks by impact and urgency.",
-      "Identify repetitive activities.",
-      "Create reusable AI prompts and templates.",
-      "Define a daily review process.",
-      "Define a weekly planning process."
-    ],
-    tools:"AI Productivity + Writing tools",
-    prompt:"Organize the following tasks into projects, priorities, deadlines and next actions. Identify repetitive activities that could be improved with AI. Then create a simple daily and weekly review system.",
-    result:"A practical AI-assisted productivity framework."
-  },
-
-  {
-    id:"meeting-summary",
-    title:"Turn a Meeting into Action Items",
-    category:"Productivity",
-    level:"Beginner",
-    icon:"🗓️",
-    description:"Transform meeting notes or a transcript into a concise summary and action plan.",
-    goal:"Convert unstructured meeting information into clear decisions and next actions.",
-    inputs:["Meeting transcript or notes","Participants","Meeting objective"],
-    steps:[
-      "Provide the meeting notes or transcript.",
-      "Identify the main discussion points.",
-      "Extract decisions.",
-      "Identify action items.",
-      "Assign responsible people when known.",
-      "Identify deadlines when available.",
-      "Create a concise follow-up summary."
-    ],
-    tools:"AI Productivity + Writing tools",
-    prompt:"Summarize this meeting. Separate key points, decisions, open questions and action items. Include responsible people and deadlines only when they are explicitly available in the source.",
-    result:"A concise meeting summary with actionable next steps."
-  },
-
-  {
-    id:"daily-planning",
-    title:"Create an AI Daily Plan",
-    category:"Productivity",
-    level:"Beginner",
-    icon:"📅",
-    description:"Turn a list of tasks and constraints into a realistic daily plan.",
-    goal:"Prioritize important work while keeping the plan practical and achievable.",
-    inputs:["Tasks","Deadlines","Available hours","Fixed commitments"],
-    steps:[
-      "List all tasks.",
-      "Identify deadlines and priorities.",
-      "Separate urgent from important work.",
-      "Account for fixed commitments.",
-      "Estimate realistic work blocks.",
-      "Create the daily schedule.",
-      "Leave buffer time for unexpected tasks.",
-      "Review the plan at the end of the day."
-    ],
-    tools:"AI Productivity tools",
-    prompt:"Create a realistic daily plan from these tasks: [TASKS]. Available time: [HOURS]. Fixed commitments: [COMMITMENTS]. Prioritize important work, avoid overloading the schedule and include reasonable buffer time.",
-    result:"A realistic daily execution plan."
-  },
-
-  /* =====================================================
-     EXPERT
-  ===================================================== */
-
-  {
-    id:"expert-content-machine",
-    title:"Build an Expert Content Machine",
-    category:"Writing",
-    level:"Expert",
-    icon:"🧠",
-    description:"Create a scalable content system connecting research, writing, SEO and distribution.",
-    goal:"Build a repeatable content production system rather than creating isolated articles.",
-    inputs:["Expertise area","Target audience","Content goals","Publishing channels"],
-    steps:[
-      "Define the authority topic and audience.",
-      "Create a topic and keyword universe.",
-      "Group topics into content clusters.",
-      "Build reusable research templates.",
-      "Create long-form pillar content.",
-      "Repurpose each pillar into multiple formats.",
-      "Optimize content for search visibility.",
-      "Create a distribution workflow.",
-      "Measure performance.",
-      "Improve the system using real results."
-    ],
-    tools:"AI Agents + SEO + Writing + Marketing + Productivity tools",
-    prompt:"Design an expert-level content production system for [EXPERTISE]. Target audience: [AUDIENCE]. Goals: [GOALS]. Build the workflow from research to production, SEO optimization, repurposing, distribution, measurement and continuous improvement.",
-    result:"A scalable content operating system connecting multiple AI capabilities."
-  }
+{
+id:"expert-content-machine",
+title:"Build an Expert Content Machine",
+category:"Writing",
+level:"Expert",
+icon:"🧠",
+description:"Create a scalable content system connecting research, writing, SEO and distribution.",
+goal:"Build a repeatable content production system rather than creating isolated articles.",
+inputs:["Expertise area","Target audience","Content goals","Publishing channels"],
+steps:[
+"Define the authority topic and audience.",
+"Create a topic and keyword universe.",
+"Group topics into content clusters.",
+"Build reusable research templates.",
+"Create long-form pillar content.",
+"Repurpose each pillar into multiple formats.",
+"Optimize content for search visibility.",
+"Create a distribution workflow.",
+"Measure performance.",
+"Improve the system using real results."
+],
+tools:"AI Agents + SEO + Writing + Marketing + Productivity tools",
+prompt:"Design an expert-level content production system for [EXPERTISE]. Target audience: [AUDIENCE]. Goals: [GOALS]. Build the workflow from research to production, SEO optimization, repurposing, distribution, measurement and continuous improvement.",
+result:"A scalable content operating system connecting multiple AI capabilities."
+}
 
 ];
 
 
-/*
-==========================================================
-DOM
-==========================================================
-*/
+/* ========================================================
+   DOM
+======================================================== */
 
-const grid = document.getElementById("grid");
-const search = document.getElementById("search");
-const level = document.getElementById("level");
-const category = document.getElementById("category");
-const resultCount = document.getElementById("resultCount");
+const grid=document.getElementById("grid");
+const search=document.getElementById("search");
+const level=document.getElementById("level");
+const category=document.getElementById("category");
+const resultCount=document.getElementById("resultCount");
 
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("closeModal");
-const closeModalBottom = document.getElementById("closeModalBottom");
+const modal=document.getElementById("modal");
+const closeModal=document.getElementById("closeModal");
+const closeModalBottom=document.getElementById("closeModalBottom");
 
-const modalTitle = document.getElementById("modalTitle");
-const modalSub = document.getElementById("modalSub");
-const modalGoal = document.getElementById("modalGoal");
-const modalInputs = document.getElementById("modalInputs");
-const modalSteps = document.getElementById("modalSteps");
-const modalTools = document.getElementById("modalTools");
-const modalPrompt = document.getElementById("modalPrompt");
-const modalResult = document.getElementById("modalResult");
+const modalTitle=document.getElementById("modalTitle");
+const modalSub=document.getElementById("modalSub");
+const modalGoal=document.getElementById("modalGoal");
+const modalInputs=document.getElementById("modalInputs");
+const modalSteps=document.getElementById("modalSteps");
+const modalTools=document.getElementById("modalTools");
+const modalPrompt=document.getElementById("modalPrompt");
+const modalResult=document.getElementById("modalResult");
+const modalLogoInner=document.getElementById("modalLogoInner");
 
 
-/*
-==========================================================
-SECURITY / HTML ESCAPE
-==========================================================
-*/
+/* ========================================================
+   ESCAPE
+======================================================== */
 
 function esc(value){
 
-  return String(value ?? "")
-    .replace(/[&<>"']/g, function(char){
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    function(char){
 
       return {
         "&":"&amp;",
@@ -1397,33 +1574,25 @@ function esc(value){
 
       }[char];
 
-    });
+    }
+  );
 
 }
 
 
-/*
-==========================================================
-SEARCH + FILTER
-==========================================================
-*/
+/* ========================================================
+   FILTER
+======================================================== */
 
 function getFilteredWorkflows(){
 
-  const query =
-    search.value
-      .toLowerCase()
-      .trim();
-
-  const selectedLevel =
-    level.value;
-
-  const selectedCategory =
-    category.value;
+  const query=search.value.toLowerCase().trim();
+  const selectedLevel=level.value;
+  const selectedCategory=category.value;
 
   return WORKFLOWS.filter(function(workflow){
 
-    const searchableText = [
+    const searchableText=[
 
       workflow.title,
       workflow.category,
@@ -1435,26 +1604,22 @@ function getFilteredWorkflows(){
       ...(workflow.inputs || []),
       ...(workflow.steps || [])
 
-    ]
-    .join(" ")
-    .toLowerCase();
-
-    const matchesSearch =
-      !query ||
-      searchableText.includes(query);
-
-    const matchesLevel =
-      selectedLevel === "all" ||
-      workflow.level === selectedLevel;
-
-    const matchesCategory =
-      selectedCategory === "all" ||
-      workflow.category === selectedCategory;
+    ].join(" ").toLowerCase();
 
     return (
-      matchesSearch &&
-      matchesLevel &&
-      matchesCategory
+
+      (!query || searchableText.includes(query)) &&
+
+      (
+        selectedLevel==="all" ||
+        workflow.level===selectedLevel
+      ) &&
+
+      (
+        selectedCategory==="all" ||
+        workflow.category===selectedCategory
+      )
+
     );
 
   });
@@ -1462,24 +1627,21 @@ function getFilteredWorkflows(){
 }
 
 
-/*
-==========================================================
-RENDER
-==========================================================
-*/
+/* ========================================================
+   RENDER
+======================================================== */
 
 function render(){
 
-  const list =
-    getFilteredWorkflows();
+  const list=getFilteredWorkflows();
 
-  resultCount.textContent =
+  resultCount.textContent=
     list.length +
-    (list.length === 1 ? " workflow" : " workflows");
+    (list.length===1 ? " workflow" : " workflows");
 
   if(!list.length){
 
-    grid.innerHTML = `
+    grid.innerHTML=`
       <div class="empty">
         <strong>No matching workflow found.</strong>
         <br><br>
@@ -1490,181 +1652,171 @@ function render(){
     return;
   }
 
-  grid.innerHTML =
-    list.map(function(workflow){
+  grid.innerHTML=list.map(function(workflow){
 
-      return `
+    return `
 
-        <article class="workflow">
+      <article class="workflow">
 
-          <div class="card-top">
+        <div class="card-top">
 
-            <div class="card-title">
+          <div class="card-title">
 
-              <div class="icon">
+            <div
+              class="workflow-logo"
+              data-category="${esc(workflow.category)}"
+              aria-hidden="true"
+            >
+
+              <div class="workflow-logo-inner">
                 ${esc(workflow.icon)}
               </div>
 
-              <div>
+            </div>
 
-                <h2>
-                  ${esc(workflow.title)}
-                </h2>
+            <div>
 
-                <div class="category">
-                  ${esc(workflow.category)}
-                </div>
+              <h2>
+                ${esc(workflow.title)}
+              </h2>
 
+              <div class="category">
+                ${esc(workflow.category)}
               </div>
 
             </div>
 
-            <span class="level">
-              ${esc(workflow.level)}
+          </div>
+
+          <span class="level">
+            ${esc(workflow.level)}
+          </span>
+
+        </div>
+
+
+        <p class="description">
+          ${esc(workflow.description)}
+        </p>
+
+
+        <div class="chips">
+
+          <span class="chip">
+            ${esc(workflow.category)}
+          </span>
+
+          <span class="chip">
+            ${esc(workflow.level)}
+          </span>
+
+          <span class="chip">
+            Step-by-step
+          </span>
+
+        </div>
+
+
+        <div class="quick">
+
+          <div class="quick-box">
+
+            <strong>Goal</strong>
+
+            <span>
+              ${esc(workflow.goal)}
             </span>
 
           </div>
 
+          <div class="quick-box">
 
-          <p class="description">
-            ${esc(workflow.description)}
-          </p>
+            <strong>Tools</strong>
 
-
-          <div class="chips">
-
-            <span class="chip">
-              ${esc(workflow.category)}
-            </span>
-
-            <span class="chip">
-              ${esc(workflow.level)}
-            </span>
-
-            <span class="chip">
-              Step-by-step
+            <span>
+              ${esc(workflow.tools)}
             </span>
 
           </div>
 
-
-          <div class="quick">
-
-            <div class="quick-box">
-
-              <strong>Goal</strong>
-
-              <span>
-                ${esc(workflow.goal)}
-              </span>
-
-            </div>
+        </div>
 
 
-            <div class="quick-box">
+        <div class="actions">
 
-              <strong>Tools</strong>
+          <button
+            class="btn"
+            type="button"
+            data-workflow="${esc(workflow.id)}"
+          >
+            View Workflow →
+          </button>
 
-              <span>
-                ${esc(workflow.tools)}
-              </span>
+          <a
+            class="btn secondary"
+            href="/tools/"
+          >
+            AI Tools
+          </a>
 
-            </div>
+        </div>
 
-          </div>
+      </article>
 
+    `;
 
-          <div class="actions">
-
-            <button
-              class="btn"
-              type="button"
-              data-workflow="${esc(workflow.id)}"
-            >
-              View Workflow →
-            </button>
-
-            <a
-              class="btn secondary"
-              href="/tools/"
-            >
-              AI Tools
-            </a>
-
-          </div>
-
-        </article>
-
-      `;
-
-    })
-    .join("");
+  }).join("");
 
 }
 
 
-/*
-==========================================================
-OPEN MODAL
-==========================================================
-*/
+/* ========================================================
+   MODAL
+======================================================== */
 
 function openWorkflow(id){
 
-  const workflow =
-    WORKFLOWS.find(function(item){
+  const workflow=WORKFLOWS.find(function(item){
 
-      return item.id === id;
+    return item.id===id;
 
-    });
+  });
 
-  if(!workflow) return;
+  if(!workflow)return;
 
+  modalTitle.textContent=workflow.title;
 
-  modalTitle.textContent =
-    workflow.title;
-
-  modalSub.textContent =
+  modalSub.textContent=
     workflow.category +
     " · " +
     workflow.level;
 
+  modalGoal.textContent=workflow.goal;
 
-  modalGoal.textContent =
-    workflow.goal;
+  modalInputs.innerHTML=
+    (workflow.inputs || []).map(function(item){
 
+      return `<li>${esc(item)}</li>`;
 
-  modalInputs.innerHTML =
-    (workflow.inputs || [])
-      .map(function(item){
+    }).join("");
 
-        return `<li>${esc(item)}</li>`;
+  modalSteps.innerHTML=
+    (workflow.steps || []).map(function(item){
 
-      })
-      .join("");
+      return `<li>${esc(item)}</li>`;
 
+    }).join("");
 
-  modalSteps.innerHTML =
-    (workflow.steps || [])
-      .map(function(item){
+  modalTools.textContent=workflow.tools;
 
-        return `<li>${esc(item)}</li>`;
+  modalPrompt.textContent=workflow.prompt;
 
-      })
-      .join("");
+  modalResult.textContent=workflow.result;
 
+  modalLogoInner.textContent=workflow.icon;
 
-  modalTools.textContent =
-    workflow.tools;
-
-
-  modalPrompt.textContent =
-    workflow.prompt;
-
-
-  modalResult.textContent =
-    workflow.result;
-
+  modalLogoInner.parentElement.dataset.category=
+    workflow.category;
 
   modal.classList.add("open");
 
@@ -1673,17 +1825,10 @@ function openWorkflow(id){
     "false"
   );
 
-  document.body.style.overflow =
-    "hidden";
+  document.body.style.overflow="hidden";
 
 }
 
-
-/*
-==========================================================
-CLOSE MODAL
-==========================================================
-*/
 
 function closeWorkflow(){
 
@@ -1694,52 +1839,33 @@ function closeWorkflow(){
     "true"
   );
 
-  document.body.style.overflow =
-    "";
+  document.body.style.overflow="";
 
 }
 
 
-/*
-==========================================================
-EVENTS
-==========================================================
-*/
+/* ========================================================
+   EVENTS
+======================================================== */
 
-search.addEventListener(
-  "input",
-  render
-);
+search.addEventListener("input",render);
 
-level.addEventListener(
-  "change",
-  render
-);
+level.addEventListener("change",render);
 
-category.addEventListener(
-  "change",
-  render
-);
+category.addEventListener("change",render);
 
+grid.addEventListener("click",function(event){
 
-grid.addEventListener(
-  "click",
-  function(event){
+  const button=
+    event.target.closest("[data-workflow]");
 
-    const button =
-      event.target.closest(
-        "[data-workflow]"
-      );
+  if(!button)return;
 
-    if(!button) return;
+  openWorkflow(
+    button.dataset.workflow
+  );
 
-    openWorkflow(
-      button.dataset.workflow
-    );
-
-  }
-);
-
+});
 
 closeModal.addEventListener(
   "click",
@@ -1751,12 +1877,11 @@ closeModalBottom.addEventListener(
   closeWorkflow
 );
 
-
 modal.addEventListener(
   "click",
   function(event){
 
-    if(event.target === modal){
+    if(event.target===modal){
 
       closeWorkflow();
 
@@ -1764,13 +1889,12 @@ modal.addEventListener(
 
   }
 );
-
 
 document.addEventListener(
   "keydown",
   function(event){
 
-    if(event.key === "Escape"){
+    if(event.key==="Escape"){
 
       closeWorkflow();
 
@@ -1780,11 +1904,9 @@ document.addEventListener(
 );
 
 
-/*
-==========================================================
-INITIAL RENDER
-==========================================================
-*/
+/* ========================================================
+   INITIAL RENDER
+======================================================== */
 
 render();
 
