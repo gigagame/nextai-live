@@ -33,10 +33,12 @@
   fake availability claims or invented information.
 -->
 
+<!-- PRODUCT SCHEMA -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": "https://2nextai.com/#product",
   "name": "2NEXTAI AI Business & Content Prompt Pack",
   "image": [
     "https://2nextai.com/nextai-prompt-pack.png"
@@ -55,19 +57,31 @@
 }
 </script>
 
+<!-- WEBSITE SCHEMA -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://2nextai.com/#website",
   "name": "2NEXTAI",
   "url": "https://2nextai.com/",
   "description": "AI prompts, practical AI resources and digital tools for business, marketing, content, SEO, sales and productivity.",
   "publisher": {
-    "@type": "Organization",
-    "name": "2NEXTAI",
-    "url": "https://2nextai.com/"
+    "@id": "https://2nextai.com/#organization"
   }
 }
+</script>
+
+<!-- ORGANIZATION SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://2nextai.com/#organization",
+  "name": "2NEXTAI",
+  "url": "https://2nextai.com/"
+}
+</script>
 </script>
 
 <style>
