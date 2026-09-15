@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /index-V1.0-STABLE.html
+Disallow: /NextAI_AI_Prompt_Pack_1000.pdf
 
 Sitemap: https://2nextai.com/sitemap.xml
