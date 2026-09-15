@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://2nextai.com/</loc>
-  </url>
+  <url><loc>https://2nextai.com/</loc></url>
+  <url><loc>https://2nextai.com/tools/</loc></url>
+  <url><loc>https://2nextai.com/tools/writing/</loc></url>
+  <url><loc>https://2nextai.com/tools/image/</loc></url>
+  <url><loc>https://2nextai.com/tools/video/</loc></url>
+  <url><loc>https://2nextai.com/tools/seo/</loc></url>
+  <url><loc>https://2nextai.com/tools/marketing/</loc></url>
+  <url><loc>https://2nextai.com/tools/productivity/</loc></url>
+  <url><loc>https://2nextai.com/tools/ai-agents/</loc></url>
+  <url><loc>https://2nextai.com/workflows/</loc></url>
+  <url><loc>https://2nextai.com/prompts/</loc></url>
+  <url><loc>https://2nextai.com/resources/</loc></url>
 </urlset>
