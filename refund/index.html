@@ -8,4 +8,29 @@
   gtag('js', new Date());
   gtag('config', 'G-6M11Q17M0R');
 </script>
-</head><body><header><nav class="container"><a class="brand" href="/">2<i>NEXTAI</i></a><div class="links"><a href="/">Home</a><a href="/products/">Products</a><a href="/tools/">AI Tools</a><a href="/workflows/">Workflows</a><a href="/prompts/">Prompts</a><a href="/resources/">Resources</a></div></nav></header><main class="container"><section class="hero"><div style="color:var(--a);font-weight:800">REFUNDS</div><h1>Refund Policy</h1><p class="lead">Last updated: September 15, 2026.</p></section><div class="card"><h2>Digital-product purchases</h2><p>2NEXTAI products are delivered digitally. Because digital files can generally be accessed or downloaded immediately after successful delivery, refund requests are reviewed case by case rather than being automatically approved after download.</p><div class="notice">This policy does not limit any mandatory consumer rights that apply under applicable law.</div></div><div class="card"><h2>When support or a refund review may be appropriate</h2><ul><li>You were charged more than once for the same purchase.</li><li>Payment completed but the purchased file could not be accessed after reasonable troubleshooting.</li><li>The delivered file is materially different from the product described at the time of purchase.</li><li>The file is technically corrupted and a replacement cannot be provided.</li></ul></div><div class="card"><h2>How to request review</h2><p>Use the seller/contact option linked to your PayPal transaction or receipt and provide the transaction ID, purchase date and a concise description of the problem. Do not send passwords or complete payment-card information.</p></div><div class="card"><h2>Third-party payment disputes</h2><p>Payments are processed by PayPal. PayPal's own dispute, buyer-protection and resolution rules may apply independently of this page.</p></div></main><footer><div class="container">© 2026 2NEXTAI · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/refund/">Refund Policy</a></div></footer></body></html>
+</head><body><header><nav class="container"><a class="brand" href="/">2<i>NEXTAI</i></a><div class="links"><a href="/">Home</a><a href="/products/">Products</a><a href="/tools/">AI Tools</a><a href="/workflows/">Workflows</a><a href="/prompts/">Prompts</a><a href="/resources/">Resources</a></div></nav></header><main class="container"><section class="hero"><div style="color:var(--a);font-weight:800">REFUNDS</div><h1>Refund Policy</h1><p class="lead">Last updated: September 15, 2026.</p></section><div class="card"><h2>Digital-product purchases</h2><p>2NEXTAI products are delivered digitally. Because digital files can generally be accessed or downloaded immediately after successful delivery, refund requests are reviewed case by case rather than being automatically approved after download.</p><div class="notice">This policy does not limit any mandatory consumer rights that apply under applicable law.</div></div><div class="card"><h2>When support or a refund review may be appropriate</h2><ul><li>You were charged more than once for the same purchase.</li><li>Payment completed but the purchased file could not be accessed after reasonable troubleshooting.</li><li>The delivered file is materially different from the product described at the time of purchase.</li><li>The file is technically corrupted and a replacement cannot be provided.</li></ul></div><div class="card"><h2>How to request review</h2><p>Use the seller/contact option linked to your PayPal transaction or receipt and provide the transaction ID, purchase date and a concise description of the problem. Do not send passwords or complete payment-card information.</p></div><div class="card"><h2>Third-party payment disputes</h2><p>Payments are processed by PayPal. PayPal's own dispute, buyer-protection and resolution rules may apply independently of this page.</p></div></main><footer><div class="container">© 2026 2NEXTAI · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/refund/">Refund Policy</a></div></footer>
+<!-- 2NextAI GA4 interaction tracking -->
+<script>
+(function () {
+  if (window.__twoNextAiTrackingInstalled) return;
+  window.__twoNextAiTrackingInstalled = true;
+  document.addEventListener('click', function (event) {
+    var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+    if (!link || typeof window.gtag !== 'function') return;
+    var href = link.href, url;
+    try { url = new URL(href, window.location.href); } catch (e) { return; }
+    var text = (link.innerText || link.getAttribute('aria-label') || link.title || '').trim().replace(/\s+/g, ' ').slice(0, 120);
+    var params = {link_url:href,link_text:text,link_domain:url.hostname,page_location:window.location.href};
+    var external = url.protocol.indexOf('http') === 0 && url.hostname !== window.location.hostname;
+    var affiliate = link.hasAttribute('data-affiliate') || /affiliate|aff=|ref=|referral|partner/i.test(href);
+    var paypal = /(^|\.)paypal\.com$/i.test(url.hostname);
+    var cta = /\b(btn|button|cta)\b/i.test(link.className || '') || /buy|get instant access|subscribe|purchase|download|start free|view product|explore|access/i.test(text);
+    if (affiliate) window.gtag('event','affiliate_click',params);
+    if (paypal) window.gtag('event','purchase_click',params);
+    else if (external) window.gtag('event','outbound_click',params);
+    if (cta) window.gtag('event','cta_click',params);
+  }, true);
+})();
+</script>
+
+</body></html>
