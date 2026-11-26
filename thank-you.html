@@ -12,27 +12,31 @@
 <body><div class="box"><div style="font-size:48px">🎉</div><h1>Thank you for your purchase!</h1><p class="muted">Your NextAI AI Business & Content Prompt Pack is ready.</p>
 <a class="btn" href="NextAI_AI_Prompt_Pack_1000.pdf" download rel="nofollow">DOWNLOAD YOUR 1,000 PROMPTS</a>
 <p class="muted" style="font-size:13px;margin-top:22px">Keep this page private. This is the fast-launch V1 delivery method.</p></div>
-<!-- 2NextAI GA4 interaction tracking -->
+<!-- 2NextAI GA4 conversion funnel tracking -->
 <script>
 (function () {
   if (window.__twoNextAiTrackingInstalled) return;
   window.__twoNextAiTrackingInstalled = true;
-  document.addEventListener('click', function (event) {
-    var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
-    if (!link || typeof window.gtag !== 'function') return;
-    var href = link.href, url;
-    try { url = new URL(href, window.location.href); } catch (e) { return; }
-    var text = (link.innerText || link.getAttribute('aria-label') || link.title || '').trim().replace(/\s+/g, ' ').slice(0, 120);
-    var params = {link_url:href,link_text:text,link_domain:url.hostname,page_location:window.location.href};
-    var external = url.protocol.indexOf('http') === 0 && url.hostname !== window.location.hostname;
-    var affiliate = link.hasAttribute('data-affiliate') || /affiliate|aff=|ref=|referral|partner/i.test(href);
-    var paypal = /(^|\.)paypal\.com$/i.test(url.hostname);
-    var cta = /\b(btn|button|cta)\b/i.test(link.className || '') || /buy|get instant access|subscribe|purchase|download|start free|view product|explore|access/i.test(text);
-    if (affiliate) window.gtag('event','affiliate_click',params);
-    if (paypal) window.gtag('event','purchase_click',params);
-    else if (external) window.gtag('event','outbound_click',params);
-    if (cta) window.gtag('event','cta_click',params);
-  }, true);
+  var send=function(name,params){if(typeof window.gtag==='function')window.gtag('event',name,params||{});};
+  var page=window.location.pathname||'/';
+  if(page==='/products/'||page==='/products/index.html')send('view_item',{currency:'USD',value:9,items:[{item_id:'ai-business-content-prompt-pack',item_name:'2NEXTAI AI Business & Content Prompt Pack',price:9,quantity:1}]});
+  if(page==='/thank-you.html')send('thank_you_page_view',{page_type:'order_confirmation_landing'});
+  document.addEventListener('click',function(event){
+    var link=event.target&&event.target.closest?event.target.closest('a[href]'):null;if(!link)return;
+    var href=link.href,url;try{url=new URL(href,window.location.href)}catch(e){return}
+    var label=(link.innerText||link.getAttribute('aria-label')||link.title||'').trim().replace(/\s+/g,' ').slice(0,120);
+    var params={link_url:href,link_text:label,link_domain:url.hostname,page_location:window.location.href};
+    var external=(url.protocol==='http:'||url.protocol==='https:')&&url.hostname!==window.location.hostname;
+    var paypal=/(^|\.)paypal\.com$/i.test(url.hostname);
+    var download=link.hasAttribute('download')||/\.pdf(?:$|[?#])/i.test(url.pathname);
+    var affiliate=link.hasAttribute('data-affiliate')||/affiliate|aff=|ref=|referral|partner/i.test(href);
+    var cta=/\b(btn|button|cta)\b/i.test(String(link.className||''))||/buy|get instant access|subscribe|purchase|download|start free|view product|explore|access/i.test(label);
+    if(paypal)send('begin_checkout',Object.assign({currency:'USD',value:9,items:[{item_id:'ai-business-content-prompt-pack',item_name:'2NEXTAI AI Business & Content Prompt Pack',price:9,quantity:1}]},params));
+    if(download)send('file_download',Object.assign({file_name:url.pathname.split('/').pop(),file_extension:(url.pathname.split('.').pop()||'').toLowerCase()},params));
+    if(affiliate)send('affiliate_click',params);
+    if(external){send('outbound_click',params);if(page.indexOf('/tools/')===0)send('tool_referral_click',params)}
+    if(cta)send('cta_click',params);
+  },true);
 })();
 </script>
 
