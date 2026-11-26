@@ -30,4 +30,35 @@
 <div class="card"><h2>Technical data</h2><p>Like most websites, the hosting and delivery infrastructure may process standard technical information required to serve pages, such as IP addresses, request timestamps, browser information and requested URLs. GitHub Pages hosts the current website, so GitHub's infrastructure may process this technical data according to its own policies.</p></div>
 <div class="card"><h2>External links</h2><p>2NEXTAI includes links to third-party AI tools and PayPal. When you follow an external link, the destination site controls its own data practices. Review the relevant provider's privacy policy before providing personal information.</p></div>
 <div class="card"><h2>Changes</h2><p>This policy may be updated if the site later adds analytics, forms, accounts, newsletters, advertising, affiliate tracking or other features that affect data collection. Material changes should be reflected on this page.</p></div>
-</main><footer><div class="container">© 2026 2NEXTAI · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/refund/">Refund Policy</a></div></footer></body></html>
+</main><footer><div class="container">© 2026 2NEXTAI · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/refund/">Refund Policy</a></div></footer>
+<!-- 2NextAI GA4 interaction tracking -->
+<script>
+(function () {
+  if (window.__twoNextAiTrackingInstalled) return;
+  window.__twoNextAiTrackingInstalled = true;
+  document.addEventListener('click', function (event) {
+    var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+    if (!link || typeof window.gtag !== 'function') return;
+    var href = link.href;
+    var url;
+    try { url = new URL(href, window.location.href); } catch (e) { return; }
+    var text = (link.innerText || link.getAttribute('aria-label') || link.title || '').trim().replace(/\s+/g, ' ').slice(0, 120);
+    var params = {
+      link_url: href,
+      link_text: text,
+      link_domain: url.hostname,
+      page_location: window.location.href
+    };
+    var isExternal = url.protocol.indexOf('http') === 0 && url.hostname !== window.location.hostname;
+    var isAffiliate = link.hasAttribute('data-affiliate') || /affiliate|aff=|ref=|referral|partner/i.test(href);
+    var isPayPal = /(^|\.)paypal\.com$/i.test(url.hostname);
+    var isCta = /\b(btn|button|cta)\b/i.test(link.className || '') || /buy|get instant access|subscribe|purchase|download|start free|view product|explore|access/i.test(text);
+    if (isAffiliate) window.gtag('event', 'affiliate_click', params);
+    if (isPayPal) window.gtag('event', 'purchase_click', params);
+    else if (isExternal) window.gtag('event', 'outbound_click', params);
+    if (isCta) window.gtag('event', 'cta_click', params);
+  }, true);
+})();
+</script>
+
+</body></html>
